@@ -119,9 +119,18 @@ if (!class_exists("Owark")) {
                  $this->notices = $this->notices . "<div class=\"error fade\"><p><strong>The Open Web Archive relies on the <a href=\"http://w-shadow.com/blog/2007/08/05/broken-link-checker-for-wordpress/\">Broken Link Checker</a>. Please install this plugin!</strong></p></div>";
             }
 
+            // Check if we have an archive subdirectory
+
+            if (!is_dir(dirname(__FILE__) . '/archives')) {
+                @mkdir(dirname(__FILE__) . '/archives');
+                if (!is_dir(dirname(__FILE__) . '/archives')) {
+                    $this->notices = $this->notices . "<div class=\"error fade\"><p><strong>The Open Web Archive has not been able to create the folder /archives in its installation directory. Please create it by hand and make it writable for the web server.</strong></p></div>";                        
+                }
+            }
+
             if ($this->notices != '') {
                 add_action('admin_notices', array($this, 'admin_notices'));
-            }
+             }
 
         }
 
