@@ -33,6 +33,7 @@ if (!class_exists("Owark")) {
         private $post_id = -1;
         private $post_type = "";
         private $version = '0.1';
+        private $notices = "";
         
         /**
          * Class constructor
@@ -77,6 +78,7 @@ if (!class_exists("Owark")) {
          *
          */
         function sanity_checks(){
+
             $installed_ver = get_option( "owark_db_version" );
             if ($installed_ver != $this->version) {
                 global $wpdb;
@@ -93,8 +95,28 @@ if (!class_exists("Owark")) {
                 dbDelta($sql);
 
                 update_option( "owark_db_version", $this->version );
-
+                $this->notices = "<div class=\"updated fade\"><p><strong>The owark table has been installed or upgraded to version {$this->version}</strong></p></div>";
             }
+
+
+            if ($this->notices != '') {
+                add_action('admin_notices', array($this, 'admin_notices'));
+            }
+
+        }
+
+        /**
+         * Show admin notices
+         *
+         * @package owark
+         * @since 0.1
+         *
+         *
+         */
+        function admin_notices(){
+
+            echo $this->notices;
+
         }
 
         /**
