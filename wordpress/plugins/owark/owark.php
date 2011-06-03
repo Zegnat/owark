@@ -146,7 +146,7 @@ if (!class_exists("Owark")) {
             echo '<p>List of broken links with successfully archived pages:</p>';
 
             $query = "SELECT owark.id, owark.url, owark.status, owark.arc_date, owark.arc_location, blc_links.status_text
-                        FROM {$wpdb->prefix}perwac AS owark, {$wpdb->prefix}blc_links as blc_links
+                        FROM {$wpdb->prefix}owark AS owark, {$wpdb->prefix}blc_links as blc_links
                         WHERE owark.url = blc_links.final_url COLLATE latin1_swedish_ci and blc_links.broken = 1
                         ORDER BY owark.url";
             $results = $wpdb->get_results($query);
@@ -280,7 +280,7 @@ if (!class_exists("Owark")) {
                     SELECT instances.raw_url, owark.id
                     FROM {$wpdb->prefix}blc_instances AS instances,
                         {$wpdb->prefix}blc_links AS links,
-                        {$wpdb->prefix}perwac AS owark
+                        {$wpdb->prefix}owark AS owark
                     WHERE
                         instances.link_id = links.link_id
                         AND owark.url = links.final_url COLLATE latin1_swedish_ci
@@ -340,7 +340,7 @@ if (!class_exists("Owark")) {
             $id = intval($parameter);
 
             $query = "SELECT *
-                        from {$wpdb->prefix}perwac AS owark
+                        from {$wpdb->prefix}owark AS owark
                         where id = {$id}";
             $link = $wpdb->get_row($query);
 
