@@ -18,7 +18,7 @@
 /*
 Plugin Name: owark
 Plugin URI: http://owark.org
-Description: Tired of broken links? Archive yours with the Open Web Archive!
+Description: Tired of broken links? Archive yours with owark, the Open Web Archive!
 Version: 0.1
 Author: Eric van der Vlist
 Author URI: http://eric.van-der-vlist.com
@@ -32,6 +32,7 @@ if (!class_exists("Owark")) {
         private $broken_links = array();
         private $post_id = -1;
         private $post_type = "";
+        private $version = '0.1';
         
         /**
          * Class constructor
@@ -43,7 +44,11 @@ if (!class_exists("Owark")) {
          */
 		function Owark() {
 
-            add_action('admin_menu', array($this, 'owark_admin_menu'));
+
+            if (is_admin()) {
+                add_action('admin_menu', array($this, 'owark_admin_menu'));
+                add_action('plugins_loaded', array($this, 'sanity_checks'));
+            }
 
             // See http://stackoverflow.com/questions/2210826/need-help-with-wp-rewrite-in-a-wordpress-plugin
             // Using a filter instead of an action to create the rewrite rules.
@@ -63,6 +68,43 @@ if (!class_exists("Owark")) {
 
 		}
 
+        /**
+         * Check we have everything we need...
+         *
+         * @package owark
+         * @since 0.1
+         *
+         *
+         */
+        function sanity_checks(){
+            $installed_ver = get_option( "owark_db_version" );
+            if ($installed_ver != $this->version) {
+                global $wpdb;
+                $table = $wpdb->prefix."owark";
+                $sql = "CREATE TABLE $table (
+                    id int(10) unsigned NOT NULL AUTO_INCREMENT,
+                    url text NOT NULL,
+                    status varchar(20) NOT NULL DEFAULT 'to-archive',
+                    arc_date datetime,
+                    arc_location text,
+                    PRIMARY KEY(`id`),
+                    KEY `url` (`url`(150)) )";
+                require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
+                dbDelta($sql);
+
+                update_option( "owark_db_version", $this->version );
+
+            }
+        }
+
+        /**
+         * Admin menus
+         *
+         * @package owark
+         * @since 0.1
+         *
+         *
+         */
         function owark_admin_menu() {
             add_management_page(__('The Open Web Archive', 'owark'), __('Web Archive', 'owark'), 'edit_others_posts', 'owark', array($this, 'management_page'));
         }
