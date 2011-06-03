@@ -67,6 +67,12 @@ if (!class_exists("Owark")) {
             add_filter ( 'comment_text', array($this, 'comment_filter'));
             add_filter ( 'get_comment_author_link', array($this, 'comment_filter'));
 
+            add_action('owark_schedule_event', array(Owark, 'schedule'));
+            if ( !wp_next_scheduled( 'owark_schedule_event' , array('occurrences' => 30) ) ) {
+		        wp_schedule_event(time(), 'hourly', 'owark_schedule_event', array('occurrences' => 30));
+	        }
+
+
 		}
 
         /**
@@ -445,8 +451,55 @@ if (!class_exists("Owark")) {
             echo '</div>';
         }
 
+        /**
+         * Check if we've got something to archive
+         *
+         * @package owark
+         * @since 0.1
+         *
+         *
+         */
+        public static function schedule($occurrences) {
+            global $wpdb;
+
+            $query = "SELECT DISTINCT final_url from {$wpdb->prefix}blc_links
+                        WHERE final_url NOT IN (SELECT url COLLATE latin1_swedish_ci FROM {$wpdb->prefix}owark)
+                        AND broken=0
+                        AND final_url!=''";
+            $url = $wpdb->get_row($query);
+            $wpdb->flush();
+
+            if ($url == NULL) {
+                wp_mail('vdv@dyomedea.com', 'Automatic email', "No row found, occurrences: $occurrences");    
+            } else {
+                $date = date('c');
+                $path = dirname(__FILE__).'/archives/'. urlencode(preg_replace('/https?:\/\//', '', $url->final_url)) . '/' . $date;
+                //mkdir($path, $recursive=true);                                           
+
+                $output = array();
+                $status = 0;
+                exec("wget -t3 -E -H -k -K -p -nd -nv --adjust-extension --timeout=60 --user-agent=\"Mozilla/5.0 (compatible; owark/0.1; http://owark.org/)\" -P $path {$url->final_url}",
+                    &$output, &$status);
+
+                $q = $wpdb->insert("{$wpdb->prefix}owark", array(
+                    'url' => $url->final_url,
+                    'status' => $status,
+                    'arc_date' => $date,
+                    'arc_location' => $path));
+                wp_mail('vdv@dyomedea.com', 'Automatic email', "URL: {$url->final_url}, occurrences: $occurrences");
+                if ($occurrences > 0) {
+                    wp_schedule_single_event(time() + 90, 'owark_schedule_event', array('occurrences' => $occurrences - 1));    
+                }
+
+            }
+        }
+
+
+
 
 	}
+
+
 }
 
 
