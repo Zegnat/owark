@@ -128,6 +128,31 @@ if (!class_exists("Owark")) {
                 }
             }
 
+            // Check that we can execute commands
+
+            if ( ini_get('disable_functions') ) {
+                $not_allowed = ini_get('disable_functions');
+                if ( stristr($not_allowed, 'exec') || stristr($not_allowed, 'passthru') ) {
+                    $this->notices = $this->notices . "<div class=\"error fade\"><p><strong>The Open Web Archives requires that exec() and passthru() are allowed to run wget and retrieve the pages to archive.</strong></p></div>";
+               }
+            }
+
+            // Check that wget is installed
+
+            $output = array();
+            exec('/usr/bin/wget -V', &$output);
+
+
+            if ( empty($output) ) {
+                $this->notices = $this->notices . "<div class=\"error fade\"><p><strong>The Open Web Archives is not able to run wget and retrieve the pages to archive. Please check that wget is installed and on the default path.</strong></p></div>";
+            }
+
+            // We need as least version 1.12 or higher
+            $helper = preg_match('/GNU Wget ([0-9\.]+) /', $output[0], $wget_version);
+            if ( $wget_version[1] < '1.12' ) {
+                $this->notices = $this->notices . "<div class=\"error fade\"><p><strong>The Open Web Archives needs wget version 1.12 or higher.</strong><br />Version read: {$wget_version[0]}</p></div>";
+            }
+
             if ($this->notices != '') {
                 add_action('admin_notices', array($this, 'admin_notices'));
              }
