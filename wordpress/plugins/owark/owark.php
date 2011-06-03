@@ -132,8 +132,8 @@ if (!class_exists("Owark")) {
 
             if ( ini_get('disable_functions') ) {
                 $not_allowed = ini_get('disable_functions');
-                if ( stristr($not_allowed, 'exec') || stristr($not_allowed, 'passthru') ) {
-                    $this->notices = $this->notices . "<div class=\"error fade\"><p><strong>The Open Web Archives requires that exec() and passthru() are allowed to run wget and retrieve the pages to archive.</strong></p></div>";
+                if ( stristr($not_allowed, 'exec') ) {
+                    $this->notices = $this->notices . "<div class=\"error fade\"><p><strong>The Open Web Archives requires that exec() is allowed to run wget and retrieve the pages to archive.</strong></p></div>";
                }
             }
 
