@@ -79,6 +79,8 @@ if (!class_exists("Owark")) {
          */
         function sanity_checks(){
 
+            // Install or upgrade tables if needed
+
             $installed_ver = get_option( "owark_db_version" );
             if ($installed_ver != $this->version) {
                 global $wpdb;
@@ -98,6 +100,24 @@ if (!class_exists("Owark")) {
                 $this->notices = "<div class=\"updated fade\"><p><strong>The owark table has been installed or upgraded to version {$this->version}</strong></p></div>";
             }
 
+            // Check that the broken link checker is installed
+
+            $blc = 'not-found';
+            foreach(get_plugins() as $plugin_file => $plugin_data) {
+                if ($plugin_data['Title'] == 'Broken Link Checker') {
+                    if (is_plugin_active($plugin_file)) {
+                        $blc = 'active';
+                    } else {
+                        $blc = 'inactive';
+                    }
+                }
+	        }
+
+            if ($blc == 'inactive') {
+                 $this->notices = $this->notices . "<div class=\"updated fade\"><p><strong>Please activate the Broken Link Checker so that the Open Web Archive can be fully functional.</strong></p></div>";
+            } else if ($blc == 'not-found') {
+                 $this->notices = $this->notices . "<div class=\"error fade\"><p><strong>The Open Web Archive relies on the <a href=\"http://w-shadow.com/blog/2007/08/05/broken-link-checker-for-wordpress/\">Broken Link Checker</a>. Please install this plugin!</strong></p></div>";
+            }
 
             if ($this->notices != '') {
                 add_action('admin_notices', array($this, 'admin_notices'));
