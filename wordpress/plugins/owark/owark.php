@@ -445,25 +445,25 @@ if (!class_exists("Owark")) {
             echo "<br />This snapshot has been taken on {$link->arc_date} for the website <a href=\"{$home_url}\">{$blog_title}</a> which contains a link to this page and has saved a copy to be displayed in the page ever disappears.";
             echo '</div></div><div style="position:relative">';
 
-             $dir = opendir('.'.$loc);
-            $filename = false;
-            while (false !== ($file = readdir($dir))) {
-                if ('.html' === substr($file, strlen($file) - 5)) {
-                    $filename = $file;
-                    break;
+            $file_location = '.'. $loc .'/index.html';
+            if (!file_exists($file_location)) {
+                // If index.html doesn't exist, find another html file!
+                $dir = opendir('.'.$loc);
+                while (false !== ($file = readdir($dir))) {
+                    if ('.html' === substr($file, strlen($file) - 5)) {
+                        $file_location = '.'.$loc.'/' . $file;
+                        break;
+                    }
                 }
+                closedir($dir);
             }
-            closedir($dir);
 
-            if ($filename) {
-                 $file_location = '.'.$loc.'/' . $filename;
-                 $f = fopen($file_location, "r");
-                 echo fread($f, filesize($file_location));
-                 fclose($f);
-                 echo '</div>';
+             $f = fopen($file_location, "r");
+             echo fread($f, filesize($file_location));
+             fclose($f);
+             echo '</div>';
 
-            }
-         }
+          }
 
         /**
          * Check if we've got something to archive
