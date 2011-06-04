@@ -32,7 +32,7 @@ if (!class_exists("Owark")) {
         private $broken_links = array();
         private $post_id = -1;
         private $post_type = "";
-        private $version = '0.1';
+        private $version = '0.2';
         private $notices = "";
         
         /**
@@ -97,6 +97,7 @@ if (!class_exists("Owark")) {
                     status varchar(20) NOT NULL DEFAULT 'to-archive',
                     arc_date datetime,
                     arc_location text,
+                    encoding varchar(10),
                     PRIMARY KEY(`id`),
                     KEY `url` (`url`(150)) )";
                 require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
@@ -425,7 +426,9 @@ if (!class_exists("Owark")) {
                         from {$wpdb->prefix}owark AS owark
                         where id = {$id}";
             $link = $wpdb->get_row($query);
+            $wpdb->flush();
 
+            // Find the file to read
             $blog_title = get_bloginfo('name');
             $home_url = home_url();
 
@@ -433,17 +436,6 @@ if (!class_exists("Owark")) {
             if( ($pos = strpos($link->arc_location, '/archives')) !== FALSE )
                 $loc = '/wp-content/plugins/owark' . substr($link->arc_location, $pos);
             $arc_loc = home_url() . $loc;
-
-            echo '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">';
-
-            echo "<base href=\"{$arc_loc}/\">";
-            echo '<div style="background:#fff;border:1px solid #999;margin:-1px -1px 0;padding:0;">';
-            echo '<div style="background:#ddd;border:1px solid #999;color:#000;font:13px arial,sans-serif;font-weight:normal;margin:12px;padding:8px;text-align:left">';
-            echo "This is an <a href='http://owark.org'>Open Web Archive</a> archive of <a href=\"{$link->url}\">{$link->url}</a>.";
-            echo "<br />This snapshot has been taken on {$link->arc_date} for the website <a href=\"{$home_url}\">{$blog_title}</a> which contains a link to this page and has saved a copy to be displayed in the page ever disappears.";
-            echo '</div></div><div style="position:relative">';
 
             $file_location = '.'. $loc .'/index.html';
             if (!file_exists($file_location)) {
@@ -458,9 +450,51 @@ if (!class_exists("Owark")) {
                 closedir($dir);
             }
 
+            // Read the file
+
+            $f = fopen($file_location, "r");
+            $content = fread($f, filesize($file_location));
+            fclose($f);
+
+            // Which encoding?
+            $encoding = $link->encoding;
+
+            if ($encoding == NULL) {
+                // We need to guess the encoding!
+
+                $matches = NULL;
+                // <meta http-equiv="Content-Type" content="text/xml; charset=iso-8859-1"/>
+                if (preg_match('/<meta\s*http-equiv\s*=\s*["\']Content-Type["\']\s+content\s*=\s*["\'][^"\'>]*charset\s*=\s*([^"\'>]+)\s*["\']/si',
+                        $content, &$matches) > 0) {
+                    $encoding = $matches[1];
+                } else {
+                    $encoding = mb_detect_encoding($content);
+                }
+
+                if ($encoding) {
+                    $wpdb->update(
+                        "{$wpdb->prefix}owark",
+                        array('encoding' => $encoding),
+                        array('id' => $id));
+                }
+            }
+
+            header("Content-Type: text/html; charset=$encoding");
+
+            echo '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<meta http-equiv="Content-Type" content="text/html; charset='.$encoding.'">';
+
+            echo "<base href=\"{$arc_loc}/\">";
+            echo '<div style="background:#fff;border:1px solid #999;margin:-1px -1px 0;padding:0;">';
+            echo '<div style="background:#ddd;border:1px solid #999;color:#000;font:13px arial,sans-serif;font-weight:normal;margin:12px;padding:8px;text-align:left">';
+            echo "This is an <a href='http://owark.org'>Open Web Archive</a> archive of <a href=\"{$link->url}\">{$link->url}</a>.";
+            echo "<br />This snapshot has been taken on {$link->arc_date} for the website <a href=\"{$home_url}\">{$blog_title}</a> which contains a link to this page and has saved a copy to be displayed in the page ever disappears.";
+            echo '</div></div><div style="position:relative">';
+
+
              $f = fopen($file_location, "r");
-             echo fread($f, filesize($file_location));
-             fclose($f);
+             echo $content;
              echo '</div>';
 
           }
