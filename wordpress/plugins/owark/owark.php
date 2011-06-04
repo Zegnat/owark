@@ -430,8 +430,8 @@ if (!class_exists("Owark")) {
             $home_url = home_url();
 
             $loc = "";
-            if( ($pos = strpos($link->arc_location, '/wp-content/plugins/owark/')) !== FALSE )
-                $loc = substr($link->arc_location, $pos);
+            if( ($pos = strpos($link->arc_location, '/archives')) !== FALSE )
+                $loc = '/wp-content/plugins/owark' . substr($link->arc_location, $pos);
             $arc_loc = home_url() . $loc;
 
             echo '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
@@ -444,12 +444,26 @@ if (!class_exists("Owark")) {
             echo "This is an <a href='http://owark.org'>Open Web Archive</a> archive of <a href=\"{$link->url}\">{$link->url}</a>.";
             echo "<br />This snapshot has been taken on {$link->arc_date} for the website <a href=\"{$home_url}\">{$blog_title}</a> which contains a link to this page and has saved a copy to be displayed in the page ever disappears.";
             echo '</div></div><div style="position:relative">';
-            $file_location = '.'.$loc.'/index.html';
-            $f = fopen($file_location, "r");
-            echo fread($f, filesize($file_location));
-            fclose($f);
-            echo '</div>';
-        }
+
+             $dir = opendir('.'.$loc);
+            $filename = false;
+            while (false !== ($file = readdir($dir))) {
+                if ('.html' === substr($file, strlen($file) - 5)) {
+                    $filename = $file;
+                    break;
+                }
+            }
+            closedir($dir);
+
+            if ($filename) {
+                 $file_location = '.'.$loc.'/' . $filename;
+                 $f = fopen($file_location, "r");
+                 echo fread($f, filesize($file_location));
+                 fclose($f);
+                 echo '</div>';
+
+            }
+         }
 
         /**
          * Check if we've got something to archive
@@ -478,7 +492,8 @@ if (!class_exists("Owark")) {
 
             if ($url != NULL) {
                 $date = date('c');
-                $path = dirname(__FILE__).'/archives/'. str_replace('%2F', '/', urlencode(preg_replace('/https?:\/\//', '', $url->final_url))) . '/' . $date;
+                $relpath = '/archives/'. str_replace('%2F', '/', urlencode(preg_replace('/https?:\/\//', '', $url->final_url))) . '/' . $date;
+                $path = dirname(__FILE__).$relpath;
                 //mkdir($path, $recursive=true);                                           
 
                 $output = array();
@@ -490,7 +505,7 @@ if (!class_exists("Owark")) {
                     'url' => $url->final_url,
                     'status' => $status,
                     'arc_date' => $date,
-                    'arc_location' => $path));
+                    'arc_location' => $relpath));
 
                 if ($occurrences > 0) {
                     wp_schedule_single_event(time() + 90, 'owark_schedule_event', array('occurrences' => $occurrences - 1));    
