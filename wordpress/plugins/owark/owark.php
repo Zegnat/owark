@@ -68,7 +68,7 @@ if (!class_exists("Owark")) {
             add_filter ( 'get_comment_author_link', array($this, 'comment_filter'));
 
             add_action('owark_schedule_event', array(Owark, 'schedule'));
-            if ( !wp_next_scheduled( 'owark_schedule_event' , array('occurrences' => 30) ) ) {
+            if ( !wp_next_scheduled( 'owark_schedule_event', array('occurrences' => 30) ) ) {
 		        wp_schedule_event(time(), 'hourly', 'owark_schedule_event', array('occurrences' => 30));
 	        }
 
@@ -225,7 +225,7 @@ if (!class_exists("Owark")) {
             echo '<p><em>Tired of broken links? Archive yours with the Open Web Archive!</em></p>';
             echo "</div>";
 
-            echo '<p>List of broken links with successfully archived pages:</p>';
+            echo '<p>List of broken links with archived pages:</p>';
 
             $query = "SELECT owark.id, owark.url, owark.status, owark.arc_date, owark.arc_location, blc_links.status_text
                         FROM {$wpdb->prefix}owark AS owark, {$wpdb->prefix}blc_links as blc_links
@@ -430,7 +430,7 @@ if (!class_exists("Owark")) {
             $home_url = home_url();
 
             $loc = "";
-            if( ($pos = strpos($link->arc_location, '/wp-content/perwac/')) !== FALSE )
+            if( ($pos = strpos($link->arc_location, '/wp-content/plugins/owark/')) !== FALSE )
                 $loc = substr($link->arc_location, $pos);
             $arc_loc = home_url() . $loc;
 
@@ -469,11 +469,9 @@ if (!class_exists("Owark")) {
             $url = $wpdb->get_row($query);
             $wpdb->flush();
 
-            if ($url == NULL) {
-                wp_mail('vdv@dyomedea.com', 'Automatic email', "No row found, occurrences: $occurrences");    
-            } else {
+            if ($url != NULL) {
                 $date = date('c');
-                $path = dirname(__FILE__).'/archives/'. urlencode(preg_replace('/https?:\/\//', '', $url->final_url)) . '/' . $date;
+                $path = dirname(__FILE__).'/archives/'. str_replace('%2F', '/', urlencode(preg_replace('/https?:\/\//', '', $url->final_url))) . '/' . $date;
                 //mkdir($path, $recursive=true);                                           
 
                 $output = array();
@@ -486,7 +484,7 @@ if (!class_exists("Owark")) {
                     'status' => $status,
                     'arc_date' => $date,
                     'arc_location' => $path));
-                wp_mail('vdv@dyomedea.com', 'Automatic email', "URL: {$url->final_url}, occurrences: $occurrences");
+
                 if ($occurrences > 0) {
                     wp_schedule_single_event(time() + 90, 'owark_schedule_event', array('occurrences' => $occurrences - 1));    
                 }
