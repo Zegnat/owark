@@ -460,6 +460,13 @@ if (!class_exists("Owark")) {
          *
          */
         public static function schedule($occurrences) {
+
+            $archiving  = get_option( 'owark_archiving', false);
+            if (! $archiving) {
+                update_option('owark_archiving', true);
+            } else {
+                return;
+            }
             global $wpdb;
 
             $query = "SELECT DISTINCT final_url from {$wpdb->prefix}blc_links
@@ -490,6 +497,7 @@ if (!class_exists("Owark")) {
                 }
 
             }
+            delete_option('owark_archiving');
         }
 
 
