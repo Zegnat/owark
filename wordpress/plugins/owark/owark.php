@@ -108,6 +108,8 @@ if (!class_exists("Owark")) {
             }
 
             // Check that the broken link checker is installed
+            if (!function_exists('get_plugins'))
+				require_once (ABSPATH."wp-admin/includes/plugin.php");
 
             $blc = 'not-found';
             foreach(get_plugins() as $plugin_file => $plugin_data) {
