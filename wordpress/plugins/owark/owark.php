@@ -159,7 +159,7 @@ if (!class_exists("Owark")) {
             // We need as least version 1.11 or higher
             $helper = preg_match('/GNU Wget ([0-9\.]+) /', $output[0], $wget_version);
             if ( $wget_version[1] < '1.11' ) {
-                $this->notices = $this->notices . "<div class=\"error fade\"><p><strong>The Open Web Archives needs wget version 1.12 or higher.</strong><br />Version read: {$wget_version[0]}</p></div>";
+                $this->notices = $this->notices . "<div class=\"error fade\"><p><strong>The Open Web Archives needs wget version 1.11 or higher.</strong><br />Version read: {$wget_version[0]}</p></div>";
             }
 
             if ($this->notices != '') {
