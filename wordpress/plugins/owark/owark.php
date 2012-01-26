@@ -156,9 +156,9 @@ if (!class_exists("Owark")) {
                 $this->notices = $this->notices . "<div class=\"error fade\"><p><strong>The Open Web Archives is not able to run wget and retrieve the pages to archive. Please check that wget is installed and on the default path.</strong></p></div>";
             }
 
-            // We need as least version 1.12 or higher
+            // We need as least version 1.11 or higher
             $helper = preg_match('/GNU Wget ([0-9\.]+) /', $output[0], $wget_version);
-            if ( $wget_version[1] < '1.12' ) {
+            if ( $wget_version[1] < '1.11' ) {
                 $this->notices = $this->notices . "<div class=\"error fade\"><p><strong>The Open Web Archives needs wget version 1.12 or higher.</strong><br />Version read: {$wget_version[0]}</p></div>";
             }
 
@@ -534,7 +534,7 @@ if (!class_exists("Owark")) {
 
                 $output = array();
                 $status = 0;
-                exec("wget -t3 -E -H -k -K -p -nd -nv --adjust-extension --timeout=60 --user-agent=\"Mozilla/5.0 (compatible; owark/0.1; http://owark.org/)\" -P $path {$url->final_url}",
+                exec("wget -t3 -E -H -k -K -p -nd -nv --timeout=60 --user-agent=\"Mozilla/5.0 (compatible; owark/0.1; http://owark.org/)\" -P $path {$url->final_url}",
                     &$output, &$status);
 
                 $q = $wpdb->insert("{$wpdb->prefix}owark", array(
