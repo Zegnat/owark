@@ -439,7 +439,14 @@ if (!class_exists("Owark")) {
                 $loc = '/wp-content/plugins/owark' . substr($link->arc_location, $pos);
             $arc_loc = home_url() . $loc;
 
-            $file_location = '.'. $loc .'/index.html';
+            // The file name is either index.html or guessed from the URL 
+            if ($home_url[strlen($home_url)] == '/') {
+                $file_location = '.'. $loc .'/index.html';
+            } else {
+                $parts = str_split($home_url, '/');
+                $file_location = '.'. $loc . $parts[count($parts)] . '.html';
+            }
+
             if (!file_exists($file_location)) {
                 // If index.html doesn't exist, find another html file!
                 $dir = opendir('.'.$loc);
