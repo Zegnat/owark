@@ -75,6 +75,7 @@
       </p:processor>
 
       <!-- Get a list of links to update -->
+      <!-- TODO: support links in inline CSS -->
       <p:processor name="oxf:unsafe-xslt">
         <p:input name="data" href="#html"/>
         <p:input name="request" href="#archive#xpointer(/archive/request)"/>
@@ -90,9 +91,6 @@
                   <xsl:variable name="abs-href" select="resolve-uri(@href, $base)"/>
                   <xsl:variable name="tokens" select="tokenize($abs-href, '/')"/>
                   <xsl:variable name="last-token" select="$tokens[last()]"/>
-                  <xsl:message>
-                    <xsl:value-of select="$last-token"/>
-                  </xsl:message>
                   <xsl:variable name="tokens2" select="tokenize($last-token, '\.')"/>
                   <xsl:variable name="extension" select="$tokens2[last()]"/>
                   <link abs-href="{$abs-href}" new-href="{saxon:string-to-hexBinary(substring($abs-href, 1, string-length($abs-href) - string-length($extension) - 1), 'utf-8')}.{$extension}"
