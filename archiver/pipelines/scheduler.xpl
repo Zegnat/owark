@@ -19,8 +19,8 @@
         </p:input>
         <p:input name="param">
             <xquery><![CDATA[
-                
-/queue/action
+
+/queue/action[@priority=max(/queue/action/@priority)]
                 
                 ]]></xquery>
         </p:input>

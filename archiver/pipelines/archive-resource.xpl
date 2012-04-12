@@ -222,6 +222,9 @@ for $as in /archive-set
             <parameter name="uuid" type="string">
               <xsl:value-of select="/root/action/@uuid"/>
             </parameter>
+            <parameter name="priority" type="string">
+              <xsl:value-of select="/root/action/@priority"/>
+            </parameter>
             <parameter name="links" type="node-set">
               <xsl:copy-of select="/root/links"/>
             </parameter>
@@ -237,7 +240,7 @@ for $q in /queue return
         insert 
           for $href in distinct-values($links/link/@abs-href)
             let $link := $links/link[@abs-href = $href][1]
-            return <action uuid="{util:uuid()}" type="archive-resource" url="{$link/@abs-href}" directory=$(directory) filename="{$link/@filename}"/> 
+            return <action priority=$(priority) uuid="{util:uuid()}" type="archive-resource" url="{$link/@abs-href}" directory=$(directory) filename="{$link/@filename}"/> 
         into $q,
         
 for $a in /queue/action where $a/@uuid = $(uuid) return

@@ -31,6 +31,9 @@
                 <parameter name="url" type="string">
                     <xsl:value-of select="/action/@url"/>
                 </parameter>
+                <parameter name="priority" type="string">
+                    <xsl:value-of select="/action/@priority + 1"/>
+                </parameter>
             </config>
         </p:input>
         <p:output name="data" id="data-access-data"/>
@@ -45,7 +48,7 @@ declare namespace util = "http://exist-db.org/xquery/util";
 
 for $q in /queue return
     update 
-        insert <action uuid="{util:uuid()}" type="archive-resource" url=$(url) directory=$(directory) filename=$(filename)/> 
+        insert <action priority=$(priority) uuid="{util:uuid()}" type="archive-resource" url=$(url) directory=$(directory) filename=$(filename)/> 
         into $q,
         
 for $a in /queue/action where $a/@uuid = $(uuid) return
