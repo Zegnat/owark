@@ -200,7 +200,7 @@
 for $as in /archive-set 
     return 
       update 
-        insert <archive url=$(url) href=$(filename) href-rewritten=$(filename-rewritten)/> 
+        insert <archive url=$(url) href=$(filename) href-rewritten=$(filename-rewritten) dateTime="{current-dateTime()}"/> 
         into $as                
                 ]]></xquery>
         </p:input>
@@ -283,7 +283,7 @@ for $a in /queue/action where $a/@uuid = $(uuid) return
 for $as in /archive-set 
     return 
       update 
-        insert <archive url=$(url) href=$(filename)/> 
+        insert <archive url=$(url) href=$(filename) dateTime="{current-dateTime()}"/> 
         into $as                
                 ]]></xquery>
         </p:input>
