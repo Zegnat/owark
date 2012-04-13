@@ -48,7 +48,7 @@
   <p:choose href="#archive">
 
     <!-- HTML document : need to update the links... -->
-    <p:when test="/archive/response/document/@content-type=('text/html')">
+    <p:when test="/archive/response/document/@content-type=('text/html', 'text/css')">
 
       <!-- Call the corresponding pipeline to extract the links and rewrite them -->
       <p:processor name="oxf:url-generator">
@@ -160,7 +160,8 @@ for $as in /archive-set
 declare namespace util = "http://exist-db.org/xquery/util";
 declare variable $links := $(links);
 
-for $q in /queue return
+for $q in /queue[$links/link/@abs-href]
+  return
     update 
         insert 
           for $href in distinct-values($links/link/@abs-href)
