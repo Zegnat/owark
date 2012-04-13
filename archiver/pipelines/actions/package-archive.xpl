@@ -202,7 +202,7 @@ conformsTo:
               <CRLF/>
               <xsl:apply-templates select="/archive/response" mode="warc"/>
               <CRLF/>
-              
+
             </xsl:variable>
             <document xsl:version="2.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xs:string" content-type="text/plain">
               <xsl:apply-templates select="$content" mode="warc"/>
@@ -225,9 +225,34 @@ conformsTo:
       </p:input>
       <p:input name="data" href="#document#xpointer(/archive/response/document)"/>
     </p:processor>
-    
+
+    <p:choose href="current()">
+      <p:when test="/archive/@href-rewritten">
+        <p:processor name="oxf:identity">
+          <p:input name="data">
+            <none/>
+          </p:input>
+          <p:output name="data" id="file" debug="file"/>
+        </p:processor>
+      </p:when>
+      <p:otherwise>
+        <!-- Store a copy of the orginal version -->
+        <p:processor name="oxf:file-serializer">
+          <p:input name="config">
+            <config>
+              <scope>request</scope>
+            </config>
+          </p:input>
+          <p:input name="data" href="#document#xpointer(/archive/response/document)"/>
+          <p:output name="data" id="file" debug="file"/>
+        </p:processor>
+      </p:otherwise>
+    </p:choose>
+
+
+
     <p:processor name="oxf:identity">
-      <p:input name="data" href="current()"/>
+      <p:input name="data" href="aggregate('file', current(), #file)"/>
       <p:output name="data" ref="files"/>
     </p:processor>
 
@@ -235,15 +260,24 @@ conformsTo:
   </p:for-each>
 
   <p:processor name="oxf:null-serializer">
-    <p:input name="data" href="#files"/>
+    <p:input name="data" href="#files" debug="files"/>
   </p:processor>
 
   <p:processor name="oxf:zip">
-    <p:input name="data" transform="oxf:xslt" href="#warc">
+    <p:input name="data" transform="oxf:unsafe-xslt" href="aggregate('root', #warc, #files)">
       <files xsl:version="2.0" file-name="archive.zip">
         <file name="archive.warc">
-          <xsl:value-of select="/url"/>
+          <xsl:value-of select="/root/url"/>
         </file>
+        <xsl:for-each select="/root/files/file[url]">
+          <xsl:variable name="tokens" select="tokenize(archive/@url, '/')"/>
+          <xsl:variable name="last-token" select="$tokens[last()]"/>
+          <xsl:variable name="tokens2" select="tokenize($last-token, '\.')"/>
+          <xsl:variable name="extension" select="$tokens2[last()]"/>
+          <file name="rewritten/{saxon:string-to-hexBinary(substring(archive/@url, 1, string-length(archive/@url) - string-length($extension) - 1), 'utf-8')}.{$extension}">
+            <xsl:value-of select="url"/>
+          </file>
+        </xsl:for-each>
       </files>
     </p:input>
     <p:output name="data" id="zip"/>
