@@ -33,8 +33,9 @@
             <p:input name="config" transform="oxf:xslt" href="current()">
                 <config xsl:version="2.0">
                     <url>
-                        <xsl:text>oxf:/</xsl:text>
-                        <xsl:value-of select="/action/@type"/>
+                        <xsl:text>oxf:/actions/</xsl:text>
+                        <!-- Remove / and \ for security reasons -->
+                        <xsl:value-of select="translate(/action/@type, '/\', '')"/>
                         <xsl:text>.xpl</xsl:text>
                     </url>
                 </config>

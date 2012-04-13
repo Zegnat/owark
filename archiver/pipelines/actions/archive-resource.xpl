@@ -24,7 +24,8 @@
 
   <!-- Store the archive in the database -->
   <p:processor name="oxf:pipeline">
-    <p:input name="config" href="data-access.xpl"/>
+    <p:input name="config" href="/data-access.xpl
+"/>
     <p:input name="data" transform="oxf:xslt" href="#data">
       <config xsl:version="2.0">
         <relpath>
@@ -149,7 +150,8 @@
 
       <!-- Store the rewritten document in the database -->
       <p:processor name="oxf:pipeline">
-        <p:input name="config" href="data-access.xpl"/>
+        <p:input name="config" href="/data-access.xpl
+"/>
         <p:input name="data" transform="oxf:xslt" href="#data">
           <config xsl:version="2.0">
             <relpath>
@@ -172,7 +174,8 @@
 
       <!-- Update the archive index -->
       <p:processor name="oxf:pipeline">
-        <p:input name="config" href="data-access.xpl"/>
+        <p:input name="config" href="/data-access.xpl
+"/>
         <p:input name="data" transform="oxf:xslt" href="#data">
           <config xsl:version="2.0">
             <relpath>
@@ -210,7 +213,8 @@ for $as in /archive-set
 
       <!-- Update the queue -->
       <p:processor name="oxf:pipeline">
-        <p:input name="config" href="data-access.xpl"/>
+        <p:input name="config" href="/data-access.xpl
+"/>
         <p:input name="data" transform="oxf:xslt" href="aggregate('root', #data, #links)">
           <config xsl:version="2.0">
             <relpath>queue.xml</relpath>
@@ -262,7 +266,8 @@ for $a in /queue/action where $a/@uuid = $(uuid) return
     <p:otherwise>
       <!-- Update the archive index -->
       <p:processor name="oxf:pipeline">
-        <p:input name="config" href="data-access.xpl"/>
+        <p:input name="config" href="/data-access.xpl
+"/>
         <p:input name="data" transform="oxf:xslt" href="#data">
           <config xsl:version="2.0">
             <relpath>
@@ -296,7 +301,8 @@ for $as in /archive-set
 
       <!-- Update the queue -->
       <p:processor name="oxf:pipeline">
-        <p:input name="config" href="data-access.xpl"/>
+        <p:input name="config" href="/data-access.xpl
+"/>
         <p:input name="data" transform="oxf:xslt" href="#data">
           <config xsl:version="2.0">
             <relpath>queue.xml</relpath>
