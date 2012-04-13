@@ -325,8 +325,8 @@ conformsTo:
 
   </p:processor>
 
-  <!--
-  <!-\- Update the queue -\->
+
+  <!-- Update the queue -->
   <p:processor name="oxf:pipeline">
     <p:input name="config" href="/data-access.xpl"/>
     <p:input name="data" transform="oxf:xslt" href="#data">
@@ -352,7 +352,7 @@ for $a in /queue/action where $a/@uuid = $(uuid) return
   </p:processor>
   <p:processor name="oxf:null-serializer">
     <p:input name="data" href="#response4"/>
-  </p:processor>-->
+  </p:processor>
 
 
 </p:config>
