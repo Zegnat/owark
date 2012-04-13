@@ -16,7 +16,7 @@
     <p:output name="data" id="url-written"/>
   </p:processor>
 
-  <!-- And read it as HTML -->
+  <!-- And read it as CSS -->
   <p:processor name="oxf:url-generator">
     <p:input name="config" transform="oxf:xslt" href="#url-written">
       <config xsl:version="2.0">
@@ -41,7 +41,11 @@
         <xsl:template match="/">
           <links>
             <xsl:variable name="links" as="node()*">
-              <xsl:apply-templates/>
+              <xsl:analyze-string select="document" regex="url\([&quot;']?([^)'&quot;]+)[&quot;']?\)" flags="">
+                <xsl:matching-substring>
+                  <link href="{regex-group(1)}"/>
+                </xsl:matching-substring>
+              </xsl:analyze-string>
             </xsl:variable>
             <xsl:for-each-group select="$links" group-by="@href">
               <xsl:variable name="abs-href" select="resolve-uri(@href, $base)"/>
@@ -55,18 +59,6 @@
               </link>
             </xsl:for-each-group>
           </links>
-        </xsl:template>
-        <xsl:template match="text()"/>
-        <xsl:template match="link[@rel='stylesheet']">
-          <link>
-            <xsl:copy-of select="@*"/>
-          </link>
-        </xsl:template>
-        <xsl:template match="img">
-          <link href="{@src}" type="image/*"/>
-        </xsl:template>
-        <xsl:template match="script[@src]">
-          <link href="{@src}" type="{@type}"/>
         </xsl:template>
       </xsl:stylesheet>
     </p:input>
@@ -88,20 +80,20 @@
         <xsl:variable name="links" select="doc('input:links')/links"/>
         <xsl:variable name="base" select="doc('input:request')/request/location"/>
         <xsl:key name="link" match="link" use="@href"/>
-        <xsl:template match="@*|node()">
+        <xsl:template match="/document">
           <xsl:copy>
-            <xsl:apply-templates select="@*|node()"/>
+            <xsl:copy-of select="@*"/>
+            <xsl:analyze-string select="." regex="url\([&quot;']?([^)'&quot;]+)[&quot;']?\)" flags="">
+              <xsl:matching-substring>
+                <xsl:text>url(</xsl:text>
+                <xsl:value-of select="$links/key('link', regex-group(1))/@new-href"/>
+                <xsl:text>)</xsl:text>
+              </xsl:matching-substring>
+              <xsl:non-matching-substring>
+                <xsl:copy-of select="."/>
+              </xsl:non-matching-substring>
+            </xsl:analyze-string>
           </xsl:copy>
-        </xsl:template>
-        <xsl:template match="link[@rel='stylesheet']/@href|img/@src|script/@src">
-          <xsl:attribute name="{name(.)}">
-            <xsl:value-of select="$links/key('link', current())/@new-href"/>
-          </xsl:attribute>
-        </xsl:template>
-        <xsl:template match="link[@rel!='stylesheet']/@href|a/@href">
-          <xsl:attribute name="{name(.)}">
-            <xsl:value-of select="resolve-uri(., $base)"/>
-          </xsl:attribute>
         </xsl:template>
       </xsl:stylesheet>
     </p:input>
