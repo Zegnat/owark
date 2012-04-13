@@ -40,8 +40,7 @@
     </p:processor>
 
     <p:processor name="oxf:pipeline">
-        <p:input name="config" href="/data-access.xpl
-"/>
+        <p:input name="config" href="/data-access.xpl"/>
         <p:input name="data" href="#data-access-data"/>
         <p:input name="param">
             <xquery><![CDATA[
@@ -66,8 +65,7 @@ for $a in /queue/action where $a/@uuid = $(uuid) return
     </p:processor>
 
     <p:processor name="oxf:pipeline">
-        <p:input name="config" href="/data-access.xpl
-"/>
+        <p:input name="config" href="/data-access.xpl"/>
         <p:input name="data" transform="oxf:xslt" href="#data-access-data">
             <config xsl:version="2.0">
                 <relpath>

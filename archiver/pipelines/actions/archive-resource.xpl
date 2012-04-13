@@ -24,8 +24,7 @@
 
   <!-- Store the archive in the database -->
   <p:processor name="oxf:pipeline">
-    <p:input name="config" href="/data-access.xpl
-"/>
+    <p:input name="config" href="/data-access.xpl"/>
     <p:input name="data" transform="oxf:xslt" href="#data">
       <config xsl:version="2.0">
         <relpath>
@@ -49,109 +48,33 @@
   <p:choose href="#archive">
 
     <!-- HTML document : need to update the links... -->
-    <p:when test="/archive/response/document/@content-type='text/html'">
+    <p:when test="/archive/response/document/@content-type=('text/html')">
 
-      <!-- Store the document -->
-      <p:processor name="oxf:file-serializer">
-        <p:input name="config">
-          <config>
-            <scope>session</scope>
-          </config>
-        </p:input>
-        <p:input name="data" href="#archive#xpointer(/archive/response/document)"/>
-        <p:output name="data" id="url-written"/>
-      </p:processor>
-
-      <!-- And read it as HTML -->
+      <!-- Call the corresponding pipeline to extract the links and rewrite them -->
       <p:processor name="oxf:url-generator">
-        <p:input name="config" transform="oxf:xslt" href="#url-written">
+        <p:input name="config" transform="oxf:xslt" href="#archive">
           <config xsl:version="2.0">
             <url>
-              <xsl:value-of select="/*"/>
+              <xsl:text>oxf:/actions/mediatypes/</xsl:text>
+              <xsl:value-of select="substring-after(/archive/response/document/@content-type, '/')"/>
+              <xsl:text>.xpl</xsl:text>
             </url>
-            <mode>html</mode>
           </config>
         </p:input>
-        <p:output name="data" id="html" debug="html"/>
+        <p:output name="data" id="pipeline"/>
       </p:processor>
 
-      <!-- Get a list of links to update -->
-      <!-- TODO: support links in inline CSS -->
-      <p:processor name="oxf:unsafe-xslt">
-        <p:input name="data" href="#html"/>
-        <p:input name="request" href="#archive#xpointer(/archive/request)"/>
-        <p:input name="config">
-          <xsl:stylesheet version="2.0">
-            <xsl:variable name="base" select="doc('input:request')/request/location"/>
-            <xsl:template match="/">
-              <links>
-                <xsl:variable name="links" as="node()*">
-                  <xsl:apply-templates/>
-                </xsl:variable>
-                <xsl:for-each-group select="$links" group-by="@href">
-                  <xsl:variable name="abs-href" select="resolve-uri(@href, $base)"/>
-                  <xsl:variable name="tokens" select="tokenize($abs-href, '/')"/>
-                  <xsl:variable name="last-token" select="$tokens[last()]"/>
-                  <xsl:variable name="tokens2" select="tokenize($last-token, '\.')"/>
-                  <xsl:variable name="extension" select="$tokens2[last()]"/>
-                  <link abs-href="{$abs-href}" new-href="{saxon:string-to-hexBinary(substring($abs-href, 1, string-length($abs-href) - string-length($extension) - 1), 'utf-8')}.{$extension}"
-                    filename="{saxon:string-to-hexBinary($abs-href, 'utf-8')}.xml">
-                    <xsl:copy-of select="@*"/>
-                  </link>
-                </xsl:for-each-group>
-              </links>
-            </xsl:template>
-            <xsl:template match="text()"/>
-            <xsl:template match="link[@rel='stylesheet']">
-              <link>
-                <xsl:copy-of select="@*"/>
-              </link>
-            </xsl:template>
-            <xsl:template match="img">
-              <link href="{@src}" type="image/*"/>
-            </xsl:template>
-            <xsl:template match="script[@src]">
-              <link href="{@src}" type="{@type}"/>
-            </xsl:template>
-          </xsl:stylesheet>
-        </p:input>
-        <p:output name="data" id="links" debug="links"/>
+      <p:processor name="oxf:pipeline">
+        <p:input name="config" href="#pipeline"/>
+        <p:input name="archive" href="#archive"/>
+        <p:output name="rewritten" id="rewritten"/>
+        <p:output name="links" id="links"/>
       </p:processor>
 
-      <!-- Update the links -->
-      <p:processor name="oxf:unsafe-xslt">
-        <p:input name="data" href="#html"/>
-        <p:input name="request" href="#archive#xpointer(/archive/request)"/>
-        <p:input name="links" href="#links"/>
-        <p:input name="config">
-          <xsl:stylesheet version="2.0">
-            <xsl:variable name="links" select="doc('input:links')/links"/>
-            <xsl:variable name="base" select="doc('input:request')/request/location"/>
-            <xsl:key name="link" match="link" use="@href"/>
-            <xsl:template match="@*|node()">
-              <xsl:copy>
-                <xsl:apply-templates select="@*|node()"/>
-              </xsl:copy>
-            </xsl:template>
-            <xsl:template match="link[@rel='stylesheet']/@href|img/@src|script/@src">
-              <xsl:attribute name="{name(.)}">
-                <xsl:value-of select="$links/key('link', current())/@new-href"/>
-              </xsl:attribute>
-            </xsl:template>
-            <xsl:template match="link[@rel!='stylesheet']/@href|a/@href">
-              <xsl:attribute name="{name(.)}">
-                <xsl:value-of select="resolve-uri(., $base)"/>
-              </xsl:attribute>
-            </xsl:template>
-          </xsl:stylesheet>
-        </p:input>
-        <p:output name="data" id="rewritten" debug="rewritten"/>
-      </p:processor>
 
       <!-- Store the rewritten document in the database -->
       <p:processor name="oxf:pipeline">
-        <p:input name="config" href="/data-access.xpl
-"/>
+        <p:input name="config" href="/data-access.xpl"/>
         <p:input name="data" transform="oxf:xslt" href="#data">
           <config xsl:version="2.0">
             <relpath>
@@ -174,8 +97,7 @@
 
       <!-- Update the archive index -->
       <p:processor name="oxf:pipeline">
-        <p:input name="config" href="/data-access.xpl
-"/>
+        <p:input name="config" href="/data-access.xpl"/>
         <p:input name="data" transform="oxf:xslt" href="#data">
           <config xsl:version="2.0">
             <relpath>
@@ -213,8 +135,7 @@ for $as in /archive-set
 
       <!-- Update the queue -->
       <p:processor name="oxf:pipeline">
-        <p:input name="config" href="/data-access.xpl
-"/>
+        <p:input name="config" href="/data-access.xpl"/>
         <p:input name="data" transform="oxf:xslt" href="aggregate('root', #data, #links)">
           <config xsl:version="2.0">
             <relpath>queue.xml</relpath>
@@ -266,8 +187,7 @@ for $a in /queue/action where $a/@uuid = $(uuid) return
     <p:otherwise>
       <!-- Update the archive index -->
       <p:processor name="oxf:pipeline">
-        <p:input name="config" href="/data-access.xpl
-"/>
+        <p:input name="config" href="/data-access.xpl"/>
         <p:input name="data" transform="oxf:xslt" href="#data">
           <config xsl:version="2.0">
             <relpath>
@@ -301,8 +221,7 @@ for $as in /archive-set
 
       <!-- Update the queue -->
       <p:processor name="oxf:pipeline">
-        <p:input name="config" href="/data-access.xpl
-"/>
+        <p:input name="config" href="/data-access.xpl"/>
         <p:input name="data" transform="oxf:xslt" href="#data">
           <config xsl:version="2.0">
             <relpath>queue.xml</relpath>
