@@ -23,6 +23,7 @@
         <url>
           <xsl:value-of select="/*"/>
         </url>
+        <content-type>text/css</content-type>
         <mode>text</mode>
       </config>
     </p:input>
@@ -97,18 +98,9 @@
         </xsl:template>
       </xsl:stylesheet>
     </p:input>
-    <p:output name="data" id="rewritten-local" debug="rewritten"/>
+    <p:output name="data" ref="rewritten" debug="rewritten"/>
   </p:processor>
 
-  <!-- It's a hack so that the document is not submitted as text through the xforms:submit processor... -->
-  <p:processor name="oxf:xslt">
-    <p:input name="config">
-      <document xsl:version="2.0">
-        <xsl:copy-of select="/"/>
-      </document>
-    </p:input>
-    <p:input name="data" href="#rewritten-local"/>
-    <p:output name="data" ref="rewritten"/>
-  </p:processor>
+ 
 
 </p:config>

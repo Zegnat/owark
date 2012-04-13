@@ -132,6 +132,16 @@ for $a in /queue/action where $a/@uuid = $(uuid) return
             <p:output name="links" id="links"/>
           </p:processor>
 
+          <!-- It's a hack so that the document is not submitted as text through the xforms:submit processor... -->
+          <p:processor name="oxf:xslt">
+            <p:input name="config">
+              <document xsl:version="2.0">
+                <xsl:copy-of select="/"/>
+              </document>
+            </p:input>
+            <p:input name="data" href="#rewritten"/>
+            <p:output name="data" id="rewritten-embedded"/>
+          </p:processor>
 
           <!-- Store the rewritten document in the database -->
           <p:processor name="oxf:pipeline">
@@ -147,7 +157,7 @@ for $a in /queue/action where $a/@uuid = $(uuid) return
                 <type>document</type>
               </config>
             </p:input>
-            <p:input name="param" href="#rewritten"/>
+            <p:input name="param" href="#rewritten-embedded"/>
             <p:output name="data" id="response3"/>
           </p:processor>
           <p:processor name="oxf:null-serializer">

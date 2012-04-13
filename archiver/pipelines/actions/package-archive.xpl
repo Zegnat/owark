@@ -228,10 +228,32 @@ conformsTo:
 
     <p:choose href="current()">
       <p:when test="/archive/@href-rewritten">
-        <p:processor name="oxf:identity">
-          <p:input name="data">
-            <none/>
+        <!-- Read the rewritten document -->
+        <p:processor name="oxf:pipeline">
+          <p:input name="config" href="/data-access.xpl"/>
+          <p:input name="data" transform="oxf:xslt" href="aggregate('root', #data, current())">
+            <config xsl:version="2.0">
+              <relpath>
+                <xsl:value-of select="/root/action/@directory"/>
+                <xsl:value-of select="/root/archive/@href-rewritten"/>
+              </relpath>
+              <operation>read</operation>
+              <type>document</type>
+            </config>
           </p:input>
+          <p:input name="param">
+            <empty/>
+          </p:input>
+          <p:output name="data" id="rewritten" debug="rewritten"/>
+        </p:processor>
+        <!-- Store this document -->
+        <p:processor name="oxf:file-serializer">
+          <p:input name="config">
+            <config>
+              <scope>request</scope>
+            </config>
+          </p:input>
+          <p:input name="data" href="#rewritten#xpointer(/document/document)"/>
           <p:output name="data" id="file" debug="file"/>
         </p:processor>
       </p:when>
@@ -270,13 +292,23 @@ conformsTo:
           <xsl:value-of select="/root/url"/>
         </file>
         <xsl:for-each select="/root/files/file[url]">
-          <xsl:variable name="tokens" select="tokenize(archive/@url, '/')"/>
-          <xsl:variable name="last-token" select="$tokens[last()]"/>
-          <xsl:variable name="tokens2" select="tokenize($last-token, '\.')"/>
-          <xsl:variable name="extension" select="$tokens2[last()]"/>
-          <file name="rewritten/{saxon:string-to-hexBinary(substring(archive/@url, 1, string-length(archive/@url) - string-length($extension) - 1), 'utf-8')}.{$extension}">
-            <xsl:value-of select="url"/>
-          </file>
+          <xsl:choose>
+            <xsl:when test="position()=1">
+              <!-- TODO: support non HTML documents... -->
+              <file name="rewritten/index.html">
+                <xsl:value-of select="url"/>
+              </file>
+            </xsl:when>
+            <xsl:otherwise>
+              <xsl:variable name="tokens" select="tokenize(archive/@url, '/')"/>
+              <xsl:variable name="last-token" select="$tokens[last()]"/>
+              <xsl:variable name="tokens2" select="tokenize($last-token, '\.')"/>
+              <xsl:variable name="extension" select="$tokens2[last()]"/>
+              <file name="rewritten/{saxon:string-to-hexBinary(substring(archive/@url, 1, string-length(archive/@url) - string-length($extension) - 1), 'utf-8')}.{$extension}">
+                <xsl:value-of select="url"/>
+              </file>
+            </xsl:otherwise>
+          </xsl:choose>
         </xsl:for-each>
       </files>
     </p:input>
