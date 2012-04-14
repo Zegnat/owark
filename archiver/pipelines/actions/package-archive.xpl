@@ -211,7 +211,9 @@ conformsTo:
             </xsl:variable>
             <document xsl:version="2.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xs:string" content-type="text/plain">
               <xsl:apply-templates select="$request" mode="warc"/>
-              <xsl:apply-templates select="$response" mode="warc"/>
+              <xsl:apply-templates select="$response" mode="warc">
+                <xsl:with-param name="document-length" as="xs:integer" select="string-length(translate(/archive/response/document, ' &#xa;&#xd;', '')) * 3 div 4" tunnel="yes"/>
+              </xsl:apply-templates>
             </document>
           </xsl:template>
         </xsl:stylesheet>

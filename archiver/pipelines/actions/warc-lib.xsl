@@ -30,6 +30,9 @@
     </xsl:template>
 
     <xsl:template match="record" mode="warc">
+        <xsl:param name="document-length" as="xs:integer" select="0" tunnel="yes"/>
+        <xsl:call-template name="CRLF"/>
+        <xsl:call-template name="CRLF"/>
         <xsl:apply-templates select="header" mode="warc"/>
         <xsl:variable name="block">
             <xsl:apply-templates select="block" mode="warc"/>
@@ -38,15 +41,13 @@
             <field>
                 <name>Content-Length</name>
                 <value>
-                    <xsl:value-of select="string-length($block)"/>
+                    <xsl:value-of select="string-length($block) + $document-length "/>
                 </value>
             </field>
         </xsl:variable>
         <xsl:apply-templates select="$content-length" mode="warc"/>
         <xsl:call-template name="CRLF"/>
         <xsl:value-of select="$block"/>
-        <xsl:call-template name="CRLF"/>
-        <xsl:call-template name="CRLF"/>
     </xsl:template>
 
     <xsl:template match="block" mode="warc">
@@ -71,6 +72,11 @@
     </xsl:template>
 
     <xsl:template match="response" mode="warc-http">
+        <!--<xsl:message>
+            <xsl:value-of select="string-length(document)"/>
+            <xsl:text> - </xsl:text>
+            <xsl:value-of select="string-length(translate(document, ' &#xa;&#xd;', ''))"/>
+        </xsl:message>-->
         <line>
             <!-- TODO: get the HTTP version and status-->
             <xsl:text>HTTP/1.1 </xsl:text>
