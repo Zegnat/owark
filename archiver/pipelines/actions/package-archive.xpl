@@ -33,41 +33,42 @@
         <xsl:import href="warc-lib.xsl"/>
         <xsl:template match="/">
           <xsl:variable name="content" as="node()*">
-            <version/>
-            <field>
-              <name>WARC-Type</name>
-              <value>warcinfo</value>
-            </field>
-            <field>
-              <name>WARC-Date</name>
-              <value>
-                <xsl:value-of select="current-dateTime()"/>
-              </value>
-            </field>
-            <field>
-              <name>WARC-Record-ID</name>
-              <value>
-                <xsl:text>&lt;urn:uuid:</xsl:text>
-                <xsl:value-of select="translate(substring(/root/action/@directory, 1, string-length(/root/action/@directory) - 1), '/', '-')"/>
-                <xsl:text>></xsl:text>
-              </value>
-            </field>
-            <field>
-              <name>Content-Type</name>
-              <value>application/warc-fields</value>
-            </field>
-            <!-- TODO: Content-Length: 381 -->
-            <CRLF/>
-            <field>
-              <name>software</name>
-              <value>Owark 0.3 http://owark.org</value>
-            </field>
-            <field>
-              <name>format</name>
-              <value>WARC file version 0.18</value>
-            </field>
-            <CRLF/>
-            <CRLF/>
+            <record>
+              <header>
+                <field>
+                  <name>WARC-Type</name>
+                  <value>warcinfo</value>
+                </field>
+                <field>
+                  <name>WARC-Date</name>
+                  <value>
+                    <xsl:value-of select="current-dateTime()"/>
+                  </value>
+                </field>
+                <field>
+                  <name>WARC-Record-ID</name>
+                  <value>
+                    <xsl:text>&lt;urn:uuid:</xsl:text>
+                    <xsl:value-of select="translate(substring(/root/action/@directory, 1, string-length(/root/action/@directory) - 1), '/', '-')"/>
+                    <xsl:text>></xsl:text>
+                  </value>
+                </field>
+                <field>
+                  <name>Content-Type</name>
+                  <value>application/warc-fields</value>
+                </field>
+              </header>
+              <block>
+                <field>
+                  <name>software</name>
+                  <value>Owark 0.3 http://owark.org</value>
+                </field>
+                <field>
+                  <name>format</name>
+                  <value>WARC file version 0.18</value>
+                </field>
+              </block>
+            </record>
             <!--
               
               
@@ -130,82 +131,87 @@ conformsTo:
         <xsl:stylesheet version="2.0">
           <xsl:import href="warc-lib.xsl"/>
           <xsl:template match="/">
-            <xsl:variable name="content" as="node()*">
+            <xsl:variable name="request" as="node()*">
               <!-- Request -->
-              <version/>
-              <field>
-                <name>WARC-Type</name>
-                <value>request</value>
-              </field>
-              <field>
-                <name>WARC-Target-URI</name>
-                <value>
-                  <xsl:value-of select="/archive/request/location"/>
-                </value>
-              </field>
-              <field>
-                <name>WARC-Date</name>
-                <value>
-                  <!-- TODO: replace that by the archive sate -->
-                  <xsl:value-of select="current-dateTime()"/>
-                </value>
-              </field>
-              <field>
-                <name>WARC-Record-ID</name>
-                <value>
-                  <xsl:text>&lt;urn:uuid:</xsl:text>
-                  <xsl:value-of select="translate(substring(/root/action/@directory, 1, string-length(/root/action/@directory) - 1), '/', '-')"/>
-                  <xsl:text>></xsl:text>
-                </value>
-              </field>
-              <field>
-                <name>Content-Type</name>
-                <value>application/http;msgtype=request</value>
-              </field>
-              <!-- TODO: Content-Length: 381 -->
-              <CRLF/>
-              <xsl:apply-templates select="/archive/request" mode="warc"/>
-              <CRLF/>
-              <CRLF/>
-              <!-- Response -->
-              <version/>
-              <field>
-                <name>WARC-Type</name>
-                <value>response</value>
-              </field>
-              <field>
-                <name>WARC-Target-URI</name>
-                <value>
-                  <xsl:value-of select="/archive/request/location"/>
-                </value>
-              </field>
-              <field>
-                <name>WARC-Date</name>
-                <value>
-                  <!-- TODO: replace that by the archive sate -->
-                  <xsl:value-of select="current-dateTime()"/>
-                </value>
-              </field>
-              <field>
-                <name>WARC-Record-ID</name>
-                <value>
-                  <xsl:text>&lt;urn:uuid:</xsl:text>
-                  <xsl:value-of select="translate(substring(/root/action/@directory, 1, string-length(/root/action/@directory) - 1), '/', '-')"/>
-                  <xsl:text>></xsl:text>
-                </value>
-              </field>
-              <field>
-                <name>Content-Type</name>
-                <value>application/http;msgtype=response</value>
-              </field>
-              <!-- TODO: Content-Length: 381 -->
-              <CRLF/>
-              <xsl:apply-templates select="/archive/response" mode="warc"/>
-              <CRLF/>
-
+              <record>
+                <header>
+                  <field>
+                    <name>WARC-Type</name>
+                    <value>request</value>
+                  </field>
+                  <field>
+                    <name>WARC-Target-URI</name>
+                    <value>
+                      <xsl:value-of select="/archive/request/location"/>
+                    </value>
+                  </field>
+                  <field>
+                    <name>WARC-Date</name>
+                    <value>
+                      <!-- TODO: replace that by the archive sate -->
+                      <xsl:value-of select="current-dateTime()"/>
+                    </value>
+                  </field>
+                  <field>
+                    <name>WARC-Record-ID</name>
+                    <value>
+                      <xsl:text>&lt;urn:uuid:</xsl:text>
+                      <xsl:value-of select="translate(substring(/root/action/@directory, 1, string-length(/root/action/@directory) - 1), '/', '-')"/>
+                      <xsl:text>></xsl:text>
+                    </value>
+                  </field>
+                  <field>
+                    <name>Content-Type</name>
+                    <value>application/http;msgtype=request</value>
+                  </field>
+                </header>
+                <block>
+                  <xsl:apply-templates select="/archive/request" mode="warc-http"/>
+                </block>
+              </record>
+            </xsl:variable>
+            <!-- Response -->
+            <xsl:variable name="response" as="node()*">
+              <record>
+                <header>
+                  <field>
+                    <name>WARC-Type</name>
+                    <value>response</value>
+                  </field>
+                  <field>
+                    <name>WARC-Target-URI</name>
+                    <value>
+                      <xsl:value-of select="/archive/request/location"/>
+                    </value>
+                  </field>
+                  <field>
+                    <name>WARC-Date</name>
+                    <value>
+                      <!-- TODO: replace that by the archive sate -->
+                      <xsl:value-of select="current-dateTime()"/>
+                    </value>
+                  </field>
+                  <field>
+                    <name>WARC-Record-ID</name>
+                    <value>
+                      <xsl:text>&lt;urn:uuid:</xsl:text>
+                      <xsl:value-of select="translate(substring(/root/action/@directory, 1, string-length(/root/action/@directory) - 1), '/', '-')"/>
+                      <xsl:text>></xsl:text>
+                    </value>
+                  </field>
+                  <field>
+                    <name>Content-Type</name>
+                    <value>application/http;msgtype=response</value>
+                  </field>
+                </header>
+                <block>
+                  <xsl:apply-templates select="/archive/response" mode="warc-http"/>
+                </block>
+              </record>
             </xsl:variable>
             <document xsl:version="2.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xs:string" content-type="text/plain">
-              <xsl:apply-templates select="$content" mode="warc"/>
+              <xsl:apply-templates select="$request" mode="warc"/>
+              <xsl:apply-templates select="$response" mode="warc"/>
             </document>
           </xsl:template>
         </xsl:stylesheet>
