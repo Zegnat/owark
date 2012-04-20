@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <config>
 
-    <exist-root>http://admin@localhost:8080/orbeon/exist/rest/db/</exist-root> 
+    <exist-root>http://admin@localhost:8080/orbeon/exist/rest/db/</exist-root>
     <exist-db>owark/</exist-db>
-    
+
     <user-agent>Mozilla/5.0 (compatible; owark/0.3; http://owark.org/)</user-agent>
 
+    <heritrix>
+        <rest-api>https://admin:envierse@localhost:8443/engine</rest-api>
+    </heritrix>
 
 </config>
