@@ -112,10 +112,68 @@ for $a in /queue/action where $a/@uuid = $(uuid) return
                 </createpath>
             </instance>
         </p:input>
-        <p:output name="response" id="heritrix1" debug="heritrix1"/>
+        <p:output name="response" id="heritrix-engine" debug="heritrix-engine"/>
     </p:processor>
+
+    <!-- Create a job configuration -->
+    <p:processor name="oxf:xslt">
+        <p:input name="data" href="#data"/>
+        <p:input name="config" href="cxml.xslt"/>
+        <p:output name="data" id="cxml"/>
+    </p:processor>
+
+    <!-- Upload the job configuration -->
+    <p:processor name="oxf:xforms-submission">
+        <p:input name="submission" transform="oxf:xslt" href="aggregate('root', #data, #heritrix-engine)">
+            <xforms:submission xsl:version="2.0" method="put" action="{/root/engine/jobs/value[shortName=/root/action/@uuid]/primaryConfigUrl}"
+                xxforms:username="{doc('oxf:/config.xml')/config/heritrix/username}" xxforms:password="{doc('oxf:/config.xml')//config/heritrix/password}" xxforms:preemptive_authentication="no"/>
+        </p:input>
+        <p:input name="request" href="#cxml"/>
+        <p:output name="response" id="cxml-response" debug="cxml-response"/>
+    </p:processor>
+
+
+    <!-- Build the job -->
+    <p:processor name="oxf:xforms-submission">
+        <p:input name="submission" transform="oxf:xslt" href="aggregate('root', #data, #heritrix-engine, #cxml-response)">
+            <xforms:submission xsl:version="2.0" method="urlencoded-post" action="{/root/engine/jobs/value[shortName=/root/action/@uuid]/url}"
+                xxforms:username="{doc('oxf:/config.xml')/config/heritrix/username}" xxforms:password="{doc('oxf:/config.xml')/config/heritrix/password}" xxforms:preemptive_authentication="no">
+                <xforms:header combine="replace">
+                    <xforms:name>Accept</xforms:name>
+                    <xforms:value>application/xml</xforms:value>
+                </xforms:header>
+            </xforms:submission>
+        </p:input>
+        <p:input name="request" transform="oxf:xslt" href="#data">
+            <instance xsl:version="2.0">
+                <action>build</action>
+            </instance>
+        </p:input>
+        <p:output name="response" id="heritrix-built" debug="heritrix-built"/>
+    </p:processor>
+    
+    <!-- Launch the job -->
+    <p:processor name="oxf:xforms-submission">
+        <p:input name="submission" transform="oxf:xslt" href="aggregate('root', #data, #heritrix-engine, #heritrix-built)">
+            <xforms:submission xsl:version="2.0" method="urlencoded-post" action="{/root/engine/jobs/value[shortName=/root/action/@uuid]/url}"
+                xxforms:username="{doc('oxf:/config.xml')/config/heritrix/username}" xxforms:password="{doc('oxf:/config.xml')/config/heritrix/password}" xxforms:preemptive_authentication="no">
+                <xforms:header combine="replace">
+                    <xforms:name>Accept</xforms:name>
+                    <xforms:value>application/xml</xforms:value>
+                </xforms:header>
+            </xforms:submission>
+        </p:input>
+        <p:input name="request" transform="oxf:xslt" href="#data">
+            <instance xsl:version="2.0">
+                <action>launch</action>
+            </instance>
+        </p:input>
+        <p:output name="response" id="heritrix-launched" debug="heritrix-launched"/>
+    </p:processor>
+    
+    
     <p:processor name="oxf:null-serializer">
-        <p:input name="data" href="#heritrix1"/>
+        <p:input name="data" href="#heritrix-launched"/>
     </p:processor>
 
 </p:config>
