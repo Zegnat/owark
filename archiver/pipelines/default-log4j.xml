@@ -20,13 +20,13 @@
             <param name="ConversionPattern" value="%d{ISO8601} %-5p %c %x - %m%n"/>
         </layout>
         <filter class="org.apache.log4j.varia.LevelRangeFilter">
-            <param name="LevelMin" value="INFO" />
+            <param name="LevelMin" value="INFO"/>
         </filter>
     </appender>
-<!-- XForms engine activity -->
-<category name="org.orbeon.oxf.xforms.processor.XFormsServer">
-    <priority value="debug"/>
-</category>
+    <!-- XForms engine activity -->
+    <category name="org.orbeon.oxf.xforms.processor.XFormsServer">
+        <priority value="debug"/>
+    </category>
 
     <!-- This is the root logger -->
     <root>

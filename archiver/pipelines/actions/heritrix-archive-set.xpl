@@ -96,12 +96,13 @@ for $a in /queue/action where $a/@uuid = $(uuid) return
     <!-- Create a new Heritrix job-->
     <p:processor name="oxf:xforms-submission">
         <p:input name="submission" transform="oxf:xslt" href="oxf:/config.xml">
-            <xforms:submission xsl:version="2.0" method="urlencoded-post" replace="none" action="{/config/heritrix/rest-api}" xxforms:authentication-scheme="digest">
-<xforms:header combine="replace"> 
-    <xforms:name>Accept</xforms:name>
-    <xforms:value>application/xml</xforms:value> 
-  </xforms:header> 
-</xforms:submission>
+            <xforms:submission xsl:version="2.0" method="urlencoded-post" action="{/config/heritrix/rest-api}" xxforms:username="{/config/heritrix/username}"
+                xxforms:password="{/config/heritrix/password}" xxforms:preemptive_authentication="no">
+                <xforms:header combine="replace">
+                    <xforms:name>Accept</xforms:name>
+                    <xforms:value>application/xml</xforms:value>
+                </xforms:header>
+            </xforms:submission>
         </p:input>
         <p:input name="request" transform="oxf:xslt" href="#data">
             <instance xsl:version="2.0">

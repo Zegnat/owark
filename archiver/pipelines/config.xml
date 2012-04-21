@@ -7,7 +7,9 @@
     <user-agent>Mozilla/5.0 (compatible; owark/0.3; http://owark.org/)</user-agent>
 
     <heritrix>
-        <rest-api>https://admin:envierse@localhost:8443/engine</rest-api>
+        <rest-api>https://localhost:8443/engine</rest-api>
+        <username>admin</username>
+        <password>envierse</password>
     </heritrix>
 
 </config>
