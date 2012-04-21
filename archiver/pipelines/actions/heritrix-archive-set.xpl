@@ -97,7 +97,7 @@ for $a in /queue/action where $a/@uuid = $(uuid) return
     <p:processor name="oxf:xforms-submission">
         <p:input name="submission" transform="oxf:xslt" href="oxf:/config.xml">
             <xforms:submission xsl:version="2.0" method="urlencoded-post" action="{/config/heritrix/rest-api}" xxforms:username="{/config/heritrix/username}"
-                xxforms:password="{/config/heritrix/password}" xxforms:preemptive_authentication="no">
+                xxforms:password="{/config/heritrix/password}" xxforms:preemptive_authentication="false">
                 <xforms:header combine="replace">
                     <xforms:name>Accept</xforms:name>
                     <xforms:value>application/xml</xforms:value>
@@ -126,7 +126,7 @@ for $a in /queue/action where $a/@uuid = $(uuid) return
     <p:processor name="oxf:xforms-submission">
         <p:input name="submission" transform="oxf:xslt" href="aggregate('root', #data, #heritrix-engine)">
             <xforms:submission xsl:version="2.0" method="put" action="{/root/engine/jobs/value[shortName=/root/action/@uuid]/primaryConfigUrl}"
-                xxforms:username="{doc('oxf:/config.xml')/config/heritrix/username}" xxforms:password="{doc('oxf:/config.xml')//config/heritrix/password}" xxforms:preemptive_authentication="no"/>
+                xxforms:username="{doc('oxf:/config.xml')/config/heritrix/username}" xxforms:password="{doc('oxf:/config.xml')//config/heritrix/password}" xxforms:preemptive_authentication="false"/>
         </p:input>
         <p:input name="request" href="#cxml"/>
         <p:output name="response" id="cxml-response" debug="cxml-response"/>
@@ -137,7 +137,7 @@ for $a in /queue/action where $a/@uuid = $(uuid) return
     <p:processor name="oxf:xforms-submission">
         <p:input name="submission" transform="oxf:xslt" href="aggregate('root', #data, #heritrix-engine, #cxml-response)">
             <xforms:submission xsl:version="2.0" method="urlencoded-post" action="{/root/engine/jobs/value[shortName=/root/action/@uuid]/url}"
-                xxforms:username="{doc('oxf:/config.xml')/config/heritrix/username}" xxforms:password="{doc('oxf:/config.xml')/config/heritrix/password}" xxforms:preemptive_authentication="no">
+                xxforms:username="{doc('oxf:/config.xml')/config/heritrix/username}" xxforms:password="{doc('oxf:/config.xml')/config/heritrix/password}" xxforms:preemptive_authentication="false">
                 <xforms:header combine="replace">
                     <xforms:name>Accept</xforms:name>
                     <xforms:value>application/xml</xforms:value>
@@ -156,7 +156,7 @@ for $a in /queue/action where $a/@uuid = $(uuid) return
     <p:processor name="oxf:xforms-submission">
         <p:input name="submission" transform="oxf:xslt" href="aggregate('root', #data, #heritrix-engine, #heritrix-built)">
             <xforms:submission xsl:version="2.0" method="urlencoded-post" action="{/root/engine/jobs/value[shortName=/root/action/@uuid]/url}"
-                xxforms:username="{doc('oxf:/config.xml')/config/heritrix/username}" xxforms:password="{doc('oxf:/config.xml')/config/heritrix/password}" xxforms:preemptive_authentication="no">
+                xxforms:username="{doc('oxf:/config.xml')/config/heritrix/username}" xxforms:password="{doc('oxf:/config.xml')/config/heritrix/password}" xxforms:preemptive_authentication="false">
                 <xforms:header combine="replace">
                     <xforms:name>Accept</xforms:name>
                     <xforms:value>application/xml</xforms:value>
