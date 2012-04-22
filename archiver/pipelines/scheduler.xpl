@@ -6,7 +6,7 @@
 -->
 
 <p:config xmlns:p="http://www.orbeon.com/oxf/pipeline" xmlns:oxf="http://www.orbeon.com/oxf/processors" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xforms="http://www.w3.org/2002/xforms"
-    xmlns:xxforms="http://orbeon.org/oxf/xml/xforms" xmlns:exist="http://exist.sourceforge.net/NS/exist" xmlns:pipeline="java:org.orbeon.oxf.processor.pipeline.PipelineFunctionLibrary">
+    xmlns:xxforms="http://orbeon.org/oxf/xml/xforms" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:exist="http://exist.sourceforge.net/NS/exist" xmlns:pipeline="java:org.orbeon.oxf.processor.pipeline.PipelineFunctionLibrary">
 
     <p:processor name="oxf:pipeline">
         <p:input name="config" href="data-access.xpl"/>
@@ -20,7 +20,7 @@
         <p:input name="param">
             <xquery><![CDATA[
 
-/queue/action[@priority=max(/queue/action/@priority)]
+/queue/action[not(@after) or xs:dateTime(@after) < current-dateTime()][@priority=max(/queue/action[not(@after) or xs:dateTime(@after) < current-dateTime()]/@priority)]
                 
                 ]]></xquery>
         </p:input>
