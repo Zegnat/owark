@@ -171,9 +171,28 @@ for $a in /queue/action where $a/@uuid = $(uuid) return
         <p:output name="response" id="heritrix-launched" debug="heritrix-launched"/>
     </p:processor>
     
+    <!-- Unpause the job -->
+    <p:processor name="oxf:xforms-submission">
+        <p:input name="submission" transform="oxf:xslt" href="aggregate('root', #data, #heritrix-engine, #heritrix-launched)">
+            <xforms:submission xsl:version="2.0" method="urlencoded-post" action="{/root/engine/jobs/value[shortName=/root/action/@uuid]/url}"
+                xxforms:username="{doc('oxf:/config.xml')/config/heritrix/username}" xxforms:password="{doc('oxf:/config.xml')/config/heritrix/password}" xxforms:preemptive-authentication="false">
+                <xforms:header combine="replace">
+                    <xforms:name>Accept</xforms:name>
+                    <xforms:value>application/xml</xforms:value>
+                </xforms:header>
+            </xforms:submission>
+        </p:input>
+        <p:input name="request" transform="oxf:xslt" href="#data">
+            <instance xsl:version="2.0">
+                <action>unpause</action>
+            </instance>
+        </p:input>
+        <p:output name="response" id="heritrix-unpaused" debug="heritrix-unpaused"/>
+    </p:processor>
+    
     
     <p:processor name="oxf:null-serializer">
-        <p:input name="data" href="#heritrix-launched"/>
+        <p:input name="data" href="#heritrix-unpaused"/>
     </p:processor>
 
 </p:config>
