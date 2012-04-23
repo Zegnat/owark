@@ -244,7 +244,7 @@ metadata.description=Basic crawl starting with useful defaults
   <!-- <property name="digestContent" value="true" /> -->
   <!-- <property name="digestAlgorithm" value="sha1" /> -->
  </bean>
- <!-- <bean id="fetchWhois" class="org.archive.modules.fetcher.FetchWhois">
+  <bean id="fetchWhois" class="org.archive.modules.fetcher.FetchWhois">
        <property name="specialQueryTemplates">
         <map>
          <entry key="whois.verisign-grs.com" value="domain %s" />
@@ -252,7 +252,7 @@ metadata.description=Basic crawl starting with useful defaults
          <entry key="whois.denic.de" value="-T dn %s" />
         </map>
        </property> 
-      </bean> -->
+ </bean> 
  <bean id="fetchHttp" class="org.archive.modules.fetcher.FetchHTTP">
   <!-- <property name="useHTTP11" value="false" /> -->
   <!-- <property name="maxLengthBytes" value="0" /> -->
@@ -313,7 +313,7 @@ metadata.description=Basic crawl starting with useful defaults
     <ref bean="preconditions"/>
     <!-- ...fetch if DNS URI... -->
     <ref bean="fetchDns"/>
-    <!-- <ref bean="fetchWhois"/> -->
+     <ref bean="fetchWhois"/> 
     <!-- ...fetch if HTTP URI... -->
     <ref bean="fetchHttp"/>
     <!-- ...extract outlinks from HTTP headers... -->
