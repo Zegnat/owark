@@ -34,16 +34,49 @@
         <p:output name="data" id="warc"/>
     </p:processor>
 
-<p:processor name="owk:from-warc-converter">
-<p:input name="data" href="#warc"/>
-<p:output name="data" id="warc-xml" debug="warc-xml"/>
-</p:processor>
+    <p:processor name="owk:from-warc-converter">
+        <p:input name="data" href="#warc"/>
+        <p:output name="data" id="warc-xml" debug="warc-xml"/>
+    </p:processor>
 
     <p:processor name="oxf:null-serializer">
         <p:input name="data" href="#warc-xml"/>
     </p:processor>
-    
-    <!-- Store it in a temp file -->
+
+    <!-- Download the log -->
+    <p:processor name="oxf:url-generator">
+        <p:input name="config" transform="oxf:xslt" href="#data">
+            <config xsl:version="2.0">
+                <url>
+                    <xsl:value-of select="/action/@log-url"/>
+                </url>
+                <mode>text</mode>
+                <authentication>
+                    <username>
+                        <xsl:value-of select="doc('oxf:/config.xml')/config/heritrix/username"/>
+                    </username>
+                    <password>
+                        <xsl:value-of select="doc('oxf:/config.xml')/config/heritrix/password"/>
+                    </password>
+                    <preemptive>false</preemptive>
+                </authentication>
+            </config>
+        </p:input>
+        <p:output name="data" id="log" debug="log"/>
+    </p:processor>
+
+    <p:processor name="oxf:xslt">
+        <p:input name="data" href="#log"/>
+        <p:input name="config" href="parse-log.xslt"></p:input>
+        <p:output name="data" id="log-xml" debug="log-xml"/>
+    </p:processor>
+
+    <p:processor name="oxf:null-serializer">
+        <p:input name="data" href="#log-xml"/>
+    </p:processor>
+
+
+    <!-- Store the WARC in a temp file -->
     <p:processor name="oxf:file-serializer">
         <p:input name="config">
             <config>
@@ -83,7 +116,7 @@
         </p:input>
         <p:output name="data" id="zip"/>
     </p:processor>
-    
+
     <p:processor name="oxf:file-serializer">
         <p:input name="config">
             <config>
@@ -91,10 +124,10 @@
             </config>
         </p:input>
         <p:input name="data" href="#zip"/>
-        
+
     </p:processor>
-    
-   <!-- <p:choose href="#heritrix-job">
+
+    <!-- <p:choose href="#heritrix-job">
         <p:when test="/job/crawlControllerState='FINISHED'">
             <!-\- The job is finished, we can get its archive... -\->
             <!-\- Scan the directory to find the name of the WARC file -\->

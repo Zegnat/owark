@@ -55,7 +55,7 @@
             <!-- Next action: package  -->
             <p:processor name="oxf:pipeline">
                 <p:input name="config" href="/data-access.xpl"/>
-                <p:input name="data" transform="oxf:xslt" href="aggregate('root', #data, #warc-dir-list)">
+                <p:input name="data" transform="oxf:xslt" href="aggregate('root', #data, #warc-dir-list, #heritrix-job)">
                     <config xsl:version="2.0">
                         <relpath>queue.xml</relpath>
                         <operation>write</operation>
@@ -78,6 +78,9 @@
                         <parameter name="warc-url" type="string">
                             <xsl:value-of select="/root/html/body/a[ends-with(., '.warc')][1]/@href"/>
                         </parameter>
+                        <parameter name="log-url" type="string">
+                            <xsl:value-of select="/root/job/configFiles/value[key='loggerModule.crawlLogPath'][1]/url"/>
+                        </parameter>
                     </config>
                 </p:input>
                 <p:input name="param">
@@ -86,7 +89,7 @@ declare namespace util = "http://exist-db.org/xquery/util";
 
 for $q in /queue return
     update 
-        insert <action priority=$(priority) uuid="{util:uuid()}" type="package-heritrix-warc" url=$(url) directory=$(directory) heritrix-job-url=$(heritrix-job-url) warc-url=$(warc-url)/>
+        insert <action priority=$(priority) uuid="{util:uuid()}" type="package-heritrix-warc" url=$(url) directory=$(directory) heritrix-job-url=$(heritrix-job-url) warc-url=$(warc-url) log-url=$(log-url)/>
         into $q,
         
 for $a in /queue/action where $a/@uuid = $(uuid) return
