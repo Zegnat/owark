@@ -17,6 +17,8 @@ package org.owark.warc;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Iterator;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Created by IntelliJ IDEA.
@@ -30,6 +32,7 @@ public class WarcRecordContent extends InputStream implements Iterator<WarcField
     private WarcRecord warcRecord;
     private Exception e;
     private String line;
+    private String payloadContentType;
 
     public WarcRecordContent(WarcRecord warcRecord) {
         this.warcRecord = warcRecord;
@@ -61,6 +64,9 @@ public class WarcRecordContent extends InputStream implements Iterator<WarcField
             return null;
         }
         WarcField field = new WarcField(line);
+        if (field.getKey().equals("Content-Type")) {
+            this.payloadContentType = field.getValue();
+        }
         line = null;
         return field;
     }
@@ -94,7 +100,7 @@ public class WarcRecordContent extends InputStream implements Iterator<WarcField
         return isHTTP() && isRequest();
     }
 
-    public Object endOfContent() {
+    public boolean endOfContent() {
         return warcRecord.isLimitReached();
     }
 
@@ -105,6 +111,38 @@ public class WarcRecordContent extends InputStream implements Iterator<WarcField
     public long getContentLength() {
         return warcRecord.getContentLength();
     }
+
+    public String getPayloadContentType() {
+        String contentType = getPayloadContentHeader();
+        if (contentType != null && contentType.contains(";")) {
+            contentType = contentType.substring(0, contentType.indexOf(";"));
+        }
+        return contentType;
+    }
+
+    public String getPayloadContentHeader() {
+        String contentType = warcRecord.getContentType();
+        if (contentType.equals("application/warc-fields") || contentType.equals("application/http; msgtype=request")) {
+            return null;
+        }
+        if (contentType.equals("application/http; msgtype=response")) {
+            contentType = this.payloadContentType;
+        }
+        return contentType;
+    }
+
+    public String getPayloadEncoding() {
+        String contentType = getPayloadContentHeader();
+        if (contentType == null) {
+            return contentType;
+        }
+        Pattern pattern = Pattern.compile(".*;\\s*charset\\s*=\\s*([^;]+).*");
+        Matcher matcher = pattern.matcher(contentType);
+        if (matcher.matches()) {
+            return matcher.group(1).toLowerCase();
+        }
+        return null;
+     }
 
 
     public class HttpStatusLine {

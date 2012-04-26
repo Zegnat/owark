@@ -34,7 +34,7 @@ public class WarcParserTest {
         WarcParser warcParser = new WarcParser(new FileInputStream(file));
         Assert.assertEquals(true, warcParser.hasNext());
 
-        // RECORD
+        // RECORD (warcinfo)
 
         WarcRecord record = warcParser.next();
         Assert.assertEquals("WARC/1.0", warcParser.getMagic());
@@ -97,9 +97,12 @@ public class WarcParserTest {
         Assert.assertEquals("http-header-user-agent", field.getKey());
         Assert.assertEquals("Mozilla/5.0 (compatible; heritrix/3.1.0 +http://owark.org)", field.getValue());
         Assert.assertEquals(false, content.hasNext());
+        Assert.assertNull(content.getPayloadContentType());
+        Assert.assertNull(content.getPayloadContentHeader());
+        Assert.assertNull(content.getPayloadEncoding());
         Assert.assertEquals(true, content.endOfContent());
 
-        // Next record
+        // Next record (DNS response)
 
         Assert.assertEquals(true, warcParser.hasNext());
         record = warcParser.next();
@@ -134,9 +137,12 @@ public class WarcParserTest {
         Assert.assertEquals("dyomedea.com.\t\t1800\tIN\tA\t95.142.167.137", line);
         line = reader.readLine();
         Assert.assertEquals(true, content.endOfContent());
+        Assert.assertEquals("text/dns", content.getPayloadContentType());
+        Assert.assertEquals("text/dns", content.getPayloadContentHeader());
+        Assert.assertNull(content.getPayloadEncoding());
         Assert.assertNull(line);
 
-        // Next record
+        // Next record (HTTP response)
 
         Assert.assertEquals(true, warcParser.hasNext());
         record = warcParser.next();
@@ -190,6 +196,9 @@ public class WarcParserTest {
         Assert.assertEquals("<html><head><title>Apache Tomcat/6.0.24 - Rapport d'erreur</title>", line.substring(0, line.indexOf("<style>")));
         line = reader.readLine();
         Assert.assertNull(line);
+        Assert.assertEquals("text/html", content.getPayloadContentType());        
+        Assert.assertEquals("text/html;charset=utf-8", content.getPayloadContentHeader());
+        Assert.assertEquals("utf-8", content.getPayloadEncoding());
         Assert.assertEquals(true, content.endOfContent());
 
 

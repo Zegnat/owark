@@ -19,12 +19,19 @@ import org.orbeon.oxf.pipeline.api.XMLReceiver;
 import org.orbeon.oxf.processor.ProcessorImpl;
 import org.orbeon.oxf.processor.ProcessorInputOutputInfo;
 import org.orbeon.oxf.processor.ProcessorOutput;
+import org.orbeon.oxf.processor.ProcessorUtils;
 import org.orbeon.oxf.processor.serializer.BinaryTextXMLReceiver;
 import org.orbeon.oxf.util.NetUtils;
 import org.orbeon.oxf.xml.ContentHandlerHelper;
+import org.orbeon.oxf.xml.XMLConstants;
+import org.orbeon.oxf.xml.XMLUtils;
 import org.owark.warc.*;
+import org.xml.sax.Attributes;
+import org.xml.sax.helpers.AttributesImpl;
 
+import java.io.BufferedInputStream;
 import java.io.IOException;
+import java.io.InputStreamReader;
 
 /**
  * This processor converts a WARC archive into an XML representation
@@ -98,6 +105,28 @@ public class FromWarcConverter extends ProcessorImpl {
                                 helper.endElement();
                             }
                             helper.endElement();
+                        }
+                        if (! content.endOfContent()) {
+                            helper.startPrefixMapping("xsi", "http://www.w3.org/2001/XMLSchema-instance");
+                            helper.startPrefixMapping("xs", "http://www.w3.org/2001/XMLSchema");
+                            String contentType = content.getPayloadContentType();
+                            AttributesImpl attributes = new AttributesImpl();
+                            attributes.addAttribute("", "content-type", "content-type", "CDATA", contentType);
+                            if (contentType.startsWith("text/") || contentType.matches(".*application/[^;]*xml.*")) {
+                                attributes.addAttribute(XMLConstants.XSI_URI, "type", "xsi:type", "CDATA", "xs:string");
+                                String encoding = content.getPayloadEncoding();
+                                if (encoding == null) {
+                                    encoding = "utf-8";
+                                }
+                                helper.startElement(ProcessorUtils.DEFAULT_TEXT_DOCUMENT_ELEMENT, attributes);
+                                XMLUtils.readerToCharacters(new InputStreamReader(content, encoding), xmlReceiver);
+                                helper.endElement();
+                            } else {
+                                attributes.addAttribute(XMLConstants.XSI_URI, "type", "xsi:type", "CDATA", "xs:base64Binary");
+                                helper.startElement(ProcessorUtils.DEFAULT_BINARY_DOCUMENT_ELEMENT, attributes);
+                                XMLUtils.inputStreamToBase64Characters(new BufferedInputStream(content), xmlReceiver);
+                                helper.endElement();
+                            }
                         }
                         record.skipToEnd();
                         helper.endElement();
