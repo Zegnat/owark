@@ -1,0 +1,6 @@
+<processors xmlns:owk="http://owark.org/orbeon/processors">
+    <processor name="owk:from-warc-converter">
+        <class name="org.owark.orbeon.FromWarcConverter"/>
+    </processor>
+</processors>
+

@@ -7,7 +7,7 @@
 
 <p:config xmlns:p="http://www.orbeon.com/oxf/pipeline" xmlns:oxf="http://www.orbeon.com/oxf/processors" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xforms="http://www.w3.org/2002/xforms"
     xmlns:xxforms="http://orbeon.org/oxf/xml/xforms" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:exist="http://exist.sourceforge.net/NS/exist" xmlns:saxon="http://saxon.sf.net/"
-    xmlns:pipeline="java:org.orbeon.oxf.processor.pipeline.PipelineFunctionLibrary">
+    xmlns:pipeline="java:org.orbeon.oxf.processor.pipeline.PipelineFunctionLibrary" xmlns:owk="http://owark.org/orbeon/processors">
 
     <p:param name="data" type="input"/>
 
@@ -32,6 +32,15 @@
             </config>
         </p:input>
         <p:output name="data" id="warc"/>
+    </p:processor>
+
+<p:processor name="owk:from-warc-converter">
+<p:input name="data" href="#warc"/>
+<p:output name="data" id="warc-xml" debug="warc-xml"/>
+</p:processor>
+
+    <p:processor name="oxf:null-serializer">
+        <p:input name="data" href="#warc-xml"/>
     </p:processor>
     
     <!-- Store it in a temp file -->

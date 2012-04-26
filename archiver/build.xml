@@ -1,0 +1,45 @@
+<project name="owark" default="dist" basedir=".">
+    <description>
+        Owark build file
+    </description>
+  <!-- set global properties for this build -->
+  <property name="src" location="java/src"/>
+  <property name="build" location="build"/>
+  <property name="dist"  location="dist"/>
+
+  <target name="init">
+    <!-- Create the time stamp -->
+    <tstamp/>
+    <!-- Create the build directory structure used by compile -->
+    <mkdir dir="${build}"/>
+  </target>
+
+  <target name="compile" depends="init"
+        description="compile the source " >
+    <!-- Compile the java code from ${src} into ${build} -->
+    <javac srcdir="${src}" destdir="${build}">
+        <classpath>
+            <pathelement location="java/lib/heritrix-commons-3.1.0.jar"/>
+            <pathelement location="java/lib/archive-overlay-commons-httpclient-3.1.jar"/>
+            <pathelement location="/home/vdv/projects/orbeon-forms/build/orbeon-war/WEB-INF/lib/commons-fileupload-1.2.2.jar"/>
+            <pathelement location="/home/vdv/projects/orbeon-forms/build/orbeon-war/WEB-INF/lib/orbeon.jar"/>
+            </classpath>
+    </javac>
+  </target>
+
+  <target name="dist" depends="compile"
+        description="generate the distribution" >
+    <!-- Create the distribution directory -->
+    <mkdir dir="${dist}/lib"/>
+
+    <!-- Put everything in ${build} into the MyProject-${DSTAMP}.jar file -->
+    <jar jarfile="${dist}/lib/owark.jar" basedir="${build}"/>
+  </target>
+
+  <target name="clean"
+        description="clean up" >
+    <!-- Delete the ${build} and ${dist} directory trees -->
+    <delete dir="${build}"/>
+    <delete dir="${dist}"/>
+  </target>
+</project>

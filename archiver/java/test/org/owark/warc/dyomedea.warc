@@ -1,0 +1,2963 @@
+WARC/1.0
+WARC-Type: warcinfo
+WARC-Date: 2012-04-23T10:05:24Z
+WARC-Filename: WEB-20120423100524650-00000-4803~boskoop~8443.warc
+WARC-Record-ID: <urn:uuid:d46c18ee-ba78-419c-923d-da5afcb55bc1>
+Content-Type: application/warc-fields
+Content-Length: 369
+
+software: Heritrix/3.1.0 http://crawler.archive.org
+ip: 127.0.1.1
+hostname: boskoop
+format: WARC File Format 1.0
+conformsTo: http://bibnum.bnf.fr/WARC/WARC_ISO_28500_version1_latestdraft.pdf
+isPartOf: basic
+description: Basic crawl starting with useful defaults
+robots: obey
+http-header-user-agent: Mozilla/5.0 (compatible; heritrix/3.1.0 +http://owark.org)
+
+
+
+WARC/1.0
+WARC-Type: response
+WARC-Target-URI: dns:dyomedea.com
+WARC-Date: 2012-04-23T10:05:24Z
+WARC-IP-Address: 212.27.40.241
+WARC-Record-ID: <urn:uuid:5c349fa3-9702-4ba5-baa7-f150acde6c21>
+Content-Type: text/dns
+Content-Length: 55
+
+20120423100524
+dyomedea.com.		1800	IN	A	95.142.167.137
+
+
+WARC/1.0
+WARC-Type: response
+WARC-Target-URI: http://dyomedea.com/robots.txt
+WARC-Date: 2012-04-23T10:05:27Z
+WARC-Payload-Digest: sha1:XARGV5H5ZQTLNIF4NORRBCBOHT2MJ3VN
+WARC-IP-Address: 95.142.167.137
+WARC-Record-ID: <urn:uuid:7c589aa3-7a59-4791-bb6d-ec1c7d8b216b>
+Content-Type: application/http; msgtype=response
+Content-Length: 1177
+
+HTTP/1.1 404 Introuvable
+Date: Mon, 23 Apr 2012 10:05:27 GMT
+Server: Apache-Coyote/1.1
+Content-Type: text/html;charset=utf-8
+Content-Length: 960
+Via: 1.0 dyomedea.com
+Vary: Accept-Encoding
+Connection: close
+
+<html><head><title>Apache Tomcat/6.0.24 - Rapport d'erreur</title><style><!--H1 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:22px;} H2 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:16px;} H3 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:14px;} BODY {font-family:Tahoma,Arial,sans-serif;color:black;background-color:white;} B {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;} P {font-family:Tahoma,Arial,sans-serif;background:white;color:black;font-size:12px;}A {color : black;}A.name {color : black;}HR {color : #525D76;}--></style> </head><body><h1>Etat HTTP 404 - </h1><HR size="1" noshade="noshade"><p><b>type</b> Rapport d'Ã©tat</p><p><b>message</b> <u></u></p><p><b>description</b> <u>La ressource demandÃ©e () n'est pas disponible.</u></p><HR size="1" noshade="noshade"><h3>Apache Tomcat/6.0.24</h3></body></html>
+
+WARC/1.0
+WARC-Type: request
+WARC-Target-URI: http://dyomedea.com/robots.txt
+WARC-Date: 2012-04-23T10:05:27Z
+WARC-Concurrent-To: <urn:uuid:7c589aa3-7a59-4791-bb6d-ec1c7d8b216b>
+WARC-Record-ID: <urn:uuid:f87348a8-4010-442e-a236-b655cd31c86d>
+Content-Type: application/http; msgtype=request
+Content-Length: 212
+
+GET /robots.txt HTTP/1.0
+User-Agent: Mozilla/5.0 (compatible; heritrix/3.1.0 +http://owark.org)
+Connection: close
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: dyomedea.com
+
+
+
+WARC/1.0
+WARC-Type: metadata
+WARC-Target-URI: http://dyomedea.com/robots.txt
+WARC-Date: 2012-04-23T10:05:27Z
+WARC-Concurrent-To: <urn:uuid:7c589aa3-7a59-4791-bb6d-ec1c7d8b216b>
+WARC-Record-ID: <urn:uuid:3b1e9166-7728-4c42-a056-661d28aba09c>
+Content-Type: application/warc-fields
+Content-Length: 230
+
+force-fetch:
+via: http://dyomedea.com/
+hopsFromSeed: P
+fetchTimeMs: 58
+outlink: http://dyomedea.com/favicon.ico I =INFERRED_MISC
+outlink: whois:95.142.167.137 I =INFERRED_MISC
+outlink: whois:dyomedea.com I =INFERRED_MISC
+
+
+
+WARC/1.0
+WARC-Type: response
+WARC-Target-URI: http://dyomedea.com/
+WARC-Date: 2012-04-23T10:05:30Z
+WARC-Payload-Digest: sha1:OB3F5F4PYIK6YISBPOAK2FR7IKW4JNZU
+WARC-IP-Address: 95.142.167.137
+WARC-Record-ID: <urn:uuid:e505ab74-41a8-4dd3-ac05-8b020b1f3dc1>
+Content-Type: application/http; msgtype=response
+Content-Length: 6570
+
+HTTP/1.1 200 OK
+Date: Mon, 23 Apr 2012 10:05:30 GMT
+Server: Apache-Coyote/1.1
+Last-Modified: Mon, 23 Apr 2012 10:05:30 GMT
+Expires: Mon, 23 Apr 2012 10:05:30 GMT
+Cache-Control: post-check=0, pre-check=0
+Pragma: 
+Content-Type: application/xhtml+xml;charset=utf-8
+Content-Length: 6234
+Via: 1.0 dyomedea.com
+Connection: close
+
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr">
+ <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+   
+  <title>Dyomedea : Guide de haute technologie XML</title>
+  <link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" />
+  <meta name="DC.title" content="Dyomedea : Guide de haute technologie XML" />
+  <meta name="DC.description" content="Site internet de la sociÃ©tÃ© Dyomedea. PrÃ©sentation de ses axes stratÃ©giques : guide de haute technologie dans les domaines Internet, XML et Web SÃ©mantique." />
+  <meta name="DC.subject" content="Dyomedea, guide de haute technologie, internet, xml, web sÃ©mantique" />
+  <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
+  <meta http-equiv="content-language" content="fr" />
+  <meta name="robots" content="index,follow" />
+  <link rel="stylesheet" href="/styles/screen.css" type="text/css" media="screen" />
+  <link rel="stylesheet" href="/styles/standard.css" type="text/css" media="all" />
+  <link rel="stylesheet" href="/styles/print.css" type="text/css" media="print" /><script type="text/javascript">
+function toggleToc(blockId) {
+	var block = document.getElementById(blockId);
+	if(block.style.display  != 'block') {
+		block.style.display = 'block';
+
+	} else {
+		block.style.display = 'none';
+
+	}
+}
+                </script></head>
+ <body>
+  <div id="divContenant">
+   <div id="divTetiere">
+    <h1><a href="/"><img src="/images/logo520.png" alt="DYOMEDEA : Guide de haute technologie" id="debutTet" /><img src="/images/bout.png" alt="..." id="finTet" /></a></h1>
+   </div>
+   <div id="divMenu">
+    <h1 class="hide">Menu</h1>
+    <ul>
+     <li><a href="/dyomedea/" title="PrÃ©sentation de la sociÃ©tÃ© &#34;Dyomedea&#34; et de ses axes stratÃ©giques : Internet, XML, Web SÃ©mantique.">sociÃ©tÃ©</a></li>
+     <li><a href="/conseil/" title="PrÃ©sentation de l'activitÃ© de conseil de la sociÃ©tÃ© Dyomedea.">conseil</a></li>
+     <li><a href="/formation/" title="ActivitÃ© de formation XML de la sociÃ©tÃ© Dyomedea.">formations</a></li>
+     <li><a href="/communication/" title="PrÃ©sentation des activtÃ©s de communication de Dyomedea.">communication</a></li>
+     <li><a href="/projets/" title="Description des projets dans lesquels Dyomedea est impliquÃ©.">projets</a></li>
+     <li><a href="/english/" title="English version">[en]</a></li>
+    </ul>
+   </div>
+   <div id="divContenu">
+    <hr />
+    <h1 class="hide">Dyomedea : Guide de haute technologie XML</h1>
+    <div id="divEncadre">
+     
+     <div class="bloc">
+      
+      <h3>Guilde XML</h3>
+      
+      <h5><a href="../vdv/" title="PrÃ©sentation d'Eric van der Vlist, gÃ©rant et crÃ©ateur de Dyomedea.">Eric van der Vlist</a> fait partie de la <a href="http://xmlguild.org" title="Site de la Guilde XML">Guilde <acronym title="Extensible Markup Language">XML</acronym></a>, un
+       groupe d'experts qui partagent les mÃªmes mÃ©thodes et valeurs.
+      </h5>
+      
+      <div class="livres"><a href="http://xmlguild.org" title="Site de la Guilde XML">
+        <img src="/images/xml-guild-logo.png" alt="logo de la Guilde XML" />
+        </a><br />La Guilde XML
+      </div>
+      
+      <p>La <a href="http://xmlguild.org" title="Site de la Guilde XML">Guilde <acronym title="Extensible Markup Language">XML</acronym></a> (XML Guild) est un groupe composÃ©
+       des meilleurs experts <acronym title="Extensible Markup Language">XML</acronym> dans le
+       monde. [<a href="javascript:toggleToc('guild')" title="plus de dÃ©tail">...</a>]
+      </p>
+      
+      <p id="guild" class="hide">Nos membres ont une expÃ©rience approfondie des technologies
+       <acronym title="Extensible Markup Language">XML</acronym> et des languages de balisage.
+       Nous sommes impliquÃ©s dans le dÃ©veloppement de standards et de bonnes pratiques. Nous
+       sommes auteurs de nombreux livres, articles et documentations et sommes des confÃ©renciers
+       renommÃ©s.
+      </p>
+      
+     </div>
+     
+    </div>
+    <div id="divArticle">
+     
+     <h2>Guide de haute technologie</h2>
+     
+     <h3>Le Web 2.0 Ã  la portÃ©e de tous</h3>
+     
+     <p>Notre mission est de guider nos clients dans l'utilisation des hautes technologies de
+      l'Internet les plus prometteuses telles que <acronym title="Extensible Markup Language">XML</acronym> et le Web SÃ©mantique et plus gÃ©nÃ©ralement ce que l'on appelle dÃ©sormais le <a href="http://xmlfr.org/actualites/decid/051201-0001" title="Web 2.0 : mythe et rÃ©alitÃ©">Web 2.0</a>.
+     </p>
+     
+     
+     <p>Votre guide est <a href="../vdv/" title="PrÃ©sentation d'Eric van der Vlist, gÃ©rant et crÃ©ateur de Dyomedea.">Eric van der Vlist</a>, un expert <acronym title="Extensible Markup Language">XML</acronym> reconnu au niveau international et basÃ© Ã  Paris.
+     </p>
+     
+     <p>Nous vous proposons des missions de <a href="../conseil/" title="PrÃ©sentation de l'activitÃ© de conseil de la sociÃ©tÃ© Dyomedea.">conseil</a> et des <a href="../formation/" title="ActivitÃ© de formation XML de la sociÃ©tÃ© Dyomedea.">formations</a> et sommes engagÃ©s dans un programme de <a href="../communication/" title="PrÃ©sentation des activtÃ©s de communication de Dyomedea.">communication</a> trÃ¨s ambitieux.
+     </p>
+     
+    </div>
+   </div>
+   <hr /><span class="about"><a href="/help/" title="Ã€ propos de ce site">Ã  propos</a>Â <a href="/map/" title="Plan du site">plan</a></span><span class="validations"><a href="http://validator.w3.org/check/referer" title="VÃ©rifiez la validitÃ© du code XHTML 1.1 de cette page">xhtml 1.1</a>
+    Â <a href="http://jigsaw.w3.org/css-validator/check/referer" title="VÃ©rifiez la validitÃ© des styles CSS 2.0 de cette page">css 2.0</a></span><h1 class="hide">Mentions LÃ©gales</h1>
+   <div id="divPiedPage"><span class="mentions"><q>Dyomedea</q> et <q>XMLfr</q> sont des marques
+     dÃ©posÃ©es. Tous droits rÃ©servÃ©s. Â© Dyomedea, 1999-2010<br />Dyomedea, SARL au
+     capital de 10 000 â‚¬ - RCS: Paris B 422 260 208 - 75, rue de Lourmel 75015
+     Paris.</span></div><br />Â <br /></div>
+ </body>
+</html>
+
+WARC/1.0
+WARC-Type: request
+WARC-Target-URI: http://dyomedea.com/
+WARC-Date: 2012-04-23T10:05:30Z
+WARC-Concurrent-To: <urn:uuid:e505ab74-41a8-4dd3-ac05-8b020b1f3dc1>
+WARC-Record-ID: <urn:uuid:fc35bca8-ab85-43a8-a3a5-f0af98363a5e>
+Content-Type: application/http; msgtype=request
+Content-Length: 202
+
+GET / HTTP/1.0
+User-Agent: Mozilla/5.0 (compatible; heritrix/3.1.0 +http://owark.org)
+Connection: close
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: dyomedea.com
+
+
+
+WARC/1.0
+WARC-Type: metadata
+WARC-Target-URI: http://dyomedea.com/
+WARC-Date: 2012-04-23T10:05:30Z
+WARC-Concurrent-To: <urn:uuid:e505ab74-41a8-4dd3-ac05-8b020b1f3dc1>
+WARC-Record-ID: <urn:uuid:aba31e6c-0229-41b9-9af9-c6c8ffa1d719>
+Content-Type: application/warc-fields
+Content-Length: 1317
+
+seed:
+fetchTimeMs: 95
+outlink: http://dyomedea.com/styles/print.css E link/@href
+outlink: http://dyomedea.com/ L a/@href
+outlink: http://dyomedea.com/projets/ L a/@href
+outlink: http://dyomedea.com/images/xml-guild-logo.png E img/@src
+outlink: http://dyomedea.com/help/ L a/@href
+outlink: http://dyomedea.com/styles/standard.css E link/@href
+outlink: http://dyomedea.com/communication/ L a/@href
+outlink: http://dyomedea.com/images/logo520.png E img/@src
+outlink: http://dyomedea.com/map/ L a/@href
+outlink: whois:95.142.167.137 I =INFERRED_MISC
+outlink: http://dyomedea.com/formation/ L a/@href
+outlink: http://xmlfr.org/actualites/decid/051201-0001 L a/@href
+outlink: http://validator.w3.org/check/referer L a/@href
+outlink: http://purl.org/dc/elements/1.1/ E link/@href
+outlink: whois:dyomedea.com I =INFERRED_MISC
+outlink: http://xmlguild.org/ L a/@href
+outlink: http://dyomedea.com/vdv/ L a/@href
+outlink: http://dyomedea.com/styles/screen.css E link/@href
+outlink: http://dyomedea.com/dyomedea/ L a/@href
+outlink: http://dyomedea.com/english/ L a/@href
+outlink: http://dyomedea.com/favicon.ico I =INFERRED_MISC
+outlink: http://dyomedea.com/images/bout.png E img/@src
+outlink: http://jigsaw.w3.org/css-validator/check/referer L a/@href
+outlink: http://dyomedea.com/conseil/ L a/@href
+
+
+
+WARC/1.0
+WARC-Type: response
+WARC-Target-URI: dns:purl.org
+WARC-Date: 2012-04-23T10:05:31Z
+WARC-IP-Address: 212.27.40.241
+WARC-Record-ID: <urn:uuid:666c6903-d703-41b4-91a2-626d70792bc5>
+Content-Type: text/dns
+Content-Length: 50
+
+20120423100531
+purl.org.		36087	IN	A	132.174.1.35
+
+
+WARC/1.0
+WARC-Type: response
+WARC-Target-URI: whois://whois.arin.net/z+%2B+95.142.167.137
+WARC-Date: 2012-04-23T10:05:30Z
+WARC-Record-ID: <urn:uuid:71d93d99-85de-4651-b690-fd1cb527ffe8>
+Content-Type: text/plain
+Content-Length: 1493
+
+#
+# The following results may also be obtained via:
+# http://whois.arin.net/rest/nets;q=95.142.167.137?showDetails=true&showARIN=false&ext=netref2
+#
+
+NetRange:       95.0.0.0 - 95.255.255.255
+CIDR:           95.0.0.0/8
+OriginAS:       
+NetName:        95-RIPE
+NetHandle:      NET-95-0-0-0-1
+Parent:         
+NetType:        Allocated to RIPE NCC
+Comment:        These addresses have been further assigned to users in
+Comment:        the RIPE NCC region. Contact information can be found in
+Comment:        the RIPE database at http://www.ripe.net/whois
+RegDate:        2007-07-30
+Updated:        2009-05-18
+Ref:            http://whois.arin.net/rest/net/NET-95-0-0-0-1
+
+OrgName:        RIPE Network Coordination Centre
+OrgId:          RIPE
+Address:        P.O. Box 10096
+City:           Amsterdam
+StateProv:      
+PostalCode:     1001EB
+Country:        NL
+RegDate:        
+Updated:        2011-09-24
+Ref:            http://whois.arin.net/rest/org/RIPE
+
+ReferralServer: whois://whois.ripe.net:43
+
+OrgTechHandle: RNO29-ARIN
+OrgTechName:   RIPE NCC Operations
+OrgTechPhone:  +31 20 535 4444 
+OrgTechEmail:  hostmaster@ripe.net
+OrgTechRef:    http://whois.arin.net/rest/poc/RNO29-ARIN
+
+OrgAbuseHandle: RNO29-ARIN
+OrgAbuseName:   RIPE NCC Operations
+OrgAbusePhone:  +31 20 535 4444 
+OrgAbuseEmail:  hostmaster@ripe.net
+OrgAbuseRef:    http://whois.arin.net/rest/poc/RNO29-ARIN
+
+#
+# ARIN WHOIS data and services are subject to the Terms of Use
+# available at: https://www.arin.net/whois_tou.html
+#
+
+
+
+WARC/1.0
+WARC-Type: response
+WARC-Target-URI: whois://whois.ripe.net:43/95.142.167.137
+WARC-Date: 2012-04-23T10:05:31Z
+WARC-Record-ID: <urn:uuid:01779c44-65a8-4ba9-bc7d-1daf480c5857>
+Content-Type: text/plain
+Content-Length: 1875
+
+% This is the RIPE Database query service.
+% The objects are in RPSL format.
+%
+% The RIPE Database is subject to Terms and Conditions.
+% See http://www.ripe.net/db/support/db-terms-conditions.pdf
+
+% Note: this output has been filtered.
+%       To receive output for a database update, use the "-B" flag.
+
+% Information related to '95.142.160.0 - 95.142.167.255'
+
+inetnum:        95.142.160.0 - 95.142.167.255
+netname:        GANDI-NET1
+descr:          GANDI DEDICATED HOSTING SERVERS
+country:        FR
+admin-c:        LV314-RIPE
+tech-c:         GNO4-RIPE
+status:         ASSIGNED PA
+mnt-by:         GANDI-NOC
+mnt-lower:      GANDI-NOC
+mnt-routes:     GANDI-NOC
+source:         RIPE # Filtered
+
+role:		 Gandi Network Operations
+address:	 63-65 Boulevard Massena
+address:	 75013 Paris
+address:	 France
+phone:		 +33 1 70 39 37 55
+admin-c:	 LV314-RIPE
+tech-c:		 LV314-RIPE
+nic-hdl:         GNO4-RIPE
+remarks:	 Gandi SAS NOC Role
+remarks:	 Gandi is an ICANN accredited Registrar
+remarks:	 http://www.gandi.net/
+remarks:	 - Network Issues:  noc@gandi.net
+remarks:	 - Abuse/SPAM:  abuse@gandi.net
+abuse-mailbox:	 abuse@gandi.net
+mnt-by:		 GANDI-NOC
+source:		 RIPE # Filtered
+
+person:          Leland Vandervort
+address:         Gandi SAS
+address:	 63-65 Boulevard Massena
+address:         75013 Paris
+address:         France
+phone:		 +33 1 70 39 37 55
+nic-hdl:         LV314-RIPE
+mnt-by:          DISCPRO-MNT
+source:          RIPE # Filtered
+
+% Information related to '95.142.160.0/20AS29169'
+
+route:          95.142.160.0/20
+descr:          GANDI is an ICANN accredited registrar
+descr:          GANDI is a virtual server provider
+descr:          for more information:
+descr:          Web:   http://www.gandi.net
+origin:         AS29169
+mnt-by:         GANDI-NOC
+source:         RIPE # Filtered
+
+% This query was served by the RIPE Database Query Service version 1.6.12 (WHOIS2)
+
+
+
+WARC/1.0
+WARC-Type: response
+WARC-Target-URI: whois://whois.iana.org/com
+WARC-Date: 2012-04-23T10:05:31Z
+WARC-Record-ID: <urn:uuid:9ade1b55-915a-484e-95e2-dd97cb87c4f2>
+Content-Type: text/plain
+Content-Length: 1830
+
+% IANA WHOIS server
+% for more information on IANA, visit http://www.iana.org
+% This query returned 1 object
+
+domain:       COM
+
+organisation: VeriSign Global Registry Services
+address:      12061 Bluemont Way
+address:      Reston Virginia 20190
+address:      United States
+
+contact:      administrative
+name:         Registry Customer Service
+organisation: VeriSign Global Registry Services
+address:      12061 Bluemont Way
+address:      Reston Virginia 20190
+address:      United States
+phone:        +1 703 925-6999
+fax-no:       +1 703 948 3978
+e-mail:       info@verisign-grs.com
+
+contact:      technical
+name:         Registry Customer Service
+organisation: VeriSign Global Registry Services
+address:      12061 Bluemont Way
+address:      Reston Virginia 20190
+address:      United States
+phone:        +1 703 925-6999
+fax-no:       +1 703 948 3978
+e-mail:       info@verisign-grs.com
+
+nserver:      A.GTLD-SERVERS.NET 192.5.6.30 2001:503:a83e:0:0:0:2:30
+nserver:      B.GTLD-SERVERS.NET 192.33.14.30 2001:503:231d:0:0:0:2:30
+nserver:      C.GTLD-SERVERS.NET 192.26.92.30
+nserver:      D.GTLD-SERVERS.NET 192.31.80.30
+nserver:      E.GTLD-SERVERS.NET 192.12.94.30
+nserver:      F.GTLD-SERVERS.NET 192.35.51.30
+nserver:      G.GTLD-SERVERS.NET 192.42.93.30
+nserver:      H.GTLD-SERVERS.NET 192.54.112.30
+nserver:      I.GTLD-SERVERS.NET 192.43.172.30
+nserver:      J.GTLD-SERVERS.NET 192.48.79.30
+nserver:      K.GTLD-SERVERS.NET 192.52.178.30
+nserver:      L.GTLD-SERVERS.NET 192.41.162.30
+nserver:      M.GTLD-SERVERS.NET 192.55.83.30
+ds-rdata:     30909 8 2 E2D3C916F6DEEAC73294E8268FB5885044A833FC5459588F4A9184CFC41A5766
+
+whois:        whois.verisign-grs.com
+
+status:       ACTIVE
+remarks:      Registration information: http://www.verisign-grs.com
+
+created:      1985-01-01
+changed:      2012-02-15
+source:       IANA
+
+
+
+WARC/1.0
+WARC-Type: response
+WARC-Target-URI: whois://whois.verisign-grs.com/domain+dyomedea.com
+WARC-Date: 2012-04-23T10:05:32Z
+WARC-Record-ID: <urn:uuid:bc77be56-9cef-4a23-9523-99e281283a57>
+Content-Type: text/plain
+Content-Length: 2856
+
+
+Whois Server Version 2.0
+
+Domain names in the .com and .net domains can now be registered
+with many different competing registrars. Go to http://www.internic.net
+for detailed information.
+
+   Domain Name: DYOMEDEA.COM
+   Registrar: GANDI SAS
+   Whois Server: whois.gandi.net
+   Referral URL: http://www.gandi.net
+   Name Server: DNS1.DYOMEDEA.COM
+   Name Server: DNS2.DYOMEDEA.COM
+   Name Server: DNS3.DYOMEDEA.COM
+   Name Server: DNS4.DYOMEDEA.COM
+   Name Server: DNS5.DYOMEDEA.COM
+   Status: clientTransferProhibited
+   Updated Date: 12-mar-2012
+   Creation Date: 10-mar-1999
+   Expiration Date: 10-mar-2013
+
+>>> Last update of whois database: Mon, 23 Apr 2012 10:04:53 UTC <<<
+
+NOTICE: The expiration date displayed in this record is the date the 
+registrar's sponsorship of the domain name registration in the registry is 
+currently set to expire. This date does not necessarily reflect the expiration 
+date of the domain name registrant's agreement with the sponsoring 
+registrar.  Users may consult the sponsoring registrar's Whois database to 
+view the registrar's reported date of expiration for this registration.
+
+TERMS OF USE: You are not authorized to access or query our Whois 
+database through the use of electronic processes that are high-volume and 
+automated except as reasonably necessary to register domain names or 
+modify existing registrations; the Data in VeriSign Global Registry 
+Services' ("VeriSign") Whois database is provided by VeriSign for 
+information purposes only, and to assist persons in obtaining information 
+about or related to a domain name registration record. VeriSign does not 
+guarantee its accuracy. By submitting a Whois query, you agree to abide 
+by the following terms of use: You agree that you may use this Data only 
+for lawful purposes and that under no circumstances will you use this Data 
+to: (1) allow, enable, or otherwise support the transmission of mass 
+unsolicited, commercial advertising or solicitations via e-mail, telephone, 
+or facsimile; or (2) enable high volume, automated, electronic processes 
+that apply to VeriSign (or its computer systems). The compilation, 
+repackaging, dissemination or other use of this Data is expressly 
+prohibited without the prior written consent of VeriSign. You agree not to 
+use electronic processes that are automated and high-volume to access or 
+query the Whois database except as reasonably necessary to register 
+domain names or modify existing registrations. VeriSign reserves the right 
+to restrict your access to the Whois database in its sole discretion to ensure 
+operational stability.  VeriSign may restrict or terminate your access to the 
+Whois database for failure to abide by these terms of use. VeriSign 
+reserves the right to modify these terms at any time. 
+
+The Registry database contains ONLY .COM, .NET, .EDU domains and
+Registrars.
+
+WARC/1.0
+WARC-Type: response
+WARC-Target-URI: whois://whois.gandi.net/dyomedea.com
+WARC-Date: 2012-04-23T10:05:32Z
+WARC-Record-ID: <urn:uuid:ddc2eb7c-9c49-4f8c-b384-86481ef57ee2>
+Content-Type: text/plain
+Content-Length: 2673
+
+--- #YAML:1.0
+# GANDI Registrar whois database for .COM, .NET, .ORG., .INFO, .BIZ, .NAME
+#
+# Access and use restricted pursuant to French law on personal data.
+# Copy of whole or part of the data without permission from GANDI
+# is strictly forbidden.
+# The sole owner of a domain is the entity described in the relevant
+# 'domain:' record.
+# Domain ownership disputes should be settled using ICANN's Uniform Dispute
+# Resolution Policy: http://www.icann.org/udrp/udrp.htm
+# For inquiries about 'by policy' protection, please check directly
+# with the appropriate registry (Eurid, AFNIC, Red.es)
+#
+# Acces et utilisation soumis a la legislation francaise sur
+# les donnees personnelles.
+# Copie de tout ou partie de la base interdite sans autorisation de GANDI.
+# Le possesseur d'un domaine est l'entite decrite dans
+# l'enregistrement 'domain:' correspondant.
+# Un desaccord sur la possession d'un nom de domaine peut etre resolu
+# en suivant la Uniform Dispute Resolution Policy de l'ICANN:
+# http://www.icann.org/udrp/udrp.htm
+# Pour obtenir les informations en status 'Protected by policy', contactez
+# directement le registre concerne (Eurid, AFNIC, Red.es)
+#
+# 2012-04-23 12:05:32 CEST
+
+domain: dyomedea.com
+reg_created: 1999-03-10 00:00:00
+expires: 2013-03-10 05:00:00
+created: 2002-01-03 16:13:07
+changed: 2012-03-12 17:16:57
+transfer-prohibited: yes
+ns0: dns3.dyomedea.com 82.236.32.56
+ns1: dns4.dyomedea.com 88.178.25.34
+ns2: DNS1.DYOMEDEA.COM 95.142.167.112
+ns3: DNS2.DYOMEDEA.COM 217.70.189.52
+ns4: dns5.dyomedea.com 95.142.167.137
+owner-c:
+  nic-hdl: EVD9-GANDI
+  owner-name: Dyomedea
+  organisation: Dyomedea
+  person: Eric van der Vlist
+  address: '22, rue Edgar Faure'
+  zipcode: 75015
+  city: Paris
+  country: France
+  phone: +33.140563136
+  fax: ~
+  email: vdv@dyomedea.com
+  lastupdated: 2012-03-08 14:19:37
+admin-c:
+  nic-hdl: EVD9-GANDI
+  owner-name: Dyomedea
+  organisation: Dyomedea
+  person: Eric van der Vlist
+  address: '22, rue Edgar Faure'
+  zipcode: 75015
+  city: Paris
+  country: France
+  phone: +33.140563136
+  fax: ~
+  email: vdv@dyomedea.com
+  lastupdated: 2012-03-08 14:19:37
+tech-c:
+  nic-hdl: EVD9-GANDI
+  owner-name: Dyomedea
+  organisation: Dyomedea
+  person: Eric van der Vlist
+  address: '22, rue Edgar Faure'
+  zipcode: 75015
+  city: Paris
+  country: France
+  phone: +33.140563136
+  fax: ~
+  email: vdv@dyomedea.com
+  lastupdated: 2012-03-08 14:19:37
+bill-c:
+  nic-hdl: EVD9-GANDI
+  owner-name: Dyomedea
+  organisation: Dyomedea
+  person: Eric van der Vlist
+  address: '22, rue Edgar Faure'
+  zipcode: 75015
+  city: Paris
+  country: France
+  phone: +33.140563136
+  fax: ~
+  email: vdv@dyomedea.com
+  lastupdated: 2012-03-08 14:19:37
+
+
+WARC/1.0
+WARC-Type: response
+WARC-Target-URI: http://dyomedea.com/styles/print.css
+WARC-Date: 2012-04-23T10:05:34Z
+WARC-Payload-Digest: sha1:JQGKJC7SYSUKF7TOYKR56XQE54LEXTGP
+WARC-IP-Address: 95.142.167.137
+WARC-Record-ID: <urn:uuid:af26eb81-0528-4c00-aa63-8208f195a5f1>
+Content-Type: application/http; msgtype=response
+Content-Length: 829
+
+HTTP/1.1 200 OK
+Date: Mon, 23 Apr 2012 10:05:33 GMT
+Server: Apache-Coyote/1.1
+Last-Modified: Mon, 27 Apr 2009 21:16:19 GMT
+Expires: Fri, 10 Aug 2012 13:46:29 GMT
+Cache-Control: public
+Pragma: 
+Content-Type: text/css
+Content-Length: 517
+Via: 1.0 dyomedea.com
+Vary: Accept-Encoding
+Connection: close
+
+/* CSS Dyomeda.com */
+
+/* version impression */
+
+
+body {
+	background: transparent;
+}
+
+#divContenant {
+	width: 600px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+#divMenu li.on a, #divMenu li.on a:visited {
+	color: #000000;
+	border-bottom: thin solid #000000;
+}
+
+#divMenu li, #divMenu li a, #divMenu a:visited {
+	color: #646464;
+	
+}
+
+#divContenu {
+	width: 580px;
+}
+
+#divPiedPage {
+	width: 600px;
+}
+
+#finTet {
+	display: none;
+}
+
+.mentions {
+	color: #000000;
+}
+
+pre {
+         border: none;
+         font-size: 0.65em;
+}
+
+WARC/1.0
+WARC-Type: request
+WARC-Target-URI: http://dyomedea.com/styles/print.css
+WARC-Date: 2012-04-23T10:05:34Z
+WARC-Concurrent-To: <urn:uuid:af26eb81-0528-4c00-aa63-8208f195a5f1>
+WARC-Record-ID: <urn:uuid:101c45a6-eb10-4b40-a830-c7c454921b30>
+Content-Type: application/http; msgtype=request
+Content-Length: 249
+
+GET /styles/print.css HTTP/1.0
+User-Agent: Mozilla/5.0 (compatible; heritrix/3.1.0 +http://owark.org)
+Connection: close
+Referer: http://dyomedea.com/
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: dyomedea.com
+
+
+
+WARC/1.0
+WARC-Type: metadata
+WARC-Target-URI: http://dyomedea.com/styles/print.css
+WARC-Date: 2012-04-23T10:05:34Z
+WARC-Concurrent-To: <urn:uuid:af26eb81-0528-4c00-aa63-8208f195a5f1>
+WARC-Record-ID: <urn:uuid:df093faa-0c81-4597-a3eb-e139ef12bed5>
+Content-Type: application/warc-fields
+Content-Length: 216
+
+via: http://dyomedea.com/
+hopsFromSeed: E
+fetchTimeMs: 66
+outlink: whois:dyomedea.com I =INFERRED_MISC
+outlink: whois:95.142.167.137 I =INFERRED_MISC
+outlink: http://dyomedea.com/favicon.ico I =INFERRED_MISC
+
+
+
+WARC/1.0
+WARC-Type: response
+WARC-Target-URI: http://purl.org/robots.txt
+WARC-Date: 2012-04-23T10:05:34Z
+WARC-Payload-Digest: sha1:6TRHDMHIOSVJ3GLUQ3OJRISRMTVQ5LJ6
+WARC-IP-Address: 132.174.1.35
+WARC-Record-ID: <urn:uuid:b7a27808-8343-4ad4-ad24-db160b76ce8a>
+Content-Type: application/http; msgtype=response
+Content-Length: 1970
+
+HTTP/1.1 404 Not Found
+Date: Mon, 23 Apr 2012 10:05:34 GMT
+Server: 1060 NetKernel v3.3 - Powered by Jetty
+Connection: close
+Expires: Thu, 01 Jan 1970 00:00:00 GMT
+Content-Type: text/html;charset=UTF-8
+Content-Length: 1739
+
+<!--                                                                            ==
+==  @(#)homepage.html.in  1.10  12/29/97 ==
+==  Copyright (c) 1996, 2007 OCLC Online Computer Library Center, Inc.          ==
+==  6565 Frantz Road, Dublin, Ohio 43017-0702.                                  ==
+==  OCLC is a registered trademark of OCLC Online Computer Library Center, Inc. ==
+==  Some rights reserved under the copyright laws of the United States.         ==
+==                                                                              -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>
+			PURL not found
+		</title>
+		<link type="text/css" rel="stylesheet" href="/docs/style.css">
+
+	</head>
+	<body>		
+
+
+		<div id="header">
+                  <h1>      
+                      HTTP 404 Not Found. 
+                  </h1>
+		</div>
+			<table class="display" summary="purl information" width="70%" align="center">
+                 <tr align="top">
+                 <td>
+                 Suggestion:
+                 </td>
+                 </tr>
+                 <tr align="top">
+                 <td>
+                   Go To <a href="http://purl.org/"<i>purl.org</i></a>
+                 </td>
+                </tr>
+                </table>
+		<div id="footer">
+			<table width="100%" summary="supporters">
+				<tr>
+					<td>
+						<a href="http://www.oclc.org/"><img align="left" src="/docs/images/oclclogo.png" alt="oclc"></a>
+					</td>
+					<td>
+						<a href="http://zepheira.com/"><img align="right" src="/docs/images/zepheiralogo.png" alt="zepheira"></a>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</body>
+</html>
+
+
+WARC/1.0
+WARC-Type: request
+WARC-Target-URI: http://purl.org/robots.txt
+WARC-Date: 2012-04-23T10:05:34Z
+WARC-Concurrent-To: <urn:uuid:b7a27808-8343-4ad4-ad24-db160b76ce8a>
+WARC-Record-ID: <urn:uuid:c1bea172-a751-4919-89e0-ccb0a0ab9c10>
+Content-Type: application/http; msgtype=request
+Content-Length: 208
+
+GET /robots.txt HTTP/1.0
+User-Agent: Mozilla/5.0 (compatible; heritrix/3.1.0 +http://owark.org)
+Connection: close
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: purl.org
+
+
+
+WARC/1.0
+WARC-Type: metadata
+WARC-Target-URI: http://purl.org/robots.txt
+WARC-Date: 2012-04-23T10:05:34Z
+WARC-Concurrent-To: <urn:uuid:b7a27808-8343-4ad4-ad24-db160b76ce8a>
+WARC-Record-ID: <urn:uuid:e2fbd1e9-79f1-47bd-b1aa-7c4951f4f725>
+Content-Type: application/warc-fields
+Content-Length: 535
+
+force-fetch:
+via: http://purl.org/dc/elements/1.1/
+hopsFromSeed: EP
+fetchTimeMs: 318
+outlink: http://zepheira.com/ L a/@href
+outlink: http://purl.org/docs/images/oclclogo.png E img/@src
+outlink: whois:132.174.1.35 I =INFERRED_MISC
+outlink: http://purl.org/favicon.ico I =INFERRED_MISC
+outlink: whois:purl.org I =INFERRED_MISC
+outlink: http://purl.org/ L a/@href
+outlink: http://purl.org/docs/style.css E link/@href
+outlink: http://purl.org/docs/images/zepheiralogo.png E img/@src
+outlink: http://www.oclc.org/ L a/@href
+
+
+
+WARC/1.0
+WARC-Type: response
+WARC-Target-URI: http://dyomedea.com/images/xml-guild-logo.png
+WARC-Date: 2012-04-23T10:05:37Z
+WARC-Payload-Digest: sha1:URHBRNQAAS4AIWJMNXIRCQC4LY7FPWNV
+WARC-IP-Address: 95.142.167.137
+WARC-Record-ID: <urn:uuid:502042ba-4803-4072-8152-786db08c0366>
+Content-Type: application/http; msgtype=response
+Content-Length: 5230
+
+HTTP/1.1 200 OK
+Date: Mon, 23 Apr 2012 10:05:36 GMT
+Server: Apache-Coyote/1.1
+Last-Modified: Mon, 27 Apr 2009 21:16:21 GMT
+Expires: Fri, 10 Aug 2012 13:46:32 GMT
+Cache-Control: public
+Pragma: 
+Content-Type: image/png
+Content-Length: 4939
+Via: 1.0 dyomedea.com
+Connection: close
+
+‰PNG
+
+   IHDR   P   P   ¹ÏŸ  ıPLTE   			
+
+
+   !!!"""###$$$%%%&&&'''((()))***+++,,,---...///000111222333444555666777888999:::;;;<<<===>>>???@@@AAABBBCCCDDDEEEFFFGGGHHHIIIJJJKKKLLLMMMNNNOOOPPPQQQRRRSSSTTTUUUVVVWWWXXXYYYZZZ[[[\\\]]]^^^___```aaabbbcccdddeeefffggghhhiiijjjkkklllmmmnnnooopppqqqrrrssstttuuuvvvwwwxxxyyyzzz{{{|||}}}~~~€€€‚‚‚ƒƒƒ„„„………†††‡‡‡ˆˆˆ‰‰‰ŠŠŠ‹‹‹ŒŒŒ‘‘‘’’’“““”””•••–––———˜˜˜™™™ššš›››œœœŸŸŸ   ¡¡¡¢¢¢£££¤¤¤¥¥¥¦¦¦§§§¨¨¨©©©ªªª«««¬¬¬­­­®®®¯¯¯°°°±±±²²²³³³´´´µµµ¶¶¶···¸¸¸¹¹¹ººº»»»¼¼¼½½½¾¾¾¿¿¿ÀÀÀÁÁÁÂÂÂÃÃÃÄÄÄÅÅÅÆÆÆÇÇÇÈÈÈÉÉÉÊÊÊËËËÌÌÌÍÍÍÎÎÎÏÏÏĞĞĞÑÑÑÒÒÒÓÓÓÔÔÔÕÕÕÖÖÖ×××ØØØÙÙÙÚÚÚÛÛÛÜÜÜİİİŞŞŞßßßàààáááâââãããäääåååæææçççèèèéééêêêëëëìììíííîîîïïïğğğñññòòòóóóôôôõõõööö÷÷÷øøøùùùúúúûûûüüüıııÿÿÿ¸±A   	pHYs     šœ   tIMEÕ	/ö´¢  áIDATXÃÅYXTW¾ƒ(v“¨‘¸–Ä˜fL·`[P±ÇXVìm£IìF5ÍDVÆh¬‰‰-¨(  Ô™yóÚ½÷İûŞDT¬`‰]"0~{.¨±&Ùì~ßÎ¼óŞ?çòŸºñ?~¡ÿ ÏWZ"^¥>ßè+½~õÒ…sg
+àuúì/—‹J|°¤èÂ¹Ó'ç>t(/ïĞ‘#ùG/8séºï¯ úŠ.+<y4ï@ö~¯73ÓkÛ™Şı9¹y‡óó^~¸èapÏÌÏİO5B0f\“uŠuÊ·²sÉ?uáaj>Ğ÷ë…ÓÇî·Ëöz-¯ÉMÛöZ¶ÅMÓ4¸aeÈË;v¡Ø÷gK/Ÿ=—Å<LtN¢3ƒi²ìò¸tóÌı9yy'.—ş)@_Ñù‚<ëš¦Ê”™6×ã×lbÜí4'çÌĞ°¦kØÎ:wúWßú®œ9–c±fr®ÅmI|½N¥=D“<i¾<,FS!´3³³s^ñı`é¥Óù9^Ëâ–i2²"üï_™Ğ£{À„¶ÕôßÉ¾ØkX¦:gådåşr¯¿ï,>ê …‰ªc‚sO×*ëGú9–ªàe¹iå MŸùÔˆxİ õ)ËÌÌ<Sü{€%
+geÚBC˜^’MË;úÉ
+#„£wıí¥'½¶—÷÷k±›bÂ¹•™•i*~8`éù“9†,»uU—?í«šÆ°YÌdÖÈàÀ7T‹™›vh,»5utİÍæÌ»Ø™¾ñN@ß…S¹¦‰a2yè#qœ'¼²Wç‰ìÑæ±nĞ¾áMÀllP*ç&å„¦IÉé’ú.Ê%ºA;yÔcŞs«c'†UmXÄ˜
+kU~nNÆ²GJë–T…Pƒ¨X×]ø\é‹
+ÛÂ2p\úæ‘Ú[S_ÙÃ-Êhd¯•şÛUÿçM„t|ıdñÈ¸i0J8Ná—| ,>{4òÿRªÏ­ÔêıH‘vïP·!QÍR»7ÁºAÇÔO¢¦i)„„™zbN‘ï>@ß/Ç²¸b>Ü¶Iÿú[ÜnEÃæ¨©y½d}Xw£ç“B8>(Å¶tE¡ÑÛ—Üx­ğp”WĞ×âXÕccàJ¯wto>$`³Ñòcñ$ÜÁÇîÁ˜²r¡m™Ì½S>ï»°ôìÑıDWUY’3$I–T=ã¿!Œ=h‘½è"ÿéñA?xŞj˜Â HÁ˜œ¬©Ü»%ç×{ /ŸÌõ‚½MøTaŞçõiYkü4­Q½yÜ#=Ö6vRp
+Ç¥"2Ê„¦øNß´·°ô.ÀÒ3G³l0 	)k[ò,íè••#\@ÛhÚplG“G46˜ jQK<Pö„¥ïXo]»ğÊ‰\¢`Â‹H`œÏÉŒN•W)„á½™Ö+ h
+Æ=›áØú)\®ŸUSte9ö›øß€¾3ùû”MÌa„Ä¾éÆš9\İ‹[óıÖ›¤Gƒ22&0âkÆ@ğĞ%TÛv­[í-º°èx.Ç£†¤,¹ÁÇCfbb‘nU×1J##ş±J½dÕÕ¦‘äÖµÑõS©ş}ı% @çX5Üî;ëûğâ‰8„-Â*#î¥õ·ËŠ"}V±6iv˜+A­€±Ÿ{|ŸA]UFØ»V8x‚^âÜK–n8X|Ğwò e¢z<in¬«š8àÍÁ77¾P­z§5«…ïÓºôüÜ¹Z•—×Ë}ëT¯Ñ iËá”PÙãI—áIİµsŞBíòmÀë'ò,&|&‚‹Ä º[ÆÌpïŠıñ'å‡U£T+:»—¯]½:™ÆÅìsº—E€xNe:W~ÚwğR~6Ş—RB‘µd « Pª™pF³\HoßM_ŸWrğÜ‘,¦zdlŞ-æòŠ…I#`Ø2!·¬›‘*„6Ñ%I%Â†šÇÅvÛì(^tĞwêT‡fÑÿš1cyâäWãSSWIP8ÄEx
+²¼eP¢i²'-5ÃíB¸X.´m3s®óâ-Àc¹PÎ9Ó6w¨é_»y£Çüß¡æ²†¦  MÓ°BÃÕÊ‡0Å/úM!V•]3ŞF€×æBT{íÕA\êÄš¡ÏÆ¤5­¸Ô†ÓÙ"Å!ÅOËNŸg—]4RÒÊ…ğ§è¤ìä6¿	xíp6›lBë	]PµOFx›n¢S¦CIÀ„:1°NH_Ç«.é'IÛÛ·Ş§kPZu`m!Üóñ¨5KÊ/m-U\lÙñuışåõÌ®ŒPÀW,dY¢Æ‹°MqT7ƒÜìéXqªL¼­ïp½\hI‹Gy½ğR^æ·•P°NÕ·‘ßr]M}!Ç0Q)¡Œ‚Š&Ô9Mjƒ^ÌP§{¯Âã.ÆK‚–@yÊ‡ï|Å-¼˜—‰¹ÑUø‚jÎæÈ1ûÔ½–jÀ‘¡Œb.İ šN‡,¶Ø–õP0¥Lì7IÕm4ğòGƒ>§×Ê/°-#ÕÚª+)êëJóì}ªé6U§ Œ**1ªêŠF¿ì’!¥íªPE!Z0ªÜí'$–¡ê‰3ú}‚¯ŞÌÍ$lsu˜e×ó5UmoJ‹9¢\™–Á)8Ò†:ájT~¡·E¢D „ªNåp§‘0µÏı&àÅÜ,Î×TBA®¹³pG„*­Ç±¯;ì„b 6tÆ@Z8FÔ#z¯Á°ü
+BÄÅ¨Š€èh±¼Â÷Nîu[ÃKöf”5–ŸÈ§Ã=ƒ×=ïazkUî¦Aızİç'‡RøŒ„:CëÎ•à>ôj²ÎÈöq}nÛğêln,÷G’‚ÑUªVSÜWuôØöWUW<¥™ÿt“ëªÖŞ
+lP;H=µöA_fAnÒ÷¶—=‰Éª T/¦q?9­BşıŞ
+ ÄØÑO ô²šì@µ–)q/ ôFš†û!
+lƒw÷­¼`}{?ÔÂmq—ËößŒÃâCÙ^ösTk{‡nÌ„P•µÒ(„w­3 ×ÑÖ€Ê•[* Tq•Gí…Pˆ$a6ÈæX®0G3ÅÄË#†®É»™)¥ù¦ª:ë!ÿå7NÂ*£ªMíU0÷Z¾©k Bµ]tzİ–Ğ ¡†©ÄìP[ L2¡Ir|ı§Ó¤Ø‘íFİÎe_A¦×4Z!ô‰û…ïXR ª±“¨süšy24Äü„z3N!^”(íƒĞó:cÖh„FÂ-#ßÀ|Ç°°É·ÙæÆy`Bc¢E’%-ã~|5×LsO5„ÆB6Q™½%wªÌ* )¥ á`ˆÇ™HÆ×]Âç8/İbìkÙ^S[Sµá|R“@Tm	0†ã‘] êÚ?êcÙ"¹%¶½“PÃŠ‰P¸mêo/ÁÒÜvıcì%yÌâê‹ImYxh”KJIİ×¡ O€âÈ}LF‡AĞ¥A‹Ğ320öd
+£ÌÕİm%¾á·šâ+€çü+,ÁšF ~‚}tˆ—÷”'  j|G†	
+ Ÿ“9{¡F‚©g9ĞkN¼z
+“¢:tyÿªç»µ:Skño•U (G)5ã[ jˆ¢:ÔcƒšÊ¶ˆ¬:b°ÇÕíİ5ÍN›Ü÷s‘É·:‡ë\T×~x´ÊRl¥aYSWUBuâ˜¦A¨Æ@Ã]'#z*MÖÆC()0LNr@”V˜ßtk?âÎÎš%Cõú4à© Ğq:ÂB`Õà fÚ6hø´lrp‘ÿ°%›p‘¡ÏËfÚÔà3ïêmn\c{j’)!É’ìÒ}oTñk^Aü¬âi†P/N…¥(Š òk—öL½G«-#ò×C‡®¸«ûºQz*)Qå†>­zÇ$
+.×:P;rÙÓ’Cu7‚#SÃ‘kì!‰uÅI§X–’¿#lû 6İ§İİãÑ©ª¬¹>¢Ù¬ek£:û£fÑšFÉB ¼J‹ÖÖ@è…4I™î‡Í'¸>á ’€¾DW ÁÚ7'¤Ã?VÜÓÁ‚Š	Ûæ²½“®RÑß¯V§İÜ0sÇßA›';¶VhH— ;<—lÒİ/Õ\_FãĞúyVt˜Tè»g¬(Ú¿i{††aÔr®˜:}Él@]‡¦v5º+Wø£ŠStœÔÕX™±t‚XC˜PÄäÍƒZw³!»ÈwßàãZÃlÙàÃE¶4ÙåR´ij/Sv7ò{Ã¥okŒ' ´¡‡¡¬a#áŸm:¼ó¥ç¾9XñXìú$£¬¹2™*«3>–Ñl4w³Bdˆw‹ÎVM¦y!„6É²\óÚ…ôâşIê†ïZöÆE›“]É£È:5 h ßÅÊvhö™3ISÙ-§{„!Tw5nZHÛîïn:ğ€YOŒ·tõ²íª-SL\Ğ’Ye]·%šï²võ.¡É÷}Ümô*öÀiTŒgÒÒE;eÆ`1ÍQe–õbÊxĞ2«D‡şƒQÓHø°}p·áKå‡ÌË`Æ‚ô/?ÙèÄ¦°4¾Œ«0ÊQjšZjJDæ·„†¼!²MÛnÃ»
+KºÄ(>•¾tæâh7hH¡aeÔæÀæ¢ƒÌ0`Ü"7NY1$øÍğQKœÅ¿³f¹~Êµxô»«âfQbŠUôòæT¨ŠGv{$ #fOìÌ°V¡=Çã),ş½½¯ø´ºzúÄ9â’G– )ÖS˜ŠDkB±¤ºÓ·ÎïÖÿƒuú™{6A÷­ªJ~±¶Í21j»SŒÄÄe)C³GNwa¬éDÇ©«F¼Ù*4|Ø¼hû|é/Ó®äíûz|¿ÈÙkv»‰h¡aÀ(k_¡r¶zú–ÏŞi×êÍ.&/O9ôÇ»¯²íaİöÉ°n½Æ|´üûè—G“U¬H®Ô]kækİº]—~ã>f…f;WvìË‡¥ÆöîÜmĞäùK¾ß½#&v÷¶W.œ9n@h›ào½=şÓŸ<ùrXî›óyîÍ_½7¤G§ĞºöèÕ³{§öm[·nŞ/rÊ¢-Ò¡ÿ`ÃYyá‰_ûù´1ƒû¼Õ9¬Cûö:v	è?tÜô/Öí¡ùû½µ³¯äJa®¾wËªEóf~0iâ„‰“>˜9Ñw[÷áÜÓWÿã-ñ-5¯œ=–ÃäÔÄØ˜1±‰i2?pìÜÕâ¿´Ç¾½·/.º|şìé²EûùËEÅ¾ÿbÓ~jùëÿòßŠ*¶ƒ®T4oB    IEND®B`‚
+
+WARC/1.0
+WARC-Type: request
+WARC-Target-URI: http://dyomedea.com/images/xml-guild-logo.png
+WARC-Date: 2012-04-23T10:05:37Z
+WARC-Concurrent-To: <urn:uuid:502042ba-4803-4072-8152-786db08c0366>
+WARC-Record-ID: <urn:uuid:af3f8878-93de-4f82-8748-4fb86091126c>
+Content-Type: application/http; msgtype=request
+Content-Length: 258
+
+GET /images/xml-guild-logo.png HTTP/1.0
+User-Agent: Mozilla/5.0 (compatible; heritrix/3.1.0 +http://owark.org)
+Connection: close
+Referer: http://dyomedea.com/
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: dyomedea.com
+
+
+
+WARC/1.0
+WARC-Type: metadata
+WARC-Target-URI: http://dyomedea.com/images/xml-guild-logo.png
+WARC-Date: 2012-04-23T10:05:37Z
+WARC-Concurrent-To: <urn:uuid:502042ba-4803-4072-8152-786db08c0366>
+WARC-Record-ID: <urn:uuid:fe7d0013-6a9d-45ac-8558-50ca3cb79049>
+Content-Type: application/warc-fields
+Content-Length: 216
+
+via: http://dyomedea.com/
+hopsFromSeed: E
+fetchTimeMs: 58
+outlink: whois:dyomedea.com I =INFERRED_MISC
+outlink: whois:95.142.167.137 I =INFERRED_MISC
+outlink: http://dyomedea.com/favicon.ico I =INFERRED_MISC
+
+
+
+WARC/1.0
+WARC-Type: response
+WARC-Target-URI: http://purl.org/dc/elements/1.1/
+WARC-Date: 2012-04-23T10:05:37Z
+WARC-Payload-Digest: sha1:MHEWMBBTZE7XH7EG62Y2LYXBJJTRHCU2
+WARC-IP-Address: 132.174.1.35
+WARC-Record-ID: <urn:uuid:f5e45ef7-48d0-41ec-b364-44c9804879a8>
+Content-Type: application/http; msgtype=response
+Content-Length: 621
+
+HTTP/1.1 302 Moved Temporarily
+Date: Mon, 23 Apr 2012 10:05:37 GMT
+Server: 1060 NetKernel v3.3 - Powered by Jetty
+Connection: close
+Location: http://dublincore.org/2010/10/11/dcelements.rdf#
+Content-Type: text/html; charset=iso-8859-1
+X-Purl: 2.0; http://localhost:8080
+Expires: Thu, 01 Jan 1970 00:00:00 GMT
+Content-Length: 281
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<HTML>
+    <HEAD>
+        <TITLE>302 Found</TITLE>
+    </HEAD>
+    <BODY>
+    <H1>Found</H1>
+         The resource requested is available <A HREF="http://dublincore.org/2010/10/11/dcelements.rdf#">here</A>.<P>
+    </BODY>
+</HTML>
+
+
+WARC/1.0
+WARC-Type: request
+WARC-Target-URI: http://purl.org/dc/elements/1.1/
+WARC-Date: 2012-04-23T10:05:37Z
+WARC-Concurrent-To: <urn:uuid:f5e45ef7-48d0-41ec-b364-44c9804879a8>
+WARC-Record-ID: <urn:uuid:593b91cb-319e-411e-bfc4-65443f70ae3c>
+Content-Type: application/http; msgtype=request
+Content-Length: 245
+
+GET /dc/elements/1.1/ HTTP/1.0
+User-Agent: Mozilla/5.0 (compatible; heritrix/3.1.0 +http://owark.org)
+Connection: close
+Referer: http://dyomedea.com/
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: purl.org
+
+
+
+WARC/1.0
+WARC-Type: metadata
+WARC-Target-URI: http://purl.org/dc/elements/1.1/
+WARC-Date: 2012-04-23T10:05:37Z
+WARC-Concurrent-To: <urn:uuid:f5e45ef7-48d0-41ec-b364-44c9804879a8>
+WARC-Record-ID: <urn:uuid:d9ff0320-0682-42ff-b41c-8e5bdf3e33cf>
+Content-Type: application/warc-fields
+Content-Length: 346
+
+via: http://dyomedea.com/
+hopsFromSeed: E
+fetchTimeMs: 1601
+outlink: whois:132.174.1.35 I =INFERRED_MISC
+outlink: http://dublincore.org/2010/10/11/dcelements.rdf R Location:
+outlink: http://purl.org/favicon.ico I =INFERRED_MISC
+outlink: whois:purl.org I =INFERRED_MISC
+outlink: http://dublincore.org/2010/10/11/dcelements.rdf L A/@HREF
+
+
+
+WARC/1.0
+WARC-Type: response
+WARC-Target-URI: dns:dublincore.org
+WARC-Date: 2012-04-23T10:05:39Z
+WARC-IP-Address: 212.27.40.241
+WARC-Record-ID: <urn:uuid:fc791bad-bd0d-478f-9084-e3702ab4210c>
+Content-Type: text/dns
+Content-Length: 57
+
+20120423100539
+dublincore.org.		21312	IN	A	211.185.62.34
+
+
+WARC/1.0
+WARC-Type: response
+WARC-Target-URI: http://dyomedea.com/styles/standard.css
+WARC-Date: 2012-04-23T10:05:40Z
+WARC-Payload-Digest: sha1:UBFFHPH66ZNZ6DYS74J5TED37UM3CHA5
+WARC-IP-Address: 95.142.167.137
+WARC-Record-ID: <urn:uuid:f17639c9-f66e-470a-bdd0-4057c10ee2fb>
+Content-Type: application/http; msgtype=response
+Content-Length: 5214
+
+HTTP/1.1 200 OK
+Date: Mon, 23 Apr 2012 10:05:40 GMT
+Server: Apache-Coyote/1.1
+Last-Modified: Mon, 27 Apr 2009 21:16:19 GMT
+Expires: Fri, 10 Aug 2012 13:46:36 GMT
+Cache-Control: public
+Pragma: 
+Content-Type: text/css
+Content-Length: 4901
+Via: 1.0 dyomedea.com
+Vary: Accept-Encoding
+Connection: close
+
+/* CSS Dyomeda.com */
+
+/* version standard v.020805-1155 CSS 2.0 valid */
+
+/*
+incompatible IE 5.5 WIN :
+@import url("screen.css") screen;
+@import url("print.css") print;
+incompatible IE 5.1 MAC :
+@media screen {}
+@media print {}
+-> utilisation sur chaque page de 
+<link rel="stylesheet" href="/styles/screen.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="/styles/standard.css" type="text/css" media="all" />
+<link rel="stylesheet" href="/styles/print.css" type="text/css" media="print" />
+*/
+
+
+/* --> BALISES  */
+	
+body {	
+	font-size: 10pt;
+	line-height: 14pt;
+	margin: 0;
+}
+
+a {
+	text-decoration: none;
+	color: #80000a;
+	padding: 0;
+	margin: 0;
+}
+
+a:visited {
+	text-decoration: none;
+	padding: 0 2px;
+	color: #410005;
+}
+
+a:hover {
+	color: #ffc42e;
+}
+
+img {
+	border: none;
+}
+
+hr {
+	display: none;
+}
+
+/*<group=listes>*/
+
+ul.activites {
+	padding-left: 20px;
+}
+
+ul.activites li {
+	list-style: url(../images/puce.png);
+	padding: 0;
+	padding-left: 0;
+	margin-bottom: 3px;
+}
+
+ul.sous-menus li {
+	font-weight: bold;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	text-transform: uppercase;
+}
+	
+/*</group>*/
+
+dl.formation dt {
+	font-weight: bold;
+	font-family: Courier New, Courier, monospace;
+}
+
+dl.formation dd {
+	margin-bottom: 15px;
+}
+
+/* --> CALQUES  */
+
+#divContenant {
+	position: relative;
+	padding: 0;
+	min-width: 580px;
+}
+
+/*<group=Tetiere>*/
+
+#debutTet {
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+#finTet {
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+#divTetiere {
+	position: relative;
+	margin-top: 5px;
+}
+
+#divTetiere h1 {
+	margin: 0;
+	padding: 0;
+	display: block;
+}
+
+#divTetiere h1 a{
+	border: none;
+	display: block;
+	height: 105px;
+	text-decoration: none;
+}
+	
+/*</group>*/
+
+
+/*<group=Menu>*/
+
+#divMenu {
+	line-height: 12pt;
+	position: relative;
+	padding: 0;
+	margin-top: 10px;
+	float: left;
+	clear: both;
+}
+
+
+#divMenu ul {
+	margin: 0;
+	padding: 0 4px;
+	float: right;
+	clear: both;
+}
+
+#divMenu li {
+	text-transform: uppercase;
+	font: normal bold 0.8em Verdana, Arial, Helvetica, sans-serif;
+	padding: 0 2px;
+	margin: 0;
+	display: inline;
+}
+
+#divMenu li a {
+	text-decoration: none;
+	margin: 0;
+	font-weight: inherit;
+	font-style: inherit;
+}
+
+#divMenu li a:hover {
+	color: #FFC42E;
+}
+
+#divMenu li.on a {
+	text-decoration: none;
+	margin: 0;
+	font-weight: inherit;
+	font-style: inherit;
+}
+
+/*</group>*/
+
+#divContenu {
+    position: relative;
+	background: white;
+	border: thin solid #000000;
+	margin-top: 20px;
+	float: left;
+	padding: 1%;	
+	min-height: 400px;
+}
+
+#divEncadre {
+	position: relative;
+	width: 25%;
+	padding: 5px;
+	float:left;
+	margin-right: 10px;
+}
+
+/*<group=Article>*/
+
+#divArticle {
+	background: white;
+	position: relative;
+	padding: 0px;
+	float:left;
+	margin-top: 0;
+	width: 70%;
+	font-family: "Trebuchet MS", verdana, sans-serif;
+}	
+
+#divArticle h2 {
+	color: #646464;
+	margin-top: 30px;
+	margin-bottom: 0;
+	text-transform: uppercase;
+	font: bold 1.5em Helvetica, Arial, sans-serif;
+	border-bottom: thin dotted #646464;
+	letter-spacing: 0.05em;
+}
+
+#divArticle h3 {
+	margin: 0;
+	font-style: italic;
+	font-size: 0.9em;
+	color: #5782a1;
+	line-height: 1.2em;
+}
+
+#divArticle ul {
+	list-style: disc;
+}
+	
+/*</group>*/
+
+/*<group=PiedPage>*/
+
+#divPiedPage {
+	border: 1px none #000000;
+	margin-top: 20px;
+	position: relative;
+	float: left;
+	display: block;
+	padding: 0.5%;	
+	margin-bottom: 2px;
+	margin-bottom: 20px;
+}
+
+/*</group>*/
+
+/* --> CLASSES   */
+
+.bloc {
+	display: block;
+	padding: 2px;
+	font: 0.8em 'Lucida Grande', 'Lucida Sans', 'Trebuchet MS', verdana, sans-serif;
+	margin-bottom: 5px;
+	background: #e6e6e6;
+}
+
+.bloc h3 {
+	text-transform: uppercase;
+	display: block;
+	margin: 0;
+	padding: 1px;
+	color: #ffffff;
+	font: bold 1em Verdana, Arial, Helvetica, sans-serif;
+	background: #5782a1;
+	border-bottom: thin solid #5782a1;
+	position: relative;
+}
+
+.bloc h5 {
+	font-size: 1em;
+	padding: 1px;
+	margin: 0 0 5px;
+}
+
+.bloc ul {
+	padding: 3px;
+}
+
+.bloc li {
+	margin-bottom: 5px;
+	padding-bottom: 3px;
+	display: block;
+}
+
+.hide {
+	display: none;
+}
+
+.mentions {
+	text-align: center;
+	font: 0.8em Arial, Helvetica, sans-serif;
+	clear: both;
+	display: block;
+}
+
+.validations {
+	font: 0.9em "Trebuchet MS", verdana, sans-serif;
+	text-align: right;
+	float: right;
+	padding-right: 3px;
+	padding-left: 3px;
+}
+
+.about {
+	font: 0.9em "Trebuchet MS", verdana, sans-serif;
+	text-align: left;
+	float: left;
+	padding-right: 3px;
+	padding-left: 3px;
+}
+
+.livres {
+	text-align: center;
+	margin: 0;
+	padding: 0;
+}
+
+.titre-menu {
+	text-transform: uppercase;
+	font: bold 0.8em Verdana, Arial, Helvetica, sans-serif;
+	color: #646464;
+	padding: 0;
+	margin: 0;
+	text-align: right;
+}
+
+.entete {
+         margin:0;
+}
+
+pre {         
+         padding: 0.5em;
+         line-height:100%;
+}
+
+ul.map li ul {
+        margin : 0;
+        padding-top: 0;
+        padding-bottom: 0;
+        padding-left: 15px;
+}
+
+ul.map li {
+	padding: 0;
+	margin: 0;
+}
+
+ul.map li p {
+	padding: 0;
+	margin: 0;
+}
+
+
+WARC/1.0
+WARC-Type: request
+WARC-Target-URI: http://dyomedea.com/styles/standard.css
+WARC-Date: 2012-04-23T10:05:40Z
+WARC-Concurrent-To: <urn:uuid:f17639c9-f66e-470a-bdd0-4057c10ee2fb>
+WARC-Record-ID: <urn:uuid:f61a7511-e097-4f13-a021-88750781ba1b>
+Content-Type: application/http; msgtype=request
+Content-Length: 252
+
+GET /styles/standard.css HTTP/1.0
+User-Agent: Mozilla/5.0 (compatible; heritrix/3.1.0 +http://owark.org)
+Connection: close
+Referer: http://dyomedea.com/
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: dyomedea.com
+
+
+
+WARC/1.0
+WARC-Type: metadata
+WARC-Target-URI: http://dyomedea.com/styles/standard.css
+WARC-Date: 2012-04-23T10:05:40Z
+WARC-Concurrent-To: <urn:uuid:f17639c9-f66e-470a-bdd0-4057c10ee2fb>
+WARC-Record-ID: <urn:uuid:a9d381d5-4649-4816-9c42-947f703ff796>
+Content-Type: application/warc-fields
+Content-Length: 400
+
+via: http://dyomedea.com/
+hopsFromSeed: E
+fetchTimeMs: 136
+outlink: http://dyomedea.com/styles/print.css E =EMBED_MISC
+outlink: http://dyomedea.com/favicon.ico I =INFERRED_MISC
+outlink: whois:95.142.167.137 I =INFERRED_MISC
+outlink: http://dyomedea.com/images/puce.png E =EMBED_MISC
+outlink: http://dyomedea.com/styles/screen.css E =EMBED_MISC
+outlink: whois:dyomedea.com I =INFERRED_MISC
+
+
+
+WARC/1.0
+WARC-Type: response
+WARC-Target-URI: whois://whois.arin.net/z+%2B+132.174.1.35
+WARC-Date: 2012-04-23T10:05:38Z
+WARC-Record-ID: <urn:uuid:74414d4f-9220-4ebe-bceb-786c266fe2d3>
+Content-Type: text/plain
+Content-Length: 1499
+
+#
+# The following results may also be obtained via:
+# http://whois.arin.net/rest/nets;q=132.174.1.35?showDetails=true&showARIN=false&ext=netref2
+#
+
+NetRange:       132.174.0.0 - 132.174.255.255
+CIDR:           132.174.0.0/16
+OriginAS:       
+NetName:        OCLC
+NetHandle:      NET-132-174-0-0-1
+Parent:         NET-132-0-0-0-0
+NetType:        Direct Assignment
+RegDate:        1989-03-01
+Updated:        2001-04-23
+Ref:            http://whois.arin.net/rest/net/NET-132-174-0-0-1
+
+OrgName:        OCLC Online Computer Library Center, Inc.
+OrgId:          OCLC
+Address:        6565 Frantz Road
+City:           Dublin
+StateProv:      OH
+PostalCode:     43017-0702
+Country:        US
+RegDate:        1989-03-01
+Updated:        2011-09-24
+Ref:            http://whois.arin.net/rest/org/OCLC
+
+OrgTechHandle: IO17-ARIN
+OrgTechName:   Online Computer Library Center Inc
+OrgTechPhone:  +1-800-848-5878 
+OrgTechEmail:  DNS-Admin@oclc.org
+OrgTechRef:    http://whois.arin.net/rest/poc/IO17-ARIN
+
+OrgAbuseHandle: IO17-ARIN
+OrgAbuseName:   Online Computer Library Center Inc
+OrgAbusePhone:  +1-800-848-5878 
+OrgAbuseEmail:  DNS-Admin@oclc.org
+OrgAbuseRef:    http://whois.arin.net/rest/poc/IO17-ARIN
+
+RTechHandle: IO17-ARIN
+RTechName:   Online Computer Library Center Inc
+RTechPhone:  +1-800-848-5878 
+RTechEmail:  DNS-Admin@oclc.org
+RTechRef:    http://whois.arin.net/rest/poc/IO17-ARIN
+
+#
+# ARIN WHOIS data and services are subject to the Terms of Use
+# available at: https://www.arin.net/whois_tou.html
+#
+
+
+
+WARC/1.0
+WARC-Type: response
+WARC-Target-URI: whois://whois.iana.org/org
+WARC-Date: 2012-04-23T10:05:41Z
+WARC-Record-ID: <urn:uuid:f0e4ac99-f880-4c74-be41-58483692a490>
+Content-Type: text/plain
+Content-Length: 1680
+
+% IANA WHOIS server
+% for more information on IANA, visit http://www.iana.org
+% This query returned 1 object
+
+domain:       ORG
+
+organisation: Public Interest Registry (PIR)
+address:      1775 Wiehle Avenue
+address:      Suite 102A
+address:      Reston Virginia 20190
+address:      United States
+
+contact:      administrative
+name:         Michelle Coon
+organisation: Public Interest Registry (PIR)
+address:      1775 Wiehle Avenue
+address:      Suite 200
+address:      Reston Virginia 20190
+address:      United States
+phone:        +1 703 889 5762
+fax-no:       +1 703 889 5779
+e-mail:       mcoon@pir.org
+
+contact:      technical
+name:         Michelle Coon
+organisation: Public Interest Registry (PIR)
+address:      1775 Wiehle Avenue
+address:      Suite 200
+address:      Reston Virginia 20190
+address:      United States
+phone:        +1 703 889 5762
+fax-no:       +1 703 889 5779
+e-mail:       mcoon@pir.org
+
+nserver:      A0.ORG.AFILIAS-NST.INFO 199.19.56.1 2001:500:e:0:0:0:0:1
+nserver:      A2.ORG.AFILIAS-NST.INFO 199.249.112.1 2001:500:40:0:0:0:0:1
+nserver:      B0.ORG.AFILIAS-NST.ORG 199.19.54.1 2001:500:c:0:0:0:0:1
+nserver:      B2.ORG.AFILIAS-NST.ORG 199.249.120.1 2001:500:48:0:0:0:0:1
+nserver:      C0.ORG.AFILIAS-NST.INFO 199.19.53.1 2001:500:b:0:0:0:0:1
+nserver:      D0.ORG.AFILIAS-NST.ORG 199.19.57.1 2001:500:f:0:0:0:0:1
+ds-rdata:     21366 7 1 e6c1716cfb6bdc84e84ce1ab5510dac69173b5b2
+ds-rdata:     21366 7 2 96eeb2ffd9b00cd4694e78278b5efdab0a80446567b69f634da078f0d90f01ba
+
+whois:        whois.pir.org
+
+status:       ACTIVE
+remarks:      Registration information: http://www.pir.org
+
+created:      1985-01-01
+changed:      2010-07-23
+source:       IANA
+
+
+
+WARC/1.0
+WARC-Type: response
+WARC-Target-URI: whois://whois.pir.org/purl.org
+WARC-Date: 2012-04-23T10:05:41Z
+WARC-Record-ID: <urn:uuid:03454385-326c-4a30-b41f-152801a59379>
+Content-Type: text/plain
+Content-Length: 2933
+
+Access to .ORG WHOIS information is provided to assist persons in 
+determining the contents of a domain name registration record in the 
+Public Interest Registry registry database. The data in this record is provided by 
+Public Interest Registry for informational purposes only, and Public Interest Registry does not 
+guarantee its accuracy.  This service is intended only for query-based 
+access. You agree that you will use this data only for lawful purposes 
+and that, under no circumstances will you use this data to: (a) allow, 
+enable, or otherwise support the transmission by e-mail, telephone, or 
+facsimile of mass unsolicited, commercial advertising or solicitations 
+to entities other than the data recipient's own existing customers; or 
+(b) enable high volume, automated, electronic processes that send 
+queries or data to the systems of Registry Operator, a Registrar, or 
+Afilias except as reasonably necessary to register domain names or 
+modify existing registrations. All rights reserved. Public Interest Registry reserves 
+the right to modify these terms at any time. By submitting this query, 
+you agree to abide by this policy. 
+
+Domain ID:D847251-LROR
+Domain Name:PURL.ORG
+Created On:01-Jan-1996 05:00:00 UTC
+Last Updated On:05-Nov-2007 20:50:14 UTC
+Expiration Date:31-Dec-2016 05:00:00 UTC
+Sponsoring Registrar:Network Solutions LLC (R63-LROR)
+Status:CLIENT TRANSFER PROHIBITED
+Registrant ID:22297011-NSI
+Registrant Name:OCLC Online Computer Library Center, Inc
+Registrant Organization:OCLC Online Computer Library Center, Inc
+Registrant Street1:6565 Kilgour Place
+Registrant Street2:
+Registrant Street3:
+Registrant City:Dublin
+Registrant State/Province:OH
+Registrant Postal Code:43017
+Registrant Country:US
+Registrant Phone:+1.614764606
+Registrant Phone Ext.:
+Registrant FAX:+1.614718708
+Registrant FAX Ext.:
+Registrant Email:buzashg@OCLC.ORG
+Admin ID:15679845-NSI
+Admin Name:OCLCOnlineComputer Library Center, Inc.
+Admin Organization:OCLCOnlineComputer Library Center, Inc.
+Admin Street1:6565 FRANTZ RD
+Admin Street2:
+Admin Street3:
+Admin City:DUBLIN
+Admin State/Province:OH
+Admin Postal Code:43017-5308
+Admin Country:US
+Admin Phone:+1.6147646057
+Admin Phone Ext.:
+Admin FAX:+1.6147640740
+Admin FAX Ext.:
+Admin Email:buzashg@OCLC.ORG
+Tech ID:16690384-NSI
+Tech Name:OCLCOnlineComputer Library Center
+Tech Organization:OCLCOnlineComputer Library Center
+Tech Street1:6565 FRANTZ RD
+Tech Street2:
+Tech Street3:
+Tech City:DUBLIN
+Tech State/Province:OH
+Tech Postal Code:43017-5308
+Tech Country:US
+Tech Phone:+1.8008485878
+Tech Phone Ext.:
+Tech FAX:+1.6147646096
+Tech FAX Ext.:
+Tech Email:DNS-Admin@OCLC.ORG
+Name Server:DNS.OCLC.ORG
+Name Server:DNS2.OCLC.ORG
+Name Server: 
+Name Server: 
+Name Server: 
+Name Server: 
+Name Server: 
+Name Server: 
+Name Server: 
+Name Server: 
+Name Server: 
+Name Server: 
+Name Server: 
+DNSSEC:Unsigned
+
+
+
+
+WARC/1.0
+WARC-Type: response
+WARC-Target-URI: http://dublincore.org/robots.txt
+WARC-Date: 2012-04-23T10:05:42Z
+WARC-Payload-Digest: sha1:WWBDOOKQFQZEMEAT5ZBZGUJFEYSBBV3R
+WARC-IP-Address: 211.185.62.34
+WARC-Record-ID: <urn:uuid:5bc97e53-5a0b-47ca-b425-7487f1dbf7a7>
+Content-Type: application/http; msgtype=response
+Content-Length: 653
+
+HTTP/1.1 200 OK
+Date: Mon, 23 Apr 2012 08:51:18 GMT
+Server: Apache/2.0.59 (Unix) DAV/2 mod_ssl/2.0.59 OpenSSL/0.9.8g SVN/1.4.3
+Last-Modified: Mon, 30 Jun 2008 03:54:54 GMT
+ETag: "7cc42-167-38dddf80"
+Accept-Ranges: bytes
+Content-Length: 359
+Content-Type: text/plain
+Connection: close
+
+# /robots.txt file for http://dublincore.org/
+# mail webteam@admin.dublincore.org for constructive criticism
+
+User-agent: *           # directed to all spiders
+Disallow: /images
+Disallow: /ssi
+Disallow: /temp
+Disallow: /psd
+Disallow: /ccs
+Disallow: /js
+Disallow: /templates
+Disallow: /dcregistry
+Disallow: /registry
+
+
+User-agent: Linbot # override 
+Allow: / 
+
+
+WARC/1.0
+WARC-Type: request
+WARC-Target-URI: http://dublincore.org/robots.txt
+WARC-Date: 2012-04-23T10:05:42Z
+WARC-Concurrent-To: <urn:uuid:5bc97e53-5a0b-47ca-b425-7487f1dbf7a7>
+WARC-Record-ID: <urn:uuid:4ac5bd02-1d96-443b-902b-7eded21cf341>
+Content-Type: application/http; msgtype=request
+Content-Length: 214
+
+GET /robots.txt HTTP/1.0
+User-Agent: Mozilla/5.0 (compatible; heritrix/3.1.0 +http://owark.org)
+Connection: close
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: dublincore.org
+
+
+
+WARC/1.0
+WARC-Type: metadata
+WARC-Target-URI: http://dublincore.org/robots.txt
+WARC-Date: 2012-04-23T10:05:42Z
+WARC-Concurrent-To: <urn:uuid:5bc97e53-5a0b-47ca-b425-7487f1dbf7a7>
+WARC-Record-ID: <urn:uuid:027dcf6d-cdf3-4103-8a84-b7f23079ba31>
+Content-Type: application/warc-fields
+Content-Length: 263
+
+force-fetch:
+via: http://dublincore.org/2010/10/11/dcelements.rdf
+hopsFromSeed: ERP
+fetchTimeMs: 843
+outlink: whois:dublincore.org I =INFERRED_MISC
+outlink: http://dublincore.org/favicon.ico I =INFERRED_MISC
+outlink: whois:211.185.62.34 I =INFERRED_MISC
+
+
+
+WARC/1.0
+WARC-Type: response
+WARC-Target-URI: http://dyomedea.com/images/logo520.png
+WARC-Date: 2012-04-23T10:05:43Z
+WARC-Payload-Digest: sha1:LNYO7FKFQTT45XP6NQWDYCKTOKXVTVJG
+WARC-IP-Address: 95.142.167.137
+WARC-Record-ID: <urn:uuid:32bb67b6-aa09-4336-85c7-5fde14c893bd>
+Content-Type: application/http; msgtype=response
+Content-Length: 7494
+
+HTTP/1.1 200 OK
+Date: Mon, 23 Apr 2012 10:05:43 GMT
+Server: Apache-Coyote/1.1
+Last-Modified: Mon, 27 Apr 2009 21:16:21 GMT
+Expires: Fri, 10 Aug 2012 13:46:39 GMT
+Cache-Control: public
+Pragma: 
+Content-Type: image/png
+Content-Length: 7203
+Via: 1.0 dyomedea.com
+Connection: close
+
+‰PNG
+
+   IHDR     i   h+‡   gAMA  ÖØÔOX2   tEXtSoftware Adobe ImageReadyqÉe<  ÁPLTEL_ïïûÄ¿¿ï``Øß00Ì@@ĞŸŸç  ÈÏÏó˜£¾ßß÷ƒ±Cdòó÷2JMs˜=R…U~Ÿ?]‹ppÜdt:U†ã>R†RzœPPÔËÑßWi•Pwš±ºÎ5N‚gw åèïJ]Hk“~‹®7Q„q€¦ØÜç¯¯ëA`‹—¶Ko–ñóö¾ÅÖu„¨<YˆFh‘¤®ÆYk—©Â	ÈÎÜ‘œº¬µËT}›%	şşÿ?^t
+"*Rz˜6Qd=[q(1-DT"2?Nt&9GCd|Pw” 0;ÖÚå!	
+U!(ãæî2K]KpŠ$6B:VkFi‚(;IDf~1I[';I1IZ4Na-81G~Nu‘,6Hl…âââÍÓà;Yn9Vj)=L8Th/FW8Sg*4LqŒºÁÔ#EfLr,BRÎÎÎ#4@$6C@`w²»Î
+öööîîûPx”V€JoŠ5Oa)=Kşşş.DU Xj•+@P3K€#5A)3ûûû&Œ˜·
+euÓÓÓÌÒà&/ıışııı (+@O¿Æ×ÌÒß³¼ÏØØØçêğíííZk—ÎÔáXj–¿ÅÖùùûÙÙÙ%.Hl†×××gw=[pR{˜š¤¿+6ÍÍòûûş§°ÇAaxeuŸøøıæèïr€¦brœ#¨²É¾¾ïôôôEe$-/GX›¹ååå3L^æææ;XmÏÕâ§Á¸ÀÒµ¾ĞFiæéğ;T†ÑÑÑÈèëñóóóÁÈØøøø™¤¿ııÿÖÖÖ®®ëóôø0F}ÍÍÍ  À   ÿÿÿW‚¡²Äq´   ëtRNSÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ /é”  ñIDATxÚì]…{ãÆ¶mÉÌL‰c;qâ‡a³ÛİíbÛmo™¹½eº¥[†Kïâ»Ìü˜™™™™IÙÅ›93#ÍHr6ñn¿¯±5_º±%ÍÑdÎoü:ÖõòÑŸÿä7ÿâx%š­d]on7Œ4^{ıØ†pg£Û'·³Wöl Œ^yá­£j Íf£Ñ³QdŸîÙ@µrÅ'T7*•l ëªŒ²9M œ9sÕ†«İ@(ØˆmÔF4«ª£*>UU5€‚‚mä²¬;¨Û¯Ø@­r«Z‰‚G8¿¢l´¡n_=ò¹ÓˆáAlPxˆ~*d n{ÅÆÁ áù==uwá R!È¢_ÙlÀ­¾õ~C„Ó7ìá¡_@±A
+BAşu«®÷Ú&×ğÉk.øÈÇTWÀÈPTP©4*Ù¨KU¯|€!‹ìü&ĞO#€PĞ8Ûh¨_ø[ÿC„‡7îzÿÕ…B8d¾d+(³†ÛNØåî7T·ŠàTõfÛ'+N!Ïß
+×ª.ôÓ@®¡¢ªµ?´@øNåøñÀ½–·^WU0È;4²Yõe[ëÃ„'·OZf‘·¨´¸İ(oh|ÀVúPáÓÙ“óLòıª^P„Ğ°U>ä@øfO(~¯áê™€7rª­ñaÂ­xş`ã”píÁ³ØhHp¹Õûl9N«•J´Q	ÜÍ.œ¸ş6¢|ê¶Â‡×c ×Ï?ıgü~Eåì€‹ @µq0@Ø4Pjè&J§z×bDzÁ&‘†·«h %‡Y
+].U€ƒôéZ[ÛÃ„÷àÔĞp¹Ü¼)Ğ`€â„Wm]P0­d‚ÇU¶ªG#F@ÙÌ),‚»±g·pÔÂA/'QœèÆ©¢É5 Pqë—xï³`Kî³p°Ëã0ÃŒ0"!zÁE‰gş„>z«mz‰ª €Á7\÷¾U½J{v”‰!Â—ğºTœ#º 
+ØÊß|»zÇów]¸ê¶61Ò«†c¡áRİúüÒ}=qNü¾¨¸âŒ5ør­êŠf!BP™w¸şš~ëÔO½ÈÇˆtRêÍ‘g‡.”;ºOrÑéæ¬ıÊı2MU[û~Šğê	›G
+Ü„EÖ|C4ªëK9°­Ïá'³®mÃ „Û]j6€Y•pÉ$kõ'¬Ÿˆ á¯„Ç66Ô[lSİ²D™N2’9úæU_èkÔíWIH™İ®ô·6R9£rA"›vD ¸å}N@9!ĞÏªú a Â•84¸TqŞ]¼ñúk¶ø9nºåö¾¢3skS6F¹Ÿ†%L7º™ExüÆ>ë‘ån<°
+”ôšmFùiœú5p¤ˆ”zNXĞˆöI	¹™ˆï~|´§ç•’„P^»YU+Ùl´›œÕ3·ç÷± ˆÑªÒ=ºİİ‰n··c„w}yæ!hD,0x_Oí±Yg¼2Ár¥ê5¼±›Zê´
+ºİr2cá]^N³•Ñ,]t®wâª?e~Á…Ä3=b¨ôÊï
+Ëšf±¥Z¯ 
+P©ÏÙYÃ»¼<q
+KPğC’ÇÏözÇÓ'ÜUØñôô¹_ºÎ´€ÍtZI™íêe³e§ïîr_…„ƒ „hŸŠ†>QïĞ¶µÜYÎğ_}ÿ¼şO±xñ¯Œ‚‹aŠú/‘NÙ@xW—AÛn0ïîÊÙh@ğ®,3F¶Á€púóYÁ¼	WáãiC°˜Jc§òËÁIô{±hJ—©õN±¥Ğ’,væŞôë$˜~7Y|8›Uo¦aà±UÜ$Dd/ŠÎàCt­‰/Œ’kÓHÿŞT"İîìh¥—¥õ¢Ro‡WÊÌÇÎ–ÃítkıÒFŞ/ĞÍ*n#~…®9xğÔ­Ç>İP³˜WÈ6½»z½{·¹U‹7?ò=…sg¢×«¨Ñ~ŒúĞîôl ‚‚Zº9Í‡Z´¬’—2?¿‹¬:P}ö£,-¼şëŞß;÷ò†Kd+jö6|ñ1nŸû5QÊíW¿íVKØ2Ia‡áÀé½ÔñÒ !µ¦4Wº}J¹Úºd„ıqØÛì†@±Â’sæ·Oîõ®xıŠoÜ½-z—ú¬6ø{}¶½šNMé´Qc=Ø Œ£Õõ„}–¥V=ÌRï®ä÷È>Ròã¹N^"$ gH–Ÿœ|Îâşµw?¦ö~F}¸wÃıû·i8uŒ`ƒDM®õl ì3>,Ö§ò¾±8å?Ä7>xiàVo<NŞÛï™Ï÷z÷$RG7ZÅÔñ¢ĞIÓÜ;$;w¬Ê¤Û„KÁÍ Ğïa2Çü¬/„ÔQÂöáö{6öeO[U úƒTïŞI.²nœ˜ÙÇôMªÏ`|YU?p¡à^{':RGhth$SÇ‹ÂT²	0'Æ ˜—ôÑágX A¸e}‹k¹t]QŠë&M<ºo¿3} §2úĞÌõl ìHÄÈ!c¾@ñ±3y9ŠÂç,¢LEi­ÅE4äªÈDÏN7•œ1}»åƒOëï¯‹\İÒz®XÌÍ™s¾L*Ş)¢[ñ)+ş+·R$uZ¦»	° =ÔZÄ#?£Şã°ÈCÔ&D×µdÅÍnyz±^[Ò/Å«4ÿ˜m'w‰×æjõÅéòÊbz¨,UTÚár9\HÎè–RXDwÊ›Má=ø^§–ÆüWys±ªh©£Gôc}¤âÅš‚`œƒ6–RbÉŒâŒ dåHw¥N“M @@‰ù×qø%ÚûRš(}:Í@’YRæµºÓi^©Ssñxœ*b©V ¬E¢£ĞR1Íò×2_©”SÚÚœ2ÿ€Nº©¿k6ÁRGŸ:Z(u’õEL &Ê‹õb	ˆj+JqÄ,$Ş€¯D)ú“M ^#ÿ©î?)¹š’V’œÅÏ5éC‰*‚s¹¤RØÄ®Úç/3¯0c¼”Ãƒ7ŒŒº’YKsäUu½Wt£«¯.ËäÒa‘êLT;Ü½„¡©:úÑSõ¥]Ä“‚áäT§ P©—’q¬Gìò6W#›€ ævÇ‡‚„zwß|S£ ¼œG½™¬n’ş…Î‹¡°YË 
+Ğ ¤]¿™œJ%ÛD…’„ë®´ZUr3"I<iH‡ız²É´(IäÙî,¥–˜ŒnßrhnŒO‘€„YÀ:{f&’i-³é¥Q‹Zh\FPt° iÏ1A"Aè¸gd]|«Ûı1Ee“Ä,g]B á::\S @uxœx	e‘ä¯^Z©”Ef­N&¿"y/Í]°÷¯îƒ˜‰Q^?M%¬É©>0óV(m"á$Ù‰@®Wğ\Õ€@P ğ’\ÁÇ-K 7èÂ)BCÉ¿åtM³NŒªr²“ÓìnÜD}ËGğ 5„¨²0â,¼F†¼ÄSØì+8Æ%Ü‡p/˜SÇ~fáu™çHPY`eø ¯j„I¯Cï§£½à—}“¿Œ•‘)]V-2>É““XËåp8L/Š6X,ê`Ú™ÑÅlçµ› ĞGÙiœ	¬O•ZšDÀğ}^ì•zFN€–'ù€O'Fæ,¡½ÉƒœcÁ2äZ¿Y_Äpp1¡ß"T-ı+t*Š~.‡€\Á„Ú(ãÕ"Fr4ip'Šñòcv¥Ø›#îÌ†“´
+?‚qTÈlÁÉ˜‡FŠê©c`}ÀF¼´õ	å@—1…T°öPÄo»]Ô³Ä ÕY¸M»ÿÆe©°ä 0ÊC„7b:‰ğëfÃ!âd-v¦@Im¦}az3Cé`HŒh¡ö
+Ow@^G¯¢ŒÓÉşü…î/cÊùóç‰–ÏÓ"~³¾øµ/jl²S·ÿVéãJFüÀÉÉ““LÕ:Kµ ›lcdIORüäA/Òé9à;É…<o˜ÆxúFæ§+Ø§8£ À—UÌc0†´7}êÏä2 Îÿì·ùå³ÂÄ™
+¿Ààxô!éÕî/RqpNC‡ íz<”ƒÌwàª¾ˆ¾²hºVÃQEHpVy¬»Ùd·‚4uÌ´ÂšñóPÇBŒuÒ‚D	„“Xé¯Ïp \œkˆ˜<º‰¤ÑóˆéÁ¤ È&úÁPüäQÜçZp!S‘=\¶Ø!-“‚Ağa+ïğËÖÚš‘3	 fBâ.ÉtÊr\ÃÅaÒšKbº÷
+nÂ#8Hò)Ô„K^Íù{Ù€D×e\È4˜‹ˆY‹C¤·dÓ7¯Ã„f-ï`â»Ÿ€¼áOE@X½ÎÊòŒ¢l†.Gÿá_8H;¿”(=p'üšaÊQV±Æğ3ÚiuèWRg96¡Ì,wá;{¨‹/¢GVá"jÂ*<ÀµD÷`®Krô5! ğğR†çÍ8 ˜	u¥qì!ZSæâúdò²(b’`DTª‡Kÿ9€EÓ¢ØIŞÙé$£íC`vjQì_îÁúÆ”™ÕÂÄŒ²…Åb—2b[HsèWì „eBÂ!¤ìØ­ıJê ÀÄf4 ¬b ¬*1ôC€ Ìt¹–€œ‹ˆúrI´ß<—s‘•ş 6Ş H‚%Ñè?Ó'uù2Mã„P„á„Ñœ@AêCÖoÀò‰ü$Q¬… ÓŸêÙÑGÁ½±'7¼ÌÀ€0Ö˜ fŠGßÇÎ\Ã—‰	åNfÅÇ£Nêla™3:¶ğ7ú¨€˜Àï^æšĞí^tŒàï›:’	)C¯y8óà×œq¾hÁr7YÇÁ8¹-k&Ş'xn‡®9JxÅLÑgÆ`ÑB}˜eA¥ı¹á›€ )CW¼	7)«ÊK{ş÷ĞKšX¤rÜhKøw„¾\ô±Óq¹8Î<ºuğëÑ€Eh4 (âgt¥Æ:ü¢vYàX s	A­u”­ˆ˜p s’½zÍÌÁŠ/u ÂeÊaåÈ^ĞÕÅÎ(7õı¦¿{0×ğäî©£ßèŒ%mfı±R“â5aLïàb¤¼ò…P„¤©^%u°	]•˜3
+M]Í;Fâˆ†ÿı½fh±XÌ
+ÈOæÕDÜ?|@£¹ôîÄŒ´\‡aª)±‰Ëúµä#üËwå’=øsX®1Ï!¤©C¶À‘ÄO#h›N4@ïûü:<‚vıârz®iNu}—×#‡¸"?È	 *ÆIvJ|ûk{NÕ19oøœšH ß£lşÖVwkÂZG®Ã€@ª)±™X_ °–€œ‹Œä~©£†ƒøÜR*•j•9 `,s¶UÄ‘ÈşĞg¼^-x{áÑq@Èˆ^_~œ·GŒÄÖ[‹³¯ám!mâÁ,Àgü[¥¾^qW×0¦ìß5,+c±1-îÛ5Älõw|°xq1B_.ÉÏ"¬øÌÇ9 à¾÷™™GëœSS-ó2%4*@Òy~B038K`‡áèuøí‹ÓF¢gp8EËõNá0Œğ—ö”Ej@¸lb@È5|x—Ô1ÏÈüi:/«!B²¥UçSãj7MÔtk8ĞØ_~Ôƒ¸á]àa‡CBÔD;˜u&;2,@oeº?¼×°µ—ôQ1§‡”Ã]-î\ú»	³L˜ƒÀ‰ä˜ nY¥ƒ áÉş\00a×#v bÔÌ›²Q¿i"[»ä7à€ÇˆŞ±Àæ8™Õç`ç!ùbˆq#ªpŠÖk\ÇgÿŸ½J‡PC&h#¬õUÌ
+„Òª‰PZEj[F5f”#1<hÁâeb°x‰^]å¥XWj±U…0P‡c„q¢-	¥A]ƒ×Ò `†Ìñ6kSÜr&P™€³E1á€‡)b=eÀÖ› T öSzsÁßç™6eÍàf÷,Eˆ3T²wÏóê„2±Åh^©mİ)PÌpG¤˜±ÑÀÿ,Ï à,sÁbLg˜h[„bˆ-“¨pyèfÚ‘b~+ƒ ¾Ôóôé·ª­LÏ Ÿ,hÑ˜™çõ• Â±,Ryœ„[±3–²£»cÈ9@‹°`±«‰Âœ¼†€¶ø ¯ Ï éä§Áï>#ÆaZğS³HĞk>˜şoôñÇÓú:ÎTÕÂ»k\®ƒw)Aq"Ï'T‰82¤<›Ó<I.ãmú–=Aı5tÉ¼…,ÃHœ€‚ƒ. #äÄÁ¾qş —A€ğa«¤Û}p%ñÛIn]÷\[‚0ñá–"… Ë;Ìœ‚¾:š†ÉKò
+IsWHfŞ“÷Ñ%®|¾ÁïÑÖ´.\²ğ-æ…‚Ğ³Î™°ÑO æHMâİi.¡ÌÙf4ºIr“·Ì?ù÷¿úwápxZO÷|>Âã¡ö4ÌÂ}YHÙ"|¹«Î|FEú«hƒÊŒÔÇş,„ \šOX€÷%è¬¥g°óíô‚?®aß‹Wñd‡yéHĞCÆîS_­ñ— Ögÿ÷;ÿüÇqTğÆÓ.¿dÕë'ÛØjøn²;… Í£› D3W8â€@(aÈ4]/p p‰v[ÏMƒd>2¬L÷À]û<0‘‡I?Cà|Z9øe€åìñ°¾ÃUß@‡êS¿.ŸOO3³c­ÄgŠnÃëÂ$3Å¤z¹Î6¶2İ!Å¤şTm…-!™$jÂnJº,ÙIwÎáSœjëJ‚Ò†Tµåz1Í&˜Hm|i½n)`º^‹§¹ÆúÆÙ\šÇëók›öFp74lwã¶8}û}_MÆùİ¥"Ù#&Ó,QÕ¶¢éÆ³$±Ú³mm?s	ëÎA7¤i{Ï@‹‰Åä:Û…‹k;˜"×Èv‡ÄUCZD"s‹äY2ÀA@lê§AÎlË„ujİîG,TµÍ’¿ò›DFBß9* „)XÏ5gfÉÿÕıúEÔiÖ“Ğ_x<ó<×glÏ‘¾ƒµ©tt›ú^ÓéB¡­õ{ïAÆõk›Ü¦C¡L« îm]¬· Y¥ä4·í.¤ÒÜvè09!Ój¤‰ cc§Ó5ô7eF¼’´òo¿÷#
+90 —£ãz®FvâÄ¶ù´°70Îíyœß¬&;üÆùÛ…Zn¦‹s©"UDY?a*Ù¦ÊYi;$ì`.‡«É\J?İe–ê¼^$çÒH+M%GßœYã,"ÚŞ¥ŞØùÅ4’‘«ããüz‡äë02úVaR¾ÿËŸytX’«®Ô‹Ks¹=pp~]ã™ô´ŠÂb8Ü.¤“9ã>âR1İD·Òµ8ÖR¦£´Ãá&r×úğËä”Ê/
+iıbjM©â-ô…ªÒêğK9|äE»®c’P µ9 ö@G Ô<–ÖğIÃ¹a9pi ½™bıËO–ôëÿÕûÜi¸ĞÏë»òdW»ÅñR
+¥s)ËŞœZG·´!Yš‹Ç×›3K¸¶X9…Õ°8“+“Â/_]2½ºŸ v8ÊÊ:ànèT®õè£*J!êYÃM C˜¨O=Øe˜Îéw’J’?Iö•u8[-fìÎ! À$M‹Œë~+éİÕ£„œˆãÜñú(SO–‚/&—ì) ÀD£ÎÒÂ3(Ón•ì- ÄÙšÔºS±»™Ûİ<’@ Ö ‘Â|¡eg#ê0õ¼@i}Å6#™5ÔøãæáôšŒ&–ô¹œÙpº˜²;xDĞ›Sšx¦©¼YPr6F½R§G—ÏÙLâhÁ.³ü¿  7¹}$’°*    IEND®B`‚
+
+WARC/1.0
+WARC-Type: request
+WARC-Target-URI: http://dyomedea.com/images/logo520.png
+WARC-Date: 2012-04-23T10:05:43Z
+WARC-Concurrent-To: <urn:uuid:32bb67b6-aa09-4336-85c7-5fde14c893bd>
+WARC-Record-ID: <urn:uuid:dd7e2904-84b4-4163-8a85-f54a604a78e2>
+Content-Type: application/http; msgtype=request
+Content-Length: 251
+
+GET /images/logo520.png HTTP/1.0
+User-Agent: Mozilla/5.0 (compatible; heritrix/3.1.0 +http://owark.org)
+Connection: close
+Referer: http://dyomedea.com/
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: dyomedea.com
+
+
+
+WARC/1.0
+WARC-Type: metadata
+WARC-Target-URI: http://dyomedea.com/images/logo520.png
+WARC-Date: 2012-04-23T10:05:43Z
+WARC-Concurrent-To: <urn:uuid:32bb67b6-aa09-4336-85c7-5fde14c893bd>
+WARC-Record-ID: <urn:uuid:8275e312-d69e-4cbd-9851-3a7f3819e9ae>
+Content-Type: application/warc-fields
+Content-Length: 216
+
+via: http://dyomedea.com/
+hopsFromSeed: E
+fetchTimeMs: 81
+outlink: whois:dyomedea.com I =INFERRED_MISC
+outlink: http://dyomedea.com/favicon.ico I =INFERRED_MISC
+outlink: whois:95.142.167.137 I =INFERRED_MISC
+
+
+
+WARC/1.0
+WARC-Type: response
+WARC-Target-URI: http://dyomedea.com/styles/screen.css
+WARC-Date: 2012-04-23T10:05:46Z
+WARC-Payload-Digest: sha1:MCLYBLAE464FBGQ24UFIUOCCFSI7SPVM
+WARC-IP-Address: 95.142.167.137
+WARC-Record-ID: <urn:uuid:064eb4fd-3eb1-44fd-8c04-0f6d6aa91b18>
+Content-Type: application/http; msgtype=response
+Content-Length: 1063
+
+HTTP/1.1 200 OK
+Date: Mon, 23 Apr 2012 10:05:46 GMT
+Server: Apache-Coyote/1.1
+Last-Modified: Mon, 27 Apr 2009 21:16:19 GMT
+Expires: Fri, 10 Aug 2012 13:46:42 GMT
+Cache-Control: public
+Pragma: 
+Content-Type: text/css
+Content-Length: 751
+Via: 1.0 dyomedea.com
+Vary: Accept-Encoding
+Connection: close
+
+/* CSS Dyomeda.com */
+
+/* version ecran */
+
+
+body, html {
+	background: #5782a1;
+}
+
+#divTetiere h1 a{
+	background: repeat-x url(../images/fd-tetiere.png);
+}
+
+#divTetiere img {
+	background: #5782a1;
+}
+
+#divMenu ul {
+        background: #30467d url(../images/fd-menu.png) repeat;
+}
+
+
+#divMenu li, #divMenu li a, #divMenu a:visited {
+	color: #ffffff;
+}
+
+#divMenu li.on a, #divMenu li.on a:visited {
+	color: #ffc42e;
+}
+
+#divContenant {
+	width: 70%;
+	margin-right: 15%;
+	margin-left: 15%;
+}
+
+#divContenu {
+	width: 98%;
+}
+
+#divPiedPage {
+	width: 99%;
+	background: #688FAB;
+}
+
+.mentions {
+	color: #e6e6e6;
+}
+
+pre {
+         border: thin dotted #646464;
+         background: #f2f2f2;
+         overflow:auto;
+         font-size: 0.75em;
+         width: 98%;
+}
+
+
+
+WARC/1.0
+WARC-Type: request
+WARC-Target-URI: http://dyomedea.com/styles/screen.css
+WARC-Date: 2012-04-23T10:05:46Z
+WARC-Concurrent-To: <urn:uuid:064eb4fd-3eb1-44fd-8c04-0f6d6aa91b18>
+WARC-Record-ID: <urn:uuid:45f2697b-0aca-4fd1-b749-042ac1e003ba>
+Content-Type: application/http; msgtype=request
+Content-Length: 250
+
+GET /styles/screen.css HTTP/1.0
+User-Agent: Mozilla/5.0 (compatible; heritrix/3.1.0 +http://owark.org)
+Connection: close
+Referer: http://dyomedea.com/
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: dyomedea.com
+
+
+
+WARC/1.0
+WARC-Type: metadata
+WARC-Target-URI: http://dyomedea.com/styles/screen.css
+WARC-Date: 2012-04-23T10:05:46Z
+WARC-Concurrent-To: <urn:uuid:064eb4fd-3eb1-44fd-8c04-0f6d6aa91b18>
+WARC-Record-ID: <urn:uuid:63065435-9439-4477-8b85-d58fc5871bcf>
+Content-Type: application/warc-fields
+Content-Length: 345
+
+via: http://dyomedea.com/
+hopsFromSeed: E
+fetchTimeMs: 57
+outlink: whois:95.142.167.137 I =INFERRED_MISC
+outlink: http://dyomedea.com/images/fd-menu.png E =EMBED_MISC
+outlink: http://dyomedea.com/favicon.ico I =INFERRED_MISC
+outlink: whois:dyomedea.com I =INFERRED_MISC
+outlink: http://dyomedea.com/images/fd-tetiere.png E =EMBED_MISC
+
+
+
+WARC/1.0
+WARC-Type: response
+WARC-Target-URI: http://purl.org/favicon.ico
+WARC-Date: 2012-04-23T10:05:47Z
+WARC-Payload-Digest: sha1:6TRHDMHIOSVJ3GLUQ3OJRISRMTVQ5LJ6
+WARC-IP-Address: 132.174.1.35
+WARC-Record-ID: <urn:uuid:3273574e-27f2-4e98-811d-0f97bb8265f5>
+Content-Type: application/http; msgtype=response
+Content-Length: 1970
+
+HTTP/1.1 404 Not Found
+Date: Mon, 23 Apr 2012 10:05:46 GMT
+Server: 1060 NetKernel v3.3 - Powered by Jetty
+Connection: close
+Expires: Thu, 01 Jan 1970 00:00:00 GMT
+Content-Type: text/html;charset=UTF-8
+Content-Length: 1739
+
+<!--                                                                            ==
+==  @(#)homepage.html.in  1.10  12/29/97 ==
+==  Copyright (c) 1996, 2007 OCLC Online Computer Library Center, Inc.          ==
+==  6565 Frantz Road, Dublin, Ohio 43017-0702.                                  ==
+==  OCLC is a registered trademark of OCLC Online Computer Library Center, Inc. ==
+==  Some rights reserved under the copyright laws of the United States.         ==
+==                                                                              -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>
+			PURL not found
+		</title>
+		<link type="text/css" rel="stylesheet" href="/docs/style.css">
+
+	</head>
+	<body>		
+
+
+		<div id="header">
+                  <h1>      
+                      HTTP 404 Not Found. 
+                  </h1>
+		</div>
+			<table class="display" summary="purl information" width="70%" align="center">
+                 <tr align="top">
+                 <td>
+                 Suggestion:
+                 </td>
+                 </tr>
+                 <tr align="top">
+                 <td>
+                   Go To <a href="http://purl.org/"<i>purl.org</i></a>
+                 </td>
+                </tr>
+                </table>
+		<div id="footer">
+			<table width="100%" summary="supporters">
+				<tr>
+					<td>
+						<a href="http://www.oclc.org/"><img align="left" src="/docs/images/oclclogo.png" alt="oclc"></a>
+					</td>
+					<td>
+						<a href="http://zepheira.com/"><img align="right" src="/docs/images/zepheiralogo.png" alt="zepheira"></a>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</body>
+</html>
+
+
+WARC/1.0
+WARC-Type: request
+WARC-Target-URI: http://purl.org/favicon.ico
+WARC-Date: 2012-04-23T10:05:47Z
+WARC-Concurrent-To: <urn:uuid:3273574e-27f2-4e98-811d-0f97bb8265f5>
+WARC-Record-ID: <urn:uuid:bddab20e-99f3-4592-b1b2-31183ed08844>
+Content-Type: application/http; msgtype=request
+Content-Length: 252
+
+GET /favicon.ico HTTP/1.0
+User-Agent: Mozilla/5.0 (compatible; heritrix/3.1.0 +http://owark.org)
+Connection: close
+Referer: http://purl.org/dc/elements/1.1/
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: purl.org
+
+
+
+WARC/1.0
+WARC-Type: metadata
+WARC-Target-URI: http://purl.org/favicon.ico
+WARC-Date: 2012-04-23T10:05:47Z
+WARC-Concurrent-To: <urn:uuid:3273574e-27f2-4e98-811d-0f97bb8265f5>
+WARC-Record-ID: <urn:uuid:e5d69082-6a93-4a1f-9fd2-968b01c80cd8>
+Content-Type: application/warc-fields
+Content-Length: 521
+
+via: http://purl.org/dc/elements/1.1/
+hopsFromSeed: EI
+fetchTimeMs: 272
+outlink: http://purl.org/docs/images/zepheiralogo.png E img/@src
+outlink: http://www.oclc.org/ L a/@href
+outlink: http://zepheira.com/ L a/@href
+outlink: http://purl.org/docs/images/oclclogo.png E img/@src
+outlink: whois:132.174.1.35 I =INFERRED_MISC
+outlink: http://purl.org/favicon.ico I =INFERRED_MISC
+outlink: whois:purl.org I =INFERRED_MISC
+outlink: http://purl.org/ L a/@href
+outlink: http://purl.org/docs/style.css E link/@href
+
+
+
+WARC/1.0
+WARC-Type: response
+WARC-Target-URI: http://dublincore.org/2010/10/11/dcelements.rdf
+WARC-Date: 2012-04-23T10:05:47Z
+WARC-Payload-Digest: sha1:Z7QXOBMD4MQMJBXGZN4IMBDOZBO3VE7Z
+WARC-IP-Address: 211.185.62.34
+WARC-Record-ID: <urn:uuid:68153f9c-52b0-4598-be38-22db850eb1c2>
+Content-Type: application/http; msgtype=response
+Content-Length: 17731
+
+HTTP/1.1 200 OK
+Date: Mon, 23 Apr 2012 08:51:23 GMT
+Server: Apache/2.0.59 (Unix) DAV/2 mod_ssl/2.0.59 OpenSSL/0.9.8g SVN/1.4.3
+Last-Modified: Wed, 29 Sep 2010 14:31:58 GMT
+ETag: "7cc3b-4411-d2e8b380"
+Accept-Ranges: bytes
+Content-Length: 17425
+Content-Type: application/rdf+xml
+Connection: close
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rdf:RDF [
+    <!ENTITY rdfns 'http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
+    <!ENTITY rdfsns 'http://www.w3.org/2000/01/rdf-schema#'>
+    <!ENTITY dcns 'http://purl.org/dc/elements/1.1/'>
+    <!ENTITY dctermsns 'http://purl.org/dc/terms/'>
+    <!ENTITY dctypens 'http://purl.org/dc/dcmitype/'>
+    <!ENTITY dcamns 'http://purl.org/dc/dcam/'>
+    <!ENTITY skosns 'http://www.w3.org/2004/02/skos/core#'>
+]>
+<rdf:RDF xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:dcam="http://purl.org/dc/dcam/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+<rdf:Description rdf:about="http://purl.org/dc/elements/1.1/">
+<dcterms:title xml:lang="en-US">Dublin Core Metadata Element Set, Version 1.1</dcterms:title>
+<dcterms:publisher rdf:resource="http://purl.org/dc/aboutdcmi#DCMI"/>
+<dcterms:modified>2010-10-11</dcterms:modified>
+</rdf:Description>
+<rdf:Property rdf:about="http://purl.org/dc/elements/1.1/title">
+<rdfs:label xml:lang="en-US">Title</rdfs:label>
+<rdfs:comment xml:lang="en-US">A name given to the resource.</rdfs:comment>
+<rdfs:isDefinedBy rdf:resource="http://purl.org/dc/elements/1.1/"/>
+<dcterms:issued>1999-07-02</dcterms:issued>
+<dcterms:modified>2008-01-14</dcterms:modified>
+<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+<dcterms:hasVersion rdf:resource="http://dublincore.org/usage/terms/history/#title-006"/>
+<skos:note xml:lang="en-US">A second property with the same name as this property has been declared in the dcterms: namespace (http://purl.org/dc/terms/).  See the Introduction to the document "DCMI Metadata Terms" (http://dublincore.org/documents/dcmi-terms/) for an explanation.</skos:note>
+</rdf:Property>
+<rdf:Property rdf:about="http://purl.org/dc/elements/1.1/creator">
+<rdfs:label xml:lang="en-US">Creator</rdfs:label>
+<rdfs:comment xml:lang="en-US">An entity primarily responsible for making the resource.</rdfs:comment>
+<dcterms:description xml:lang="en-US">Examples of a Creator include a person, an organization, or a service. Typically, the name of a Creator should be used to indicate the entity.</dcterms:description>
+<rdfs:isDefinedBy rdf:resource="http://purl.org/dc/elements/1.1/"/>
+<dcterms:issued>1999-07-02</dcterms:issued>
+<dcterms:modified>2008-01-14</dcterms:modified>
+<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+<dcterms:hasVersion rdf:resource="http://dublincore.org/usage/terms/history/#creator-006"/>
+<skos:note xml:lang="en-US">A second property with the same name as this property has been declared in the dcterms: namespace (http://purl.org/dc/terms/).  See the Introduction to the document "DCMI Metadata Terms" (http://dublincore.org/documents/dcmi-terms/) for an explanation.</skos:note>
+</rdf:Property>
+<rdf:Property rdf:about="http://purl.org/dc/elements/1.1/subject">
+<rdfs:label xml:lang="en-US">Subject</rdfs:label>
+<rdfs:comment xml:lang="en-US">The topic of the resource.</rdfs:comment>
+<dcterms:description xml:lang="en-US">Typically, the subject will be represented using keywords, key phrases, or classification codes. Recommended best practice is to use a controlled vocabulary. To describe the spatial or temporal topic of the resource, use the Coverage element.</dcterms:description>
+<rdfs:isDefinedBy rdf:resource="http://purl.org/dc/elements/1.1/"/>
+<dcterms:issued>1999-07-02</dcterms:issued>
+<dcterms:modified>2008-01-14</dcterms:modified>
+<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+<dcterms:hasVersion rdf:resource="http://dublincore.org/usage/terms/history/#subject-006"/>
+<skos:note xml:lang="en-US">A second property with the same name as this property has been declared in the dcterms: namespace (http://purl.org/dc/terms/).  See the Introduction to the document "DCMI Metadata Terms" (http://dublincore.org/documents/dcmi-terms/) for an explanation.</skos:note>
+</rdf:Property>
+<rdf:Property rdf:about="http://purl.org/dc/elements/1.1/description">
+<rdfs:label xml:lang="en-US">Description</rdfs:label>
+<rdfs:comment xml:lang="en-US">An account of the resource.</rdfs:comment>
+<dcterms:description xml:lang="en-US">Description may include but is not limited to: an abstract, a table of contents, a graphical representation, or a free-text account of the resource.</dcterms:description>
+<rdfs:isDefinedBy rdf:resource="http://purl.org/dc/elements/1.1/"/>
+<dcterms:issued>1999-07-02</dcterms:issued>
+<dcterms:modified>2008-01-14</dcterms:modified>
+<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+<dcterms:hasVersion rdf:resource="http://dublincore.org/usage/terms/history/#description-006"/>
+<skos:note xml:lang="en-US">A second property with the same name as this property has been declared in the dcterms: namespace (http://purl.org/dc/terms/).  See the Introduction to the document "DCMI Metadata Terms" (http://dublincore.org/documents/dcmi-terms/) for an explanation.</skos:note>
+</rdf:Property>
+<rdf:Property rdf:about="http://purl.org/dc/elements/1.1/publisher">
+<rdfs:label xml:lang="en-US">Publisher</rdfs:label>
+<rdfs:comment xml:lang="en-US">An entity responsible for making the resource available.</rdfs:comment>
+<dcterms:description xml:lang="en-US">Examples of a Publisher include a person, an organization, or a service. Typically, the name of a Publisher should be used to indicate the entity.</dcterms:description>
+<rdfs:isDefinedBy rdf:resource="http://purl.org/dc/elements/1.1/"/>
+<dcterms:issued>1999-07-02</dcterms:issued>
+<dcterms:modified>2008-01-14</dcterms:modified>
+<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+<dcterms:hasVersion rdf:resource="http://dublincore.org/usage/terms/history/#publisher-006"/>
+<skos:note xml:lang="en-US">A second property with the same name as this property has been declared in the dcterms: namespace (http://purl.org/dc/terms/).  See the Introduction to the document "DCMI Metadata Terms" (http://dublincore.org/documents/dcmi-terms/) for an explanation.</skos:note>
+</rdf:Property>
+<rdf:Property rdf:about="http://purl.org/dc/elements/1.1/contributor">
+<rdfs:label xml:lang="en-US">Contributor</rdfs:label>
+<rdfs:comment xml:lang="en-US">An entity responsible for making contributions to the resource.</rdfs:comment>
+<dcterms:description xml:lang="en-US">Examples of a Contributor include a person, an organization, or a service. Typically, the name of a Contributor should be used to indicate the entity.</dcterms:description>
+<rdfs:isDefinedBy rdf:resource="http://purl.org/dc/elements/1.1/"/>
+<dcterms:issued>1999-07-02</dcterms:issued>
+<dcterms:modified>2008-01-14</dcterms:modified>
+<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+<dcterms:hasVersion rdf:resource="http://dublincore.org/usage/terms/history/#contributor-006"/>
+<skos:note xml:lang="en-US">A second property with the same name as this property has been declared in the dcterms: namespace (http://purl.org/dc/terms/).  See the Introduction to the document "DCMI Metadata Terms" (http://dublincore.org/documents/dcmi-terms/) for an explanation.</skos:note>
+</rdf:Property>
+<rdf:Property rdf:about="http://purl.org/dc/elements/1.1/date">
+<rdfs:label xml:lang="en-US">Date</rdfs:label>
+<rdfs:comment xml:lang="en-US">A point or period of time associated with an event in the lifecycle of the resource.</rdfs:comment>
+<dcterms:description xml:lang="en-US">Date may be used to express temporal information at any level of granularity.  Recommended best practice is to use an encoding scheme, such as the W3CDTF profile of ISO 8601 [W3CDTF].</dcterms:description>
+<rdfs:isDefinedBy rdf:resource="http://purl.org/dc/elements/1.1/"/>
+<dcterms:issued>1999-07-02</dcterms:issued>
+<dcterms:modified>2008-01-14</dcterms:modified>
+<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+<dcterms:hasVersion rdf:resource="http://dublincore.org/usage/terms/history/#date-006"/>
+<skos:note xml:lang="en-US">A second property with the same name as this property has been declared in the dcterms: namespace (http://purl.org/dc/terms/).  See the Introduction to the document "DCMI Metadata Terms" (http://dublincore.org/documents/dcmi-terms/) for an explanation.</skos:note>
+</rdf:Property>
+<rdf:Property rdf:about="http://purl.org/dc/elements/1.1/type">
+<rdfs:label xml:lang="en-US">Type</rdfs:label>
+<rdfs:comment xml:lang="en-US">The nature or genre of the resource.</rdfs:comment>
+<dcterms:description xml:lang="en-US">Recommended best practice is to use a controlled vocabulary such as the DCMI Type Vocabulary [DCMITYPE]. To describe the file format, physical medium, or dimensions of the resource, use the Format element.</dcterms:description>
+<rdfs:isDefinedBy rdf:resource="http://purl.org/dc/elements/1.1/"/>
+<dcterms:issued>1999-07-02</dcterms:issued>
+<dcterms:modified>2008-01-14</dcterms:modified>
+<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+<dcterms:hasVersion rdf:resource="http://dublincore.org/usage/terms/history/#type-006"/>
+<skos:note xml:lang="en-US">A second property with the same name as this property has been declared in the dcterms: namespace (http://purl.org/dc/terms/).  See the Introduction to the document "DCMI Metadata Terms" (http://dublincore.org/documents/dcmi-terms/) for an explanation.</skos:note>
+</rdf:Property>
+<rdf:Property rdf:about="http://purl.org/dc/elements/1.1/format">
+<rdfs:label xml:lang="en-US">Format</rdfs:label>
+<rdfs:comment xml:lang="en-US">The file format, physical medium, or dimensions of the resource.</rdfs:comment>
+<dcterms:description xml:lang="en-US">Examples of dimensions include size and duration. Recommended best practice is to use a controlled vocabulary such as the list of Internet Media Types [MIME].</dcterms:description>
+<rdfs:isDefinedBy rdf:resource="http://purl.org/dc/elements/1.1/"/>
+<dcterms:issued>1999-07-02</dcterms:issued>
+<dcterms:modified>2008-01-14</dcterms:modified>
+<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+<dcterms:hasVersion rdf:resource="http://dublincore.org/usage/terms/history/#format-007"/>
+<skos:note xml:lang="en-US">A second property with the same name as this property has been declared in the dcterms: namespace (http://purl.org/dc/terms/).  See the Introduction to the document "DCMI Metadata Terms" (http://dublincore.org/documents/dcmi-terms/) for an explanation.</skos:note>
+</rdf:Property>
+<rdf:Property rdf:about="http://purl.org/dc/elements/1.1/identifier">
+<rdfs:label xml:lang="en-US">Identifier</rdfs:label>
+<rdfs:comment xml:lang="en-US">An unambiguous reference to the resource within a given context.</rdfs:comment>
+<dcterms:description xml:lang="en-US">Recommended best practice is to identify the resource by means of a string conforming to a formal identification system. </dcterms:description>
+<rdfs:isDefinedBy rdf:resource="http://purl.org/dc/elements/1.1/"/>
+<dcterms:issued>1999-07-02</dcterms:issued>
+<dcterms:modified>2008-01-14</dcterms:modified>
+<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+<dcterms:hasVersion rdf:resource="http://dublincore.org/usage/terms/history/#identifier-006"/>
+<skos:note xml:lang="en-US">A second property with the same name as this property has been declared in the dcterms: namespace (http://purl.org/dc/terms/).  See the Introduction to the document "DCMI Metadata Terms" (http://dublincore.org/documents/dcmi-terms/) for an explanation.</skos:note>
+</rdf:Property>
+<rdf:Property rdf:about="http://purl.org/dc/elements/1.1/source">
+<rdfs:label xml:lang="en-US">Source</rdfs:label>
+<rdfs:comment xml:lang="en-US">A related resource from which the described resource is derived.</rdfs:comment>
+<dcterms:description xml:lang="en-US">The described resource may be derived from the related resource in whole or in part. Recommended best practice is to identify the related resource by means of a string conforming to a formal identification system.</dcterms:description>
+<rdfs:isDefinedBy rdf:resource="http://purl.org/dc/elements/1.1/"/>
+<dcterms:issued>1999-07-02</dcterms:issued>
+<dcterms:modified>2008-01-14</dcterms:modified>
+<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+<dcterms:hasVersion rdf:resource="http://dublincore.org/usage/terms/history/#source-006"/>
+<skos:note xml:lang="en-US">A second property with the same name as this property has been declared in the dcterms: namespace (http://purl.org/dc/terms/).  See the Introduction to the document "DCMI Metadata Terms" (http://dublincore.org/documents/dcmi-terms/) for an explanation.</skos:note>
+</rdf:Property>
+<rdf:Property rdf:about="http://purl.org/dc/elements/1.1/language">
+<rdfs:label xml:lang="en-US">Language</rdfs:label>
+<rdfs:comment xml:lang="en-US">A language of the resource.</rdfs:comment>
+<dcterms:description xml:lang="en-US">Recommended best practice is to use a controlled vocabulary such as RFC 4646 [RFC4646].</dcterms:description>
+<rdfs:isDefinedBy rdf:resource="http://purl.org/dc/elements/1.1/"/>
+<dcterms:issued>1999-07-02</dcterms:issued>
+<dcterms:modified>2008-01-14</dcterms:modified>
+<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+<dcterms:hasVersion rdf:resource="http://dublincore.org/usage/terms/history/#language-007"/>
+<rdfs:seeAlso rdf:resource="http://www.ietf.org/rfc/rfc4646.txt"/>
+<skos:note xml:lang="en-US">A second property with the same name as this property has been declared in the dcterms: namespace (http://purl.org/dc/terms/).  See the Introduction to the document "DCMI Metadata Terms" (http://dublincore.org/documents/dcmi-terms/) for an explanation.</skos:note>
+</rdf:Property>
+<rdf:Property rdf:about="http://purl.org/dc/elements/1.1/relation">
+<rdfs:label xml:lang="en-US">Relation</rdfs:label>
+<rdfs:comment xml:lang="en-US">A related resource.</rdfs:comment>
+<dcterms:description xml:lang="en-US">Recommended best practice is to identify the related resource by means of a string conforming to a formal identification system. </dcterms:description>
+<rdfs:isDefinedBy rdf:resource="http://purl.org/dc/elements/1.1/"/>
+<dcterms:issued>1999-07-02</dcterms:issued>
+<dcterms:modified>2008-01-14</dcterms:modified>
+<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+<dcterms:hasVersion rdf:resource="http://dublincore.org/usage/terms/history/#relation-006"/>
+<skos:note xml:lang="en-US">A second property with the same name as this property has been declared in the dcterms: namespace (http://purl.org/dc/terms/).  See the Introduction to the document "DCMI Metadata Terms" (http://dublincore.org/documents/dcmi-terms/) for an explanation.</skos:note>
+</rdf:Property>
+<rdf:Property rdf:about="http://purl.org/dc/elements/1.1/coverage">
+<rdfs:label xml:lang="en-US">Coverage</rdfs:label>
+<rdfs:comment xml:lang="en-US">The spatial or temporal topic of the resource, the spatial applicability of the resource, or the jurisdiction under which the resource is relevant.</rdfs:comment>
+<dcterms:description xml:lang="en-US">Spatial topic and spatial applicability may be a named place or a location specified by its geographic coordinates. Temporal topic may be a named period, date, or date range. A jurisdiction may be a named administrative entity or a geographic place to which the resource applies. Recommended best practice is to use a controlled vocabulary such as the Thesaurus of Geographic Names [TGN]. Where appropriate, named places or time periods can be used in preference to numeric identifiers such as sets of coordinates or date ranges.</dcterms:description>
+<rdfs:isDefinedBy rdf:resource="http://purl.org/dc/elements/1.1/"/>
+<dcterms:issued>1999-07-02</dcterms:issued>
+<dcterms:modified>2008-01-14</dcterms:modified>
+<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+<dcterms:hasVersion rdf:resource="http://dublincore.org/usage/terms/history/#coverage-006"/>
+<skos:note xml:lang="en-US">A second property with the same name as this property has been declared in the dcterms: namespace (http://purl.org/dc/terms/).  See the Introduction to the document "DCMI Metadata Terms" (http://dublincore.org/documents/dcmi-terms/) for an explanation.</skos:note>
+</rdf:Property>
+<rdf:Property rdf:about="http://purl.org/dc/elements/1.1/rights">
+<rdfs:label xml:lang="en-US">Rights</rdfs:label>
+<rdfs:comment xml:lang="en-US">Information about rights held in and over the resource.</rdfs:comment>
+<dcterms:description xml:lang="en-US">Typically, rights information includes a statement about various property rights associated with the resource, including intellectual property rights.</dcterms:description>
+<rdfs:isDefinedBy rdf:resource="http://purl.org/dc/elements/1.1/"/>
+<dcterms:issued>1999-07-02</dcterms:issued>
+<dcterms:modified>2008-01-14</dcterms:modified>
+<rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+<dcterms:hasVersion rdf:resource="http://dublincore.org/usage/terms/history/#rights-006"/>
+<skos:note xml:lang="en-US">A second property with the same name as this property has been declared in the dcterms: namespace (http://purl.org/dc/terms/).  See the Introduction to the document "DCMI Metadata Terms" (http://dublincore.org/documents/dcmi-terms/) for an explanation.</skos:note>
+</rdf:Property>
+</rdf:RDF>
+
+
+WARC/1.0
+WARC-Type: request
+WARC-Target-URI: http://dublincore.org/2010/10/11/dcelements.rdf
+WARC-Date: 2012-04-23T10:05:47Z
+WARC-Concurrent-To: <urn:uuid:68153f9c-52b0-4598-be38-22db850eb1c2>
+WARC-Record-ID: <urn:uuid:ee840fb1-43d3-4398-a7ff-ce34c10ffe41>
+Content-Type: application/http; msgtype=request
+Content-Length: 272
+
+GET /2010/10/11/dcelements.rdf HTTP/1.0
+User-Agent: Mozilla/5.0 (compatible; heritrix/3.1.0 +http://owark.org)
+Connection: close
+Referer: http://purl.org/dc/elements/1.1/
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: dublincore.org
+
+
+
+WARC/1.0
+WARC-Type: metadata
+WARC-Target-URI: http://dublincore.org/2010/10/11/dcelements.rdf
+WARC-Date: 2012-04-23T10:05:47Z
+WARC-Concurrent-To: <urn:uuid:68153f9c-52b0-4598-be38-22db850eb1c2>
+WARC-Record-ID: <urn:uuid:a7ecefe4-cd53-4bb7-aea2-a24d0bd21f86>
+Content-Type: application/warc-fields
+Content-Length: 234
+
+via: http://purl.org/dc/elements/1.1/
+hopsFromSeed: ER
+fetchTimeMs: 1719
+outlink: http://dublincore.org/favicon.ico I =INFERRED_MISC
+outlink: whois:dublincore.org I =INFERRED_MISC
+outlink: whois:211.185.62.34 I =INFERRED_MISC
+
+
+
+WARC/1.0
+WARC-Type: response
+WARC-Target-URI: whois://whois.pir.org/dublincore.org
+WARC-Date: 2012-04-23T10:05:48Z
+WARC-Record-ID: <urn:uuid:5e72b39f-78d0-4806-8318-e6049470fbe3>
+Content-Type: text/plain
+Content-Length: 2719
+
+Access to .ORG WHOIS information is provided to assist persons in 
+determining the contents of a domain name registration record in the 
+Public Interest Registry registry database. The data in this record is provided by 
+Public Interest Registry for informational purposes only, and Public Interest Registry does not 
+guarantee its accuracy.  This service is intended only for query-based 
+access. You agree that you will use this data only for lawful purposes 
+and that, under no circumstances will you use this data to: (a) allow, 
+enable, or otherwise support the transmission by e-mail, telephone, or 
+facsimile of mass unsolicited, commercial advertising or solicitations 
+to entities other than the data recipient's own existing customers; or 
+(b) enable high volume, automated, electronic processes that send 
+queries or data to the systems of Registry Operator, a Registrar, or 
+Afilias except as reasonably necessary to register domain names or 
+modify existing registrations. All rights reserved. Public Interest Registry reserves 
+the right to modify these terms at any time. By submitting this query, 
+you agree to abide by this policy. 
+
+Domain ID:D9251392-LROR
+Domain Name:DUBLINCORE.ORG
+Created On:19-Aug-1999 13:23:09 UTC
+Last Updated On:12-Jan-2012 18:33:36 UTC
+Expiration Date:19-Aug-2014 13:23:09 UTC
+Sponsoring Registrar:Network Solutions LLC (R63-LROR)
+Status:CLIENT TRANSFER PROHIBITED
+Registrant ID:43612149-NSI
+Registrant Name:Stuart Sutton
+Registrant Street1:4 Shenton Way
+Registrant Street2:SGX Centre 2, #17-01
+Registrant Street3:
+Registrant City:Singapore
+Registrant State/Province:
+Registrant Postal Code:068807
+Registrant Country:SG
+Registrant Phone:+65.68466733
+Registrant Phone Ext.:
+Registrant FAX:
+Registrant FAX Ext.:
+Registrant Email:sasutton@dublincore.net
+Admin ID:43612149-NSI
+Admin Name:Stuart Sutton
+Admin Street1:4 Shenton Way
+Admin Street2:SGX Centre 2, #17-01
+Admin Street3:
+Admin City:Singapore
+Admin State/Province:
+Admin Postal Code:068807
+Admin Country:SG
+Admin Phone:+65.68466733
+Admin Phone Ext.:
+Admin FAX:
+Admin FAX Ext.:
+Admin Email:sasutton@dublincore.net
+Tech ID:43612149-NSI
+Tech Name:Stuart Sutton
+Tech Street1:4 Shenton Way
+Tech Street2:SGX Centre 2, #17-01
+Tech Street3:
+Tech City:Singapore
+Tech State/Province:
+Tech Postal Code:068807
+Tech Country:SG
+Tech Phone:+65.68466733
+Tech Phone Ext.:
+Tech FAX:
+Tech FAX Ext.:
+Tech Email:sasutton@dublincore.net
+Name Server:NS.PUBNET.NE.KR
+Name Server:MAIL.NL.GO.KR
+Name Server: 
+Name Server: 
+Name Server: 
+Name Server: 
+Name Server: 
+Name Server: 
+Name Server: 
+Name Server: 
+Name Server: 
+Name Server: 
+Name Server: 
+DNSSEC:Unsigned
+
+
+
+
+WARC/1.0
+WARC-Type: response
+WARC-Target-URI: whois://whois.arin.net/z+%2B+211.185.62.34
+WARC-Date: 2012-04-23T10:05:49Z
+WARC-Record-ID: <urn:uuid:fa096887-cc5b-4cc6-86f6-e3c3dd349f6c>
+Content-Type: text/plain
+Content-Length: 1939
+
+#
+# The following results may also be obtained via:
+# http://whois.arin.net/rest/nets;q=211.185.62.34?showDetails=true&showARIN=false&ext=netref2
+#
+
+NetRange:       211.0.0.0 - 211.255.255.255
+CIDR:           211.0.0.0/8
+OriginAS:       
+NetName:        NET-211
+NetHandle:      NET-211-0-0-0-1
+Parent:         
+NetType:        Allocated to APNIC
+Comment:        This IP address range is not registered in the ARIN database.
+Comment:        For details, refer to the APNIC Whois Database via
+Comment:        WHOIS.APNIC.NET or http://wq.apnic.net/apnic-bin/whois.pl
+Comment:        ** IMPORTANT NOTE: APNIC is the Regional Internet Registry
+Comment:        for the Asia Pacific region. APNIC does not operate networks
+Comment:        using this IP address range and is not able to investigate
+Comment:        spam or abuse reports relating to these addresses. For more
+Comment:        help, refer to http://www.apnic.net/apnic-info/whois_search2/abuse-and-spamming
+RegDate:        1996-07-01
+Updated:        2010-08-02
+Ref:            http://whois.arin.net/rest/net/NET-211-0-0-0-1
+
+OrgName:        Asia Pacific Network Information Centre
+OrgId:          APNIC
+Address:        PO Box 3646
+City:           South Brisbane
+StateProv:      QLD
+PostalCode:     4101
+Country:        AU
+RegDate:        
+Updated:        2012-01-24
+Ref:            http://whois.arin.net/rest/org/APNIC
+
+ReferralServer: whois://whois.apnic.net
+
+OrgTechHandle: AWC12-ARIN
+OrgTechName:   APNIC Whois Contact
+OrgTechPhone:  +61 7 3858 3188 
+OrgTechEmail:  search-apnic-not-arin@apnic.net
+OrgTechRef:    http://whois.arin.net/rest/poc/AWC12-ARIN
+
+OrgAbuseHandle: AWC12-ARIN
+OrgAbuseName:   APNIC Whois Contact
+OrgAbusePhone:  +61 7 3858 3188 
+OrgAbuseEmail:  search-apnic-not-arin@apnic.net
+OrgAbuseRef:    http://whois.arin.net/rest/poc/AWC12-ARIN
+
+#
+# ARIN WHOIS data and services are subject to the Terms of Use
+# available at: https://www.arin.net/whois_tou.html
+#
+
+
+
+WARC/1.0
+WARC-Type: response
+WARC-Target-URI: http://dyomedea.com/favicon.ico
+WARC-Date: 2012-04-23T10:05:49Z
+WARC-Payload-Digest: sha1:F6G7ZFWRBV6NT7ATRZNMXPBY7CI3PEDT
+WARC-IP-Address: 95.142.167.137
+WARC-Record-ID: <urn:uuid:1641692f-4d08-4f40-9d7c-7ca967528e8a>
+Content-Type: application/http; msgtype=response
+Content-Length: 4181
+
+HTTP/1.1 404 Introuvable
+Date: Mon, 23 Apr 2012 10:05:49 GMT
+Server: Apache-Coyote/1.1
+Last-Modified: Mon, 23 Apr 2012 10:05:49 GMT
+Expires: Mon, 23 Apr 2012 10:05:49 GMT
+Cache-Control: post-check=0, pre-check=0
+Pragma: 
+Content-Type: application/xhtml+xml;charset=utf-8
+Content-Length: 3836
+Via: 1.0 dyomedea.com
+Connection: close
+
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr">
+ <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+   
+  <title>Dyomedea : Guide de haute technologie XML</title>
+  <link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" />
+  <meta name="DC.title" content="Dyomedea : Guide de haute technologie XML" />
+  <meta name="DC.description" content="Site internet de la sociÃ©tÃ© Dyomedea. PrÃ©sentation de ses axes stratÃ©giques : guide de haute technologie dans les domaines Internet, XML et Web SÃ©mantique." />
+  <meta name="DC.subject" content="Dyomedea, guide de haute technologie, internet, xml, web sÃ©mantique" />
+  <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
+  <meta http-equiv="content-language" content="fr" />
+  <meta name="robots" content="index,follow" />
+  <link rel="stylesheet" href="/styles/screen.css" type="text/css" media="screen" />
+  <link rel="stylesheet" href="/styles/standard.css" type="text/css" media="all" />
+  <link rel="stylesheet" href="/styles/print.css" type="text/css" media="print" />
+  <meta name="DC.subject" content="error 404" />
+ </head>
+ <body>
+  <div id="divContenant">
+   <div id="divTetiere">
+    <h1><a href="/"><img src="/images/logo520.png" alt="DYOMEDEA : Guide de haute technologie" id="debutTet" /><img src="/images/bout.png" alt="..." id="finTet" /></a></h1>
+   </div>
+   <div id="divMenu">
+    <h1 class="hide">Menu</h1>
+    <ul>
+     <li><a href="/dyomedea/" title="PrÃ©sentation de la sociÃ©tÃ© &#34;Dyomedea&#34; et de ses axes stratÃ©giques : Internet, XML, Web SÃ©mantique.">sociÃ©tÃ©</a></li>
+     <li><a href="/conseil/" title="PrÃ©sentation de l'activitÃ© de conseil de la sociÃ©tÃ© Dyomedea.">conseil</a></li>
+     <li><a href="/formation/" title="ActivitÃ© de formation XML de la sociÃ©tÃ© Dyomedea.">formations</a></li>
+     <li><a href="/communication/" title="PrÃ©sentation des activtÃ©s de communication de Dyomedea.">communication</a></li>
+     <li><a href="/projets/" title="Description des projets dans lesquels Dyomedea est impliquÃ©.">projets</a></li>
+     <li><a href="/english/favicon.ico" title="English version">[en]</a></li>
+    </ul>
+   </div>
+   <div id="divContenu">
+    <hr />
+    <h1 class="hide">Dyomedea : Guide de haute technologie XML</h1>
+    <div id="divEncadre">Â </div>
+    <div id="divArticle">
+     
+     <h2>Page inexistante (erreur 404)</h2>
+     
+     <h3>La page que vous avez demandÃ© n'existe pas sur le site http://dyomedea.com</h3>
+     
+     <p>Si vous pensez qu'il s'agit d'une erreur liÃ©e au site http://dyomedea.com, merci de
+      la signaler Ã  <a href="mailto:vdv@dyomedea.com">Eric van der Vlist</a>.
+     </p>
+     
+     <p>Sinon, si vous obtenez cette erreur aprÃ¨s avoir suivi un lien, merci de la signaler Ã 
+      l'auteur de la page contenant le lien erronÃ©.
+     </p>
+     
+    </div>
+   </div>
+   <hr /><span class="about"><a href="/help/" title="Ã€ propos de ce site">Ã  propos</a>Â <a href="/map/" title="Plan du site">plan</a></span><span class="validations"><a href="http://validator.w3.org/check/referer" title="VÃ©rifiez la validitÃ© du code XHTML 1.1 de cette page">xhtml 1.1</a>
+    Â <a href="http://jigsaw.w3.org/css-validator/check/referer" title="VÃ©rifiez la validitÃ© des styles CSS 2.0 de cette page">css 2.0</a></span><h1 class="hide">Mentions LÃ©gales</h1>
+   <div id="divPiedPage"><span class="mentions"><q>Dyomedea</q> et <q>XMLfr</q> sont des marques
+     dÃ©posÃ©es. Tous droits rÃ©servÃ©s. Â© Dyomedea, 1999-2010<br />Dyomedea, SARL au
+     capital de 10 000 â‚¬ - RCS: Paris B 422 260 208 - 75, rue de Lourmel 75015
+     Paris.</span></div><br />Â <br /></div>
+ </body>
+</html>
+
+WARC/1.0
+WARC-Type: request
+WARC-Target-URI: http://dyomedea.com/favicon.ico
+WARC-Date: 2012-04-23T10:05:49Z
+WARC-Concurrent-To: <urn:uuid:1641692f-4d08-4f40-9d7c-7ca967528e8a>
+WARC-Record-ID: <urn:uuid:db079b73-bcb7-4ff4-b5ec-8081f4bb1142>
+Content-Type: application/http; msgtype=request
+Content-Length: 244
+
+GET /favicon.ico HTTP/1.0
+User-Agent: Mozilla/5.0 (compatible; heritrix/3.1.0 +http://owark.org)
+Connection: close
+Referer: http://dyomedea.com/
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: dyomedea.com
+
+
+
+WARC/1.0
+WARC-Type: metadata
+WARC-Target-URI: http://dyomedea.com/favicon.ico
+WARC-Date: 2012-04-23T10:05:49Z
+WARC-Concurrent-To: <urn:uuid:1641692f-4d08-4f40-9d7c-7ca967528e8a>
+WARC-Record-ID: <urn:uuid:53e30e4f-39cb-4272-8a99-7727283767bd>
+Content-Type: application/warc-fields
+Content-Length: 1190
+
+via: http://dyomedea.com/
+hopsFromSeed: I
+fetchTimeMs: 82
+outlink: http://dyomedea.com/styles/print.css E link/@href
+outlink: mailto:vdv@dyomedea.com L a/@href
+outlink: http://dyomedea.com/projets/ L a/@href
+outlink: http://dyomedea.com/ L a/@href
+outlink: http://dyomedea.com/help/ L a/@href
+outlink: http://dyomedea.com/communication/ L a/@href
+outlink: http://dyomedea.com/images/logo520.png E img/@src
+outlink: http://dyomedea.com/map/ L a/@href
+outlink: whois:95.142.167.137 I =INFERRED_MISC
+outlink: http://dyomedea.com/styles/standard.css E link/@href
+outlink: http://dyomedea.com/formation/ L a/@href
+outlink: http://validator.w3.org/check/referer L a/@href
+outlink: http://dyomedea.com/english/favicon.ico L a/@href
+outlink: http://purl.org/dc/elements/1.1/ E link/@href
+outlink: whois:dyomedea.com I =INFERRED_MISC
+outlink: http://dyomedea.com/styles/screen.css E link/@href
+outlink: http://dyomedea.com/favicon.ico I =INFERRED_MISC
+outlink: http://dyomedea.com/images/bout.png E img/@src
+outlink: http://jigsaw.w3.org/css-validator/check/referer L a/@href
+outlink: http://dyomedea.com/conseil/ L a/@href
+outlink: http://dyomedea.com/dyomedea/ L a/@href
+
+
+
+WARC/1.0
+WARC-Type: response
+WARC-Target-URI: whois://whois.apnic.net/211.185.62.34
+WARC-Date: 2012-04-23T10:05:49Z
+WARC-Record-ID: <urn:uuid:2d08681a-70b9-4de3-a799-be9869d901ec>
+Content-Type: text/plain
+Content-Length: 1820
+
+% [whois.apnic.net node-5]
+% Whois data copyright terms    http://www.apnic.net/db/dbcopyright.html
+
+inetnum:        211.172.0.0 - 211.199.255.255
+netname:        KRNIC-KR
+descr:          KRNIC
+descr:          Korea Network Information Center
+country:        KR
+admin-c:        HM127-AP
+tech-c:         HM127-AP
+remarks:        ******************************************
+remarks:        KRNIC is the National Internet Registry
+remarks:        in Korea under APNIC. If you would like to
+remarks:        find assignment information in detail
+remarks:        please refer to the KRNIC Whois DB
+remarks:        http://whois.nic.or.kr/english/index.html
+remarks:        ******************************************
+mnt-by:         APNIC-HM
+mnt-lower:      MNT-KRNIC-AP
+changed:        hostmaster@apnic.net 20000607
+changed:        hostmaster@apnic.net 20010606
+status:         ALLOCATED PORTABLE
+source:         APNIC
+
+person:         Host Master
+address:        11F, KTF B/D, 1321-11, Seocho2-Dong, Seocho-Gu,
+address:        Seoul, Korea, 137-857
+country:        KR
+phone:          +82-2-2186-4500
+fax-no:         +82-2-2186-4496
+e-mail:         hostmaster@nic.or.kr
+nic-hdl:        HM127-AP
+mnt-by:         MNT-KRNIC-AP
+changed:        hostmaster@nic.or.kr 20020507
+source:         APNIC
+
+inetnum:        211.184.0.0 - 211.185.255.255
+netname:        PUBNET-KR
+descr:          Korea Telecom-PUBNET
+country:        KR
+admin-c:        IA30-KR
+tech-c:         IM30-KR
+status:         ALLOCATED PORTABLE
+mnt-by:         MNT-KRNIC-AP
+mnt-irt:        IRT-KRNIC-KR
+remarks:        This information has been partially mirrored by APNIC from
+remarks:        KRNIC. To obtain more specific information, please use the
+remarks:        KRNIC whois server at whois.krnic.net.
+changed:        hostmaster@nic.or.kr
+source:         KRNIC
+
+
+
+
+WARC/1.0
+WARC-Type: response
+WARC-Target-URI: http://dyomedea.com/images/bout.png
+WARC-Date: 2012-04-23T10:05:52Z
+WARC-Payload-Digest: sha1:GSXQTUF5CX2FQDSYWYXBENCD47RJDXP2
+WARC-IP-Address: 95.142.167.137
+WARC-Record-ID: <urn:uuid:541aa2ff-ecd5-454d-a299-38b211e855b8>
+Content-Type: application/http; msgtype=response
+Content-Length: 524
+
+HTTP/1.1 200 OK
+Date: Mon, 23 Apr 2012 10:05:52 GMT
+Server: Apache-Coyote/1.1
+Last-Modified: Mon, 27 Apr 2009 21:16:21 GMT
+Expires: Fri, 10 Aug 2012 13:46:49 GMT
+Cache-Control: public
+Pragma: 
+Content-Type: image/png
+Content-Length: 234
+Via: 1.0 dyomedea.com
+Connection: close
+
+‰PNG
+
+   IHDR   -   i   ™ZÒ   gAMA  ÖØÔOX2   tEXtSoftware Adobe ImageReadyqÉe<   PLTE0F}ÍÍÍÿÿÿW‚¡(Y¯—   tRNSÿÿÿ @*©ô   TIDATxÚìÔ± „áâıßYB4Î¤$ùom¾á¬Dbh4F£Ñh4úF[?—èršÚ5ktéÓĞI£KŸÎt¬	½éısïİWÌ?ˆF?ĞU€ @1êwª    IEND®B`‚
+
+WARC/1.0
+WARC-Type: request
+WARC-Target-URI: http://dyomedea.com/images/bout.png
+WARC-Date: 2012-04-23T10:05:52Z
+WARC-Concurrent-To: <urn:uuid:541aa2ff-ecd5-454d-a299-38b211e855b8>
+WARC-Record-ID: <urn:uuid:825c4e0a-e041-4a8a-a2d4-535779272b23>
+Content-Type: application/http; msgtype=request
+Content-Length: 248
+
+GET /images/bout.png HTTP/1.0
+User-Agent: Mozilla/5.0 (compatible; heritrix/3.1.0 +http://owark.org)
+Connection: close
+Referer: http://dyomedea.com/
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: dyomedea.com
+
+
+
+WARC/1.0
+WARC-Type: metadata
+WARC-Target-URI: http://dyomedea.com/images/bout.png
+WARC-Date: 2012-04-23T10:05:52Z
+WARC-Concurrent-To: <urn:uuid:541aa2ff-ecd5-454d-a299-38b211e855b8>
+WARC-Record-ID: <urn:uuid:7dab17b5-2d7e-436b-b2c2-bb41947aac84>
+Content-Type: application/warc-fields
+Content-Length: 216
+
+via: http://dyomedea.com/
+hopsFromSeed: E
+fetchTimeMs: 54
+outlink: whois:dyomedea.com I =INFERRED_MISC
+outlink: http://dyomedea.com/favicon.ico I =INFERRED_MISC
+outlink: whois:95.142.167.137 I =INFERRED_MISC
+
+
+
+WARC/1.0
+WARC-Type: response
+WARC-Target-URI: http://dyomedea.com/images/puce.png
+WARC-Date: 2012-04-23T10:05:55Z
+WARC-Payload-Digest: sha1:OBN6LKMHMTVMIM2F4NGXCLGW46RL7WG5
+WARC-IP-Address: 95.142.167.137
+WARC-Record-ID: <urn:uuid:2ead2c73-61fc-40bb-bc60-7ce676fe9131>
+Content-Type: application/http; msgtype=response
+Content-Length: 447
+
+HTTP/1.1 200 OK
+Date: Mon, 23 Apr 2012 10:05:55 GMT
+Server: Apache-Coyote/1.1
+Last-Modified: Mon, 27 Apr 2009 21:16:21 GMT
+Expires: Fri, 10 Aug 2012 13:46:52 GMT
+Cache-Control: public
+Pragma: 
+Content-Type: image/png
+Content-Length: 157
+Via: 1.0 dyomedea.com
+Connection: close
+
+‰PNG
+
+   IHDR         óÑN¹   gAMA  ÖØÔOX2   tEXtSoftware Adobe ImageReadyqÉe<   PLTEÿÿÿÿÄ.˜ø   IDATxÚb```ddd€ 4# ÈŠPi€   #Ëø>B    IEND®B`‚
+
+WARC/1.0
+WARC-Type: request
+WARC-Target-URI: http://dyomedea.com/images/puce.png
+WARC-Date: 2012-04-23T10:05:55Z
+WARC-Concurrent-To: <urn:uuid:2ead2c73-61fc-40bb-bc60-7ce676fe9131>
+WARC-Record-ID: <urn:uuid:74d7575a-3d3f-4591-9faf-bb471f9b4d97>
+Content-Type: application/http; msgtype=request
+Content-Length: 267
+
+GET /images/puce.png HTTP/1.0
+User-Agent: Mozilla/5.0 (compatible; heritrix/3.1.0 +http://owark.org)
+Connection: close
+Referer: http://dyomedea.com/styles/standard.css
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: dyomedea.com
+
+
+
+WARC/1.0
+WARC-Type: metadata
+WARC-Target-URI: http://dyomedea.com/images/puce.png
+WARC-Date: 2012-04-23T10:05:55Z
+WARC-Concurrent-To: <urn:uuid:2ead2c73-61fc-40bb-bc60-7ce676fe9131>
+WARC-Record-ID: <urn:uuid:fbec1f8a-437e-4a43-bdb2-b63bae47d63a>
+Content-Type: application/warc-fields
+Content-Length: 236
+
+via: http://dyomedea.com/styles/standard.css
+hopsFromSeed: EE
+fetchTimeMs: 63
+outlink: whois:95.142.167.137 I =INFERRED_MISC
+outlink: http://dyomedea.com/favicon.ico I =INFERRED_MISC
+outlink: whois:dyomedea.com I =INFERRED_MISC
+
+
+
+WARC/1.0
+WARC-Type: response
+WARC-Target-URI: http://dyomedea.com/images/fd-menu.png
+WARC-Date: 2012-04-23T10:05:58Z
+WARC-Payload-Digest: sha1:XHSKLTIZIED73A767LG5T73MDWNML4TY
+WARC-IP-Address: 95.142.167.137
+WARC-Record-ID: <urn:uuid:a5725316-a25e-469b-a1cd-174015ffcbb4>
+Content-Type: application/http; msgtype=response
+Content-Length: 437
+
+HTTP/1.1 200 OK
+Date: Mon, 23 Apr 2012 10:05:58 GMT
+Server: Apache-Coyote/1.1
+Last-Modified: Mon, 27 Apr 2009 21:16:21 GMT
+Expires: Fri, 10 Aug 2012 13:46:56 GMT
+Cache-Control: public
+Pragma: 
+Content-Type: image/png
+Content-Length: 147
+Via: 1.0 dyomedea.com
+Connection: close
+
+‰PNG
+
+   IHDR         (-S   gAMA  ÖØÔOX2   tEXtSoftware Adobe ImageReadyqÉe<   PLTEio}0F}¤W   IDATxÚb`D`D© 0 IP IĞ,İ    IEND®B`‚
+
+WARC/1.0
+WARC-Type: request
+WARC-Target-URI: http://dyomedea.com/images/fd-menu.png
+WARC-Date: 2012-04-23T10:05:58Z
+WARC-Concurrent-To: <urn:uuid:a5725316-a25e-469b-a1cd-174015ffcbb4>
+WARC-Record-ID: <urn:uuid:eb8efd3c-0318-4eea-bc02-1358f7d58f6a>
+Content-Type: application/http; msgtype=request
+Content-Length: 268
+
+GET /images/fd-menu.png HTTP/1.0
+User-Agent: Mozilla/5.0 (compatible; heritrix/3.1.0 +http://owark.org)
+Connection: close
+Referer: http://dyomedea.com/styles/screen.css
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: dyomedea.com
+
+
+
+WARC/1.0
+WARC-Type: metadata
+WARC-Target-URI: http://dyomedea.com/images/fd-menu.png
+WARC-Date: 2012-04-23T10:05:58Z
+WARC-Concurrent-To: <urn:uuid:a5725316-a25e-469b-a1cd-174015ffcbb4>
+WARC-Record-ID: <urn:uuid:11db81e7-0661-4323-b903-b1f695371ca5>
+Content-Type: application/warc-fields
+Content-Length: 234
+
+via: http://dyomedea.com/styles/screen.css
+hopsFromSeed: EE
+fetchTimeMs: 59
+outlink: whois:dyomedea.com I =INFERRED_MISC
+outlink: whois:95.142.167.137 I =INFERRED_MISC
+outlink: http://dyomedea.com/favicon.ico I =INFERRED_MISC
+
+
+
+WARC/1.0
+WARC-Type: response
+WARC-Target-URI: http://dublincore.org/favicon.ico
+WARC-Date: 2012-04-23T10:05:57Z
+WARC-Payload-Digest: sha1:HYZOZGARLB7ATJSLRIGZN2UEORPIZXJH
+WARC-IP-Address: 211.185.62.34
+WARC-Record-ID: <urn:uuid:454588d8-8fec-4349-969e-6f3bea3413b9>
+Content-Type: application/http; msgtype=response
+Content-Length: 4448
+
+HTTP/1.1 200 OK
+Date: Mon, 23 Apr 2012 08:51:33 GMT
+Server: Apache/2.0.59 (Unix) DAV/2 mod_ssl/2.0.59 OpenSSL/0.9.8g SVN/1.4.3
+Last-Modified: Mon, 30 Jun 2008 03:54:54 GMT
+ETag: "7f1df-1036-38dddf80"
+Accept-Ranges: bytes
+Content-Length: 4150
+Content-Type: image/x-icon
+Connection: close
+
+          ¨  &       h  Î  (       @                             fÿ fÿ fÿ fÿ fÿ fÿ fÿ fÿ fÿ eÿ eş fş eş fş eş eş eÿ fş eş fş eş eş fş fÿ fÿ fÿ fÿ fÿ fÿ fÿ fÿ fÿ fÿ fÿ fÿ fÿ fÿ fÿ fÿ fÿ fÿ eş eş eş3„şT˜şjş fş fşjşT˜ş4…ıfş eş fş fÿ fÿ fÿ fÿ fÿ fÿ fÿ fÿ fÿ fÿ fÿ fÿ fÿ fÿ fÿ fÿ fÿ fÿ fş fşsşéñşışşj¦şeş fşi¤şıışéòÿtş eş fş fÿ fÿ fÿ fÿ fÿ fÿ fÿ fÿ fÿ fÿ fÿ fÿ fÿ fÿ fÿ fşxş"zş fş fımşÂÚşíôşFş fş eşEşìôşÃÛşmş fş fş!zşxş fş fş fÿ fÿ fÿ fÿ fÿ fÿ fÿ fÿ fÿ fÿ fÿ&|şñöşóøş-€ş eş fşkşqş fş eş eşfşqşjş fş fş,€şó÷şğöş'}ş eÿ fÿ fÿ fÿ fÿ fÿ fÿ fÿ fÿ fÿ fÿ fÿ)~şò÷şôøş1„ş eş fş eş	lşmş gıfşmş	kş fş fş eş1ƒşôøşò÷ş,ş eş fÿ fÿ fÿ fÿ fÿ eş fş fş fÿ eş eÿfş-ş0ƒş fş fş eşqşÇİşãîş9ˆş8‡şãïşÇİşqş fş eşeş/‚ş.ı fş fş eş eş eÿ fÿ fÿ fş fş fşpş%{şgş fş eş eşvı„µşFş${şéòşûüşWšıWšşûüşèòş$|şEş„µşvş fÿ fÿ fÿgş%|şpş eş fÿ fÿ eş eşnşÂÚşöùş\ş eş fş fş»şışşáíşmş@ŒşW™şişjşWšş@Œınşáíşşşÿ»ş fÿ fÿ fÿ[şõùşÃÛşmş fÿ fÿ eş eşpşÓäşúüşn¨ş eşhş
+kşFşÖæş¼şgşfşpşuşuşoşgşgş¼şÖçşGş	lşhş eÿl¦şùûşÔåşpş fÿ fÿ fş fş fş%|şI‘şjşhşÄşÌàş1ƒşjşfş&|ş–ÀşŞëşôøşôøşŞëş—Àş&|şfşjş0ƒşÌàşŸÅşhşjşI’ş&|ş fş eş eş eş fş fş fş fı eşqıôøşşÿşs«ş eşJ’şçñşşşşışşşşşşşşşşşışşèñşL“şeşt«şşşşôøşpş fş fş eş eş fş fş eş fÿjş fş fş fşgşXšş³şpş+şèñşşşşşşşşşşıÿşşşşşşşışşşşşéòş-€şpş³şWšşfş fş fş eşjş eş eş eşl¦şçğş{¯şfşhşN•şU™şişhş¥Éşşşşışşşşşşÿşşÿÿÿÿÿÿşÿşşşşşÿşşş§ÊşhşişU˜şO•şhşfşz®şçñşn§ş eş fş®Ïşşşş¿Ùşiş1‚şôøşùûşGştşãîşşşşşşşşÿşÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿşşşşşşäîştşFşùûşóøş1ƒıjş¾Øşşşş°Ïş fş eş${ş²ş,€ş fşvşÈŞşÒäş'}ş"zşõùşşşşşşşşşşÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿşşşşşşõùş"zş'|şÒäşÉŞşvş fş+ş²ş${ÿ fş eı fı eş fş eş fşoşqş fş yşñ÷şışşşşşÿşşÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿşşşşşşó÷ş yş fşpşoş eş eş eş eş eş fş eı fş fş fş eşfşp©şÍáşN”şnşÑãşışşşşşşÿşÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿşşşşşşÒäşnşM”şÍáşq©şfş fş eş fş fş fş eşfşU˜şn¨ş
+lşjşÓäşşşş§Éşgşx­şüışşşşşÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿşşşüşız®ıfş¦ÊşşşşÓåşjş
+kşn¨şT™ş fş fş fş"zşõùşşşş]ş fşGş˜Áş-ş fşlş¹ÔşşşşşşşşşşşşşşşşşşşşşşşşşºÕşlş fş,€ş—ÁşGş eş[œşşşşöùş$|ş fş eşlş½×şÙèş/ş eş eşgşb ş§Ëş,€şrş¤Èşöùşşşşşşşşşşşşş÷úş¦Éşsş,€ş¨Ëıb şfş eş fş-€şØèı½×şmş eş eş eşgşjş fş fş eşqşÜêşşşş»ş fşgş9ˆş‰¸şªËşªÌş‰¸ş:‰şgş fş»şşşşİêşqş fş eş eşiÿhş eş eş fş fş fş eş eşhşgşgşn§ş·Óş4…şEş‹¹ş xş fşhşgşfşxş‹¹şEş3„ş·Óşm¨şgşhşhş fş eş fş fş fş fÿ fÿ fÿ eşuş³Òş¢Èş	jş fşeşişßëşşşş–Àşrş¦Éş¤Èşqş•Àşşşşßëşiş fş eş	jş¡ÇşµÒşvş eş eş fÿ fÿ fÿ fÿ fÿ eşT™şışşùûş/‚ş eş eşfş…¶şÕæşI’şFşûüşùüşBşJ’şÕåş†¶şfş eş eş,€şúûşşşşV™ş eş eş fÿ fÿ fÿ fÿ fÿ eşoş¼ş}±şhş eş eş eşfşiş eşmş€³ş²şlş fşhş eş eş eş eşhş|°ş¼şpş fş fş fÿ fÿ fÿ fÿ fÿ eş eşfşfş eş fş7‡ş–Àş7†ş eş fş fş fş eş eş fş eş6†ş—Àş8‡ş eş fş eşfş fş fÿ fÿ fÿ fÿ fÿ fÿ fÿ eş eş fş fş fş eş¼Öşşşş¿Øş eş fşhşY›şY›şhş fş eş½×şşşş½Øş fş fş fş fş eş fş fÿ fÿ fÿ fÿ fÿ fÿ fş fş fş eş eş eşb¡şĞãşc¢ş eş fşAŒşøúşøûşAŒş fş fşa¡şÑãıd¢ş eş fş fş fş fÿ fÿ fÿ fÿ fÿ fÿ fÿ fÿ fÿ fÿ fÿ fÿ fÿ fÿ fşiş fş fş fş!yşÓäşÓäş"yş eş eş fşiş fş fÿ fÿ fÿ fÿ fÿ fÿ fÿ fÿ fÿ fÿ fÿ fÿ fÿ fÿ fÿ fÿ fÿ fÿ eş fş fş fş fşfşhşhş fş eş fş fş fş fş fÿ fÿ fÿ fÿ fÿ fÿ fÿ fÿ fÿ fÿ fÿ fÿ fÿ fÿ fÿ fÿ fÿ fÿ fş fş fş eÿ eş fş eş fş eş eş eş eş fş eş fÿ fÿ fÿ fÿ fÿ fÿ fÿ fÿ fÿ                                                                                                                                (                                    fÿ fÿ fÿ fÿ eş eş"zşgşgş"zş eş fş fÿ fÿ fÿ fÿ fÿ fÿ fÿjşkş	kşåïş,€ş+şæïş	kşkşjş fş fÿ fÿ fÿ fÿ fÿŒºş‘½ş fş	kşhşgş	kş fş‘½şºş eş fÿ fÿ fşhş
+kşlşqş3„şz¯ş›Ãş›Ãşz¯ş2„şqşlş
+lşhş fÿ eşm§ş¯Îşfş7‡şÑãşrş"zş#zşrşÑãş7‡şfş­Îşm§ş fÿ fş	kşrşj¥ş›Ãşrş¨Ëşóøşóøş¨Ëşrş›Ãşj¥şrş	kş fşvşZœşfş?‹ş'}ş®Îşşşşşşşşşşşşş¯Ïş'}ş?‹şfşZ›şvş5…şšÂşrşâíş)şõùşşşşÿÿÿÿÿÿşşşõùş*~şâîşrşšÂş5†ş eş eş fşXšşxşïöşşşşÿÿÿÿÿÿşşşğöşxşXšş fş eş fş	kş­Îşvş¬Íş5…ş»şşşşşşşşşşşşş»ş5…ş¬Íşvş­Îş	kşgşh¤şlşiş¹Õş4…şu¬şÌàşÌàşv­ş4…ş¹Õşhşlşh¤şgş fş fş4…ş,€şI‘şWšş¼ş/‚ş/‚ş¼şWšşI’ş,€ş5…ş eş fş fÿ eş|°şk¦ş eş"zşI‘şs«şqªşI‘ş"zş eşj¥ş}±ş eş fÿ fÿ eş eş fş=Šş£Çş eştşsş fş¢Çş=Šş fş fş fş fÿ fÿ fş fş eştşO•ş fş‹¹ş‹¹ş fşN•şuş fş fş fÿ fÿ fÿ fÿ fÿ fÿ fş fş fşfşfş eş fş fş fÿ fÿ fÿ fÿ                                                                
+
+WARC/1.0
+WARC-Type: request
+WARC-Target-URI: http://dublincore.org/favicon.ico
+WARC-Date: 2012-04-23T10:05:57Z
+WARC-Concurrent-To: <urn:uuid:454588d8-8fec-4349-969e-6f3bea3413b9>
+WARC-Record-ID: <urn:uuid:a0e9a78f-ef18-4ba5-bce6-020bdfb4f43a>
+Content-Type: application/http; msgtype=request
+Content-Length: 273
+
+GET /favicon.ico HTTP/1.0
+User-Agent: Mozilla/5.0 (compatible; heritrix/3.1.0 +http://owark.org)
+Connection: close
+Referer: http://dublincore.org/2010/10/11/dcelements.rdf
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: dublincore.org
+
+
+
+WARC/1.0
+WARC-Type: metadata
+WARC-Target-URI: http://dublincore.org/favicon.ico
+WARC-Date: 2012-04-23T10:05:57Z
+WARC-Concurrent-To: <urn:uuid:454588d8-8fec-4349-969e-6f3bea3413b9>
+WARC-Record-ID: <urn:uuid:528a25b7-344e-4e1a-9ae5-320a58495a17>
+Content-Type: application/warc-fields
+Content-Length: 250
+
+via: http://dublincore.org/2010/10/11/dcelements.rdf
+hopsFromSeed: ERI
+fetchTimeMs: 1265
+outlink: whois:211.185.62.34 I =INFERRED_MISC
+outlink: whois:dublincore.org I =INFERRED_MISC
+outlink: http://dublincore.org/favicon.ico I =INFERRED_MISC
+
+
+
+WARC/1.0
+WARC-Type: response
+WARC-Target-URI: http://dyomedea.com/images/fd-tetiere.png
+WARC-Date: 2012-04-23T10:06:01Z
+WARC-Payload-Digest: sha1:HLIXQNEZC6SVR57GUKHOYCPDZ6I3A46S
+WARC-IP-Address: 95.142.167.137
+WARC-Record-ID: <urn:uuid:dc56cd51-2f4f-4d75-9fe1-8df4c2fbe694>
+Content-Type: application/http; msgtype=response
+Content-Length: 488
+
+HTTP/1.1 200 OK
+Date: Mon, 23 Apr 2012 10:06:01 GMT
+Server: Apache-Coyote/1.1
+Last-Modified: Mon, 27 Apr 2009 21:16:21 GMT
+Expires: Fri, 10 Aug 2012 13:46:59 GMT
+Cache-Control: public
+Pragma: 
+Content-Type: image/png
+Content-Length: 198
+Via: 1.0 dyomedea.com
+Connection: close
+
+‰PNG
+
+   IHDR      i    SZ   gAMA  ÖØÔOX2   tEXtSoftware Adobe ImageReadyqÉe<   PLTE0F}ÍÍÍÿÿÿW‚¡(Y¯—   tRNSÿÿÿ @*©ô   0IDATxÚb`F££££D
+` &4ÀÀˆ00´ŒšªŒ¦BJ  2QqHwmÃ    IEND®B`‚
+
+WARC/1.0
+WARC-Type: request
+WARC-Target-URI: http://dyomedea.com/images/fd-tetiere.png
+WARC-Date: 2012-04-23T10:06:01Z
+WARC-Concurrent-To: <urn:uuid:dc56cd51-2f4f-4d75-9fe1-8df4c2fbe694>
+WARC-Record-ID: <urn:uuid:88bea53d-f883-4e7b-9f1a-ed2331975fc2>
+Content-Type: application/http; msgtype=request
+Content-Length: 271
+
+GET /images/fd-tetiere.png HTTP/1.0
+User-Agent: Mozilla/5.0 (compatible; heritrix/3.1.0 +http://owark.org)
+Connection: close
+Referer: http://dyomedea.com/styles/screen.css
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Host: dyomedea.com
+
+
+
+WARC/1.0
+WARC-Type: metadata
+WARC-Target-URI: http://dyomedea.com/images/fd-tetiere.png
+WARC-Date: 2012-04-23T10:06:01Z
+WARC-Concurrent-To: <urn:uuid:dc56cd51-2f4f-4d75-9fe1-8df4c2fbe694>
+WARC-Record-ID: <urn:uuid:5e980eab-b536-4295-a51d-cddaf137a8a0>
+Content-Type: application/warc-fields
+Content-Length: 234
+
+via: http://dyomedea.com/styles/screen.css
+hopsFromSeed: EE
+fetchTimeMs: 60
+outlink: http://dyomedea.com/favicon.ico I =INFERRED_MISC
+outlink: whois:95.142.167.137 I =INFERRED_MISC
+outlink: whois:dyomedea.com I =INFERRED_MISC
+
+
+
