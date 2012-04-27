@@ -93,12 +93,31 @@
             <p:output name="data" id="index-entry" debug="index-entry"/>
         </p:processor>
         <p:choose href="#index-entry">
-            <p:when test="/entry/embeds">
+            <p:when test="/resource/embeds">
                 <!-- The resource has embedded content and must be rewritten -->
-                <p:processor name="oxf:identity">
-                    <p:input name="data" href="current()#xpointer(/record/content/document)"/>
-                    <p:output name="data" id="document"/>
+
+                <!-- Call the corresponding pipeline -->
+                <p:processor name="oxf:url-generator">
+                    <p:input name="config" transform="oxf:xslt" href="#index-entry">
+                        <config xsl:version="2.0">
+                            <url>
+                                <xsl:text>oxf:/actions/mediatypes/warc-</xsl:text>
+                                <xsl:value-of select="/resource/type"/>
+                                <xsl:text>.xpl</xsl:text>
+                            </url>
+                        </config>
+                    </p:input>
+                    <p:output name="data" id="pipeline"/>
                 </p:processor>
+
+                <p:processor name="oxf:pipeline">
+                    <p:input name="config" href="#pipeline"/>
+                    <p:input name="record" href="current()"/>
+                    <p:input name="index" href="#index"/>
+                    <p:input name="index-entry" href="#index-entry"/>
+                    <p:output name="rewritten" id="document" debug="rewritten"/>
+                </p:processor>
+
             </p:when>
             <p:otherwise>
                 <!-- The resource can be stored  -->
@@ -123,10 +142,6 @@
         </p:processor>
     </p:for-each>
 
-    <p:processor name="oxf:null-serializer">
-        <p:input name="data" href="#loop" debug="loop"/>
-    </p:processor>
-
 
 
     <!-- Store the WARC in a temp file -->
@@ -141,30 +156,16 @@
     </p:processor>
 
     <p:processor name="oxf:zip">
-        <p:input name="data" transform="oxf:unsafe-xslt" href="aggregate('root', #warc-location)">
+        <p:input name="data" transform="oxf:unsafe-xslt" href="aggregate('root', #warc-location, #loop)">
             <files xsl:version="2.0" file-name="archive.zip">
                 <file name="archive.warc">
                     <xsl:value-of select="/root/url"/>
                 </file>
-                <!--<xsl:for-each select="/root/files/file[url]">
-                    <xsl:choose>
-                        <xsl:when test="position()=1">
-                            <!-\- TODO: support non HTML documents... -\->
-                            <file name="rewritten/index.html">
-                                <xsl:value-of select="url"/>
-                            </file>
-                        </xsl:when>
-                        <xsl:otherwise>
-                            <xsl:variable name="tokens" select="tokenize(archive/@url, '/')"/>
-                            <xsl:variable name="last-token" select="$tokens[last()]"/>
-                            <xsl:variable name="tokens2" select="tokenize($last-token, '\.')"/>
-                            <xsl:variable name="extension" select="$tokens2[last()]"/>
-                            <file name="rewritten/{saxon:string-to-hexBinary(substring(archive/@url, 1, string-length(archive/@url) - string-length($extension) - 1), 'utf-8')}.{$extension}">
-                                <xsl:value-of select="url"/>
-                            </file>
-                        </xsl:otherwise>
-                    </xsl:choose>
-                </xsl:for-each>-->
+                <xsl:for-each select="/root/root/doc">
+                    <file name="rewritten/{resource/local-name}">
+                        <xsl:value-of select="url"/>
+                    </file>
+                </xsl:for-each>
             </files>
         </p:input>
         <p:output name="data" id="zip"/>

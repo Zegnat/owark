@@ -58,6 +58,16 @@
             <local-name>
                 <xsl:value-of select="owk:unique-local-name(.)"/>
             </local-name>
+            <type>
+                <xsl:choose>
+                    <xsl:when test="content-type = 'text/html'">html</xsl:when>
+                    <xsl:when test="content-type = 'application/xhtml+xml'">html</xsl:when>
+                    <xsl:when test="content-type = 'text/plain'">text</xsl:when>
+                    <xsl:otherwise>
+                        <xsl:value-of select="substring-after(content-type, '/')"/>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </type>
             <xsl:apply-templates select="." mode="redirect"/>
             <xsl:apply-templates select="/log/entry[referer = current()/uri and ends-with(discovery-path, 'E')]" mode="embedding"/>
         </resource>
