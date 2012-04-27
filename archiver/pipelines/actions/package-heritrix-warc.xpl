@@ -77,17 +77,58 @@
         <p:input name="config" href="resource-index.xslt"/>
         <p:output name="data" id="index" debug="index"/>
     </p:processor>
-    
-    
 
-    <p:processor name="oxf:null-serializer">
-        <p:input name="data" href="#index"/>
-    </p:processor>
+
 
 
     <!-- Loop over the WARC file to store and transform documents -->
-<!--    <p:for-each href="#warc-xml" select="/warc/record[header[name='Content-Type'] = 'application/http; msgtype=response' and content/status/status = 200]"> </p:for-each>
--->
+    <p:for-each href="#warc-xml" select="/warc/record[headers/header[@name='Content-Type'] = 'application/http; msgtype=response' and content/status/status = 200]" root="root" id="loop">
+        <p:processor name="oxf:xslt">
+            <p:input name="data" href="aggregate('root', current(), #index)" debug="aggregate"/>
+            <p:input name="config">
+                <resource xsl:version="2.0">
+                    <xsl:copy-of select="/root/index/resource[uri = /root/record/headers/header[@name = 'WARC-Target-URI']]/*"/>
+                </resource>
+            </p:input>
+            <p:output name="data" id="index-entry" debug="index-entry"/>
+        </p:processor>
+        <p:choose href="#index-entry">
+            <p:when test="/entry/embeds">
+                <!-- The resource has embedded content and must be rewritten -->
+                <p:processor name="oxf:identity">
+                    <p:input name="data" href="current()#xpointer(/record/content/document)"/>
+                    <p:output name="data" id="document"/>
+                </p:processor>
+            </p:when>
+            <p:otherwise>
+                <!-- The resource can be stored  -->
+                <p:processor name="oxf:identity">
+                    <p:input name="data" href="current()#xpointer(/record/content/document)"/>
+                    <p:output name="data" id="document"/>
+                </p:processor>
+            </p:otherwise>
+        </p:choose>
+        <p:processor name="oxf:file-serializer">
+            <p:input name="config">
+                <config>
+                    <scope>request</scope>
+                </config>
+            </p:input>
+            <p:input name="data" href="#document"/>
+            <p:output name="data" id="doc-location" debug="doc-location"/>
+        </p:processor>
+        <p:processor name="oxf:identity">
+            <p:input name="data" href="aggregate('doc', #index-entry, #doc-location)"/>
+            <p:output name="data" ref="loop"/>
+        </p:processor>
+    </p:for-each>
+
+    <p:processor name="oxf:null-serializer">
+        <p:input name="data" href="#loop" debug="loop"/>
+    </p:processor>
+
+
+
     <!-- Store the WARC in a temp file -->
     <p:processor name="oxf:file-serializer">
         <p:input name="config">
