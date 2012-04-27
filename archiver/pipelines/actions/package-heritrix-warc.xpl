@@ -67,15 +67,27 @@
 
     <p:processor name="oxf:xslt">
         <p:input name="data" href="#log"/>
-        <p:input name="config" href="parse-log.xslt"></p:input>
+        <p:input name="config" href="parse-log.xslt"/>
         <p:output name="data" id="log-xml" debug="log-xml"/>
     </p:processor>
 
-    <p:processor name="oxf:null-serializer">
+    <!-- Create a resource index with links and local names -->
+    <p:processor name="oxf:xslt">
         <p:input name="data" href="#log-xml"/>
+        <p:input name="config" href="resource-index.xslt"/>
+        <p:output name="data" id="index" debug="index"/>
+    </p:processor>
+    
+    
+
+    <p:processor name="oxf:null-serializer">
+        <p:input name="data" href="#index"/>
     </p:processor>
 
 
+    <!-- Loop over the WARC file to store and transform documents -->
+<!--    <p:for-each href="#warc-xml" select="/warc/record[header[name='Content-Type'] = 'application/http; msgtype=response' and content/status/status = 200]"> </p:for-each>
+-->
     <!-- Store the WARC in a temp file -->
     <p:processor name="oxf:file-serializer">
         <p:input name="config">
