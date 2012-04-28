@@ -14,7 +14,7 @@
             <xsl:with-param name="id" select="uri"/>
             <xsl:with-param name="nodes1">
               <local-name>
-                <xsl:value-of select="owk:local-name(key('log-by-uri', current()/uri, $source ))"/>
+                <xsl:value-of select="owk:unique-local-name(key('log-by-uri', current()/uri, $source ))"/>
               </local-name>
             </xsl:with-param>
             <xsl:with-param name="nodes2">

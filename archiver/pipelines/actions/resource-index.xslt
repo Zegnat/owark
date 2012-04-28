@@ -11,16 +11,41 @@
 
     <xsl:variable name="source" select="/"/>
 
+    <xsl:variable name="common-extensions">
+        <content-type name="application/x-shockwave-flash">
+            <extension>swf</extension>
+        </content-type>
+    </xsl:variable>
+
+    <xsl:key name="extension" match="content-type" use="@name"/>
+
+    <xsl:function name="owk:add-extension" as="xs:string">
+        <xsl:param name="entry" as="element(entry)"/>
+        <xsl:param name="last-token" as="xs:string"/>
+        <xsl:sequence select="
+            if (contains($last-token, '.')) 
+                then ''
+                else concat('.', 
+                    if (key('extension', $entry/content-type, $common-extensions))
+                        then key('extension', $entry/content-type, $common-extensions)
+                        else if (contains($entry/content-type, '/')) 
+                            then substring-after($entry/content-type, '/')
+                            else 'unknown') "/>
+    </xsl:function>
+
+
     <xsl:function name="owk:local-name" as="xs:string">
         <xsl:param name="entry" as="element(entry)"/>
         <xsl:variable name="is-seed" select="$entry/discovery-path='-'"/>
-        <xsl:variable name="tokens" select="tokenize($entry/uri, '/')"/>
+        <xsl:variable name="tokens" select="tokenize(if (contains($entry/uri, '?')) then substring-before($entry/uri, '?') else $entry/uri, '/')"/>
         <xsl:sequence
             select="if ($is-seed) 
             then 'index.html' 
-            else concat($tokens[3], '/', if ($tokens[last()] = '')
-            then concat('index.', substring-after($entry/content-type, '/') )
-            else $tokens[last()])"
+            else concat(
+                $tokens[3], 
+                '/', 
+                if ($tokens[last()] = '') then 'index' else $tokens[last()], 
+                owk:add-extension($entry, $tokens[last()]))"
         />
     </xsl:function>
 
@@ -32,11 +57,12 @@
                         then $local-name
                         else concat(
                             substring-before($local-name, '/'),
-                            substring-before(concat(substring-after($local-name, '/'), '.'), '.'),
+                            '/',
+                            substring-before(substring-after($local-name, '/'), '.'),
+                            '-',
                             count($entry/preceding-sibling::entry[owk:local-name(.) = $local-name]) + 1,
-                            if (contains(substring-after($local-name, '/'), '.'))
-                                then concat(substring-after(substring-after($local-name, '/'), '.'), '.')
-                                else ''
+                            '.',
+                            substring-after(substring-after($local-name, '/'), '.')
                         )"
         />
     </xsl:function>
