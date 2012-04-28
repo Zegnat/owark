@@ -5,28 +5,51 @@
   <p:param name="index" type="input"/>
   <p:param name="rewritten" type="output"/>
 
+  <!-- Try to guess the encoding... -->
+  <p:processor name="oxf:xslt">
+    <p:input name="data" href="#record"/>
+    <p:input name="config">
+      <encoding xsl:version="2.0">
+        <xsl:choose>
+          <xsl:when test="contains(/record/content/headers/header[@name='Content-Type'], 'charset=')">
+            <xsl:value-of select="substring-before(concat(substring-after(/record/content/headers/header[@name='Content-Type'], 'charset='), ';'), ';')"/>
+            <xsl:message>
+              ENCODING :
+              <xsl:value-of select="substring-before(concat(substring-after(/record/content/headers/header[@name='Content-Type'], 'charset='), ';'), ';')"/>
+            </xsl:message>
+          </xsl:when>
+          <xsl:otherwise>utf-8</xsl:otherwise>
+        </xsl:choose>
+      </encoding>
+    </p:input>
+    <p:output name="data" id="encoding" debug="encoding"/>
+  </p:processor>
 
   <!-- Store the document -->
   <p:processor name="oxf:file-serializer">
-    <p:input name="config">
-      <config>
+    <p:input name="config" transform="oxf:xslt" href="#encoding">
+      <config xsl:version="2.0">
         <scope>session</scope>
-        <encoding>utf-8</encoding>
+        <encoding>
+          <xsl:value-of select="/encoding"/>
+        </encoding>
         <force-encoding>true</force-encoding>
       </config>
     </p:input>
     <p:input name="data" href="#record#xpointer(/record/content/document)"/>
-    <p:output name="data" id="url-written"/>
+    <p:output name="data" id="url-written" debug="url-written"/>
   </p:processor>
 
   <!-- And read it as HTML -->
   <p:processor name="oxf:url-generator">
-    <p:input name="config" transform="oxf:xslt" href="#url-written">
+    <p:input name="config" transform="oxf:xslt" href="aggregate('root', #url-written, #encoding)">
       <config xsl:version="2.0">
         <url>
-          <xsl:value-of select="/*"/>
+          <xsl:value-of select="/root/url"/>
         </url>
-        <encoding>utf-8</encoding>
+        <encoding>
+          <xsl:value-of select="/root/encoding"/>
+        </encoding>
         <force-encoding>true</force-encoding>
         <content-type>text/html</content-type>
         <force-content-type>true</force-content-type>
@@ -75,7 +98,7 @@
   <p:processor name="oxf:html-converter">
     <p:input name="config">
       <config>
-        <content-type>application/xml</content-type>
+        <content-type>text/html</content-type>
         <encoding>utf-8</encoding>
       </config>
     </p:input>
