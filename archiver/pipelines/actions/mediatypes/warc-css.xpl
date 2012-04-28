@@ -49,7 +49,8 @@
               <xsl:matching-substring>
                 <xsl:text>url(</xsl:text>
                 <xsl:variable name="abs" select="substring-before(concat(resolve-uri(regex-group(1), $base), '#'), '#')"/>
-                <xsl:value-of select="$index/resource[(uri, same-as) = $abs]/local-name"/>
+                <xsl:variable name="local-name" select="$index/resource[(uri, same-as) = $abs][1]/local-name"/>
+                <xsl:value-of select="if ($local-name) then concat('../', $local-name) else resolve-uri(regex-group(1), $base)"/>
                 <xsl:text>)</xsl:text>
               </xsl:matching-substring>
               <xsl:non-matching-substring>

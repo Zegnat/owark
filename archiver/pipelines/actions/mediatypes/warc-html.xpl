@@ -58,7 +58,8 @@
         <xsl:template match="link[@rel='stylesheet']/@href|img/@src|script/@src">
           <xsl:attribute name="{name(.)}">
             <xsl:variable name="abs" select="substring-before(concat(resolve-uri(., $base), '#'), '#')"/>
-            <xsl:value-of select="$index/resource[(uri, same-as) = $abs]/local-name"/>
+            <xsl:variable name="local-name" select="$index/resource[(uri, same-as) = $abs][1]/local-name"/>
+            <xsl:value-of select="if ($local-name) then concat(if ($resource/uri/@seed = 'false') then '../' else '', $local-name) else resolve-uri(., $base)"/>
           </xsl:attribute>
         </xsl:template>
         <xsl:template match="link[@rel!='stylesheet']/@href|a/@href">
