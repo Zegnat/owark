@@ -23,7 +23,7 @@ declare namespace util = "http://exist-db.org/xquery/util";
 
 for $q in /queue return
     update 
-        insert <action priority="0" uuid="{util:uuid()}" type="heritrix-archive-set" url="http://dyomedea.com"/> 
+        insert <action priority="0" uuid="{util:uuid()}" type="heritrix-archive-set" url="http://eric.van-der-vlist.com/blog/"/> 
         into $q
                 
                 ]]></xquery>

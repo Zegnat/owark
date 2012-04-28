@@ -71,12 +71,11 @@
     <p:output name="data" id="html-rewritten" debug="rewritten"/>
   </p:processor>
 
-  <p:processor name="oxf:xml-converter">
+  <p:processor name="oxf:html-converter">
     <p:input name="config">
       <config>
         <content-type>application/xml</content-type>
         <encoding>utf-8</encoding>
-        <version>1.0</version>
       </config>
     </p:input>
     <p:input name="data" href="#html-rewritten"/>
