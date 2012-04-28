@@ -11,6 +11,8 @@
     <p:input name="config">
       <config>
         <scope>session</scope>
+        <encoding>utf-8</encoding>
+        <force-encoding>true</force-encoding>
       </config>
     </p:input>
     <p:input name="data" href="#record#xpointer(/record/content/document)"/>
@@ -24,6 +26,10 @@
         <url>
           <xsl:value-of select="/*"/>
         </url>
+        <encoding>utf-8</encoding>
+        <force-encoding>true</force-encoding>
+        <content-type>text/html</content-type>
+        <force-content-type>true</force-content-type>
         <mode>html</mode>
       </config>
     </p:input>
