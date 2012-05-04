@@ -64,6 +64,18 @@
         </p:input>
         <p:output name="data" id="log" debug="log"/>
     </p:processor>
+    
+    <!-- Store the log in a temp file -->
+    <p:processor name="oxf:file-serializer">
+        <p:input name="config">
+            <config>
+                <scope>request</scope>
+            </config>
+        </p:input>
+        <p:input name="data" href="#log"/>
+        <p:output name="data" id="log-location" debug="log-location"/>
+    </p:processor>
+    
 
     <p:processor name="oxf:xslt">
         <p:input name="data" href="#log"/>
@@ -156,10 +168,13 @@
     </p:processor>
 
     <p:processor name="oxf:zip">
-        <p:input name="data" transform="oxf:unsafe-xslt" href="aggregate('root', #warc-location, #loop)">
+        <p:input name="data" transform="oxf:unsafe-xslt" href="aggregate('root', #warc-location, #log-location, #loop)">
             <files xsl:version="2.0" file-name="archive.zip">
-                <file name="archive.warc">
-                    <xsl:value-of select="/root/url"/>
+                <file name="archive/archive.warc">
+                    <xsl:value-of select="/root/url[1]"/>
+                </file>
+                <file name="archive/archive.log">
+                    <xsl:value-of select="/root/url[2]"/>
                 </file>
                 <xsl:for-each select="/root/root/doc">
                     <file name="rewritten/{resource/local-name}">
