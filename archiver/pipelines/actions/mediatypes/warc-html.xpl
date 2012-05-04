@@ -78,7 +78,7 @@
             <xsl:apply-templates select="@*|node()"/>
           </xsl:copy>
         </xsl:template>
-        <xsl:template match="link[@rel='stylesheet']/@href|img/@src|script/@src|embed/@src">
+        <xsl:template match="link[@rel='stylesheet']/@href|img/@src|script/@src|embed/@src|@background">
           <xsl:attribute name="{name(.)}">
             <xsl:variable name="abs" select="substring-before(concat(resolve-uri(., $base), '#'), '#')"/>
             <xsl:variable name="local-name" select="$index/resource[(uri, same-as) = $abs][1]/local-name"/>
