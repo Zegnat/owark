@@ -15,6 +15,9 @@
         <content-type name="application/x-shockwave-flash">
             <extension>swf</extension>
         </content-type>
+        <content-type name="application/xhtml+xml">
+            <extension>html</extension>
+        </content-type>
     </xsl:variable>
 
     <xsl:key name="extension" match="content-type" use="@name"/>
