@@ -450,20 +450,26 @@ if (!class_exists("Owark")) {
             if (!file_exists($file_location)) {
                 // If index.html doesn't exist, find another html file!
                 $dir = opendir('.'.$loc);
-                while (false !== ($file = readdir($dir))) {
-                    if ('.html' === substr($file, strlen($file) - 5)) {
-                        $file_location = '.'.$loc.'/' . $file;
-                        break;
+		if ($dir) {
+                    while (false !== ($file = readdir($dir))) {
+                        if ('.html' === substr($file, strlen($file) - 5)) {
+                            $file_location = '.'.$loc.'/' . $file;
+                            break;
+                        }
                     }
+                    closedir($dir);
                 }
-                closedir($dir);
             }
 
             // Read the file
 
-            $f = fopen($file_location, "r");
-            $content = fread($f, filesize($file_location));
-            fclose($f);
+            if (file_exists($file_location)) {
+                $f = fopen($file_location, "r");
+                $content = fread($f, filesize($file_location));
+                fclose($f);
+            } else {
+                $content = 'Archive not found';
+            }
 
             // Which encoding?
             $encoding = $link->encoding;
